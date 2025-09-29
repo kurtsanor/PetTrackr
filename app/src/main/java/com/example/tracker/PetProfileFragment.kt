@@ -17,6 +17,18 @@ class PetProfileFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_pet_profile, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val petDetailsBtn = view.findViewById< Button>(R.id.buttonVaccination)
+        petDetailsBtn.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainerView2, VaccinationFragment())
+                .addToBackStack(null)
+                .commit()
+        }
+    }
+
 
 
 }

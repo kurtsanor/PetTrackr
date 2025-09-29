@@ -103,6 +103,7 @@
                 app:layout_columnWeight="1"
                 app:strokeColor="#C3C3C3" />
             <Button
+                android:id="@+id/buttonVaccination"
                 style="@style/Widget.Material3.ExtendedFloatingActionButton.Icon.Surface"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -189,6 +190,7 @@
                     android:textSize="14sp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="0dp"
