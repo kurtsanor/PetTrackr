@@ -20,13 +20,23 @@ class PetProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val petDetailsBtn = view.findViewById< Button>(R.id.buttonVaccination)
-        petDetailsBtn.setOnClickListener {
+        val buttonVaccination = view.findViewById< Button>(R.id.buttonVaccination)
+        buttonVaccination.setOnClickListener {
             parentFragmentManager.beginTransaction()
                 .replace(R.id.fragmentContainerView2, VaccinationFragment())
                 .addToBackStack(null)
                 .commit()
         }
+
+        val buttonMedicalHistory = view.findViewById< Button>(R.id.buttonMedicalHistory)
+        buttonMedicalHistory.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainerView2, MedicalHistoryFragment())
+                .addToBackStack(null)
+                .commit()
+        }
+
+
     }
 
 

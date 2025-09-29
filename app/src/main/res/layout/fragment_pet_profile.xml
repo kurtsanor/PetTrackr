@@ -140,6 +140,7 @@
                 app:layout_columnWeight="1"
                 app:strokeColor="#C3C3C3" />
             <Button
+                android:id="@+id/buttonMedicalHistory"
                 style="@style/Widget.Material3.ExtendedFloatingActionButton.Icon.Surface"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
