@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 
 class PetsFragment : Fragment() {
 
@@ -14,6 +15,18 @@ class PetsFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_pets, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val petDetailsBtn = view.findViewById< Button>(R.id.buttonAdd)
+        petDetailsBtn.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainerView2, PetProfileFragment())
+                .addToBackStack(null)
+                .commit()
+        }
     }
 
 }

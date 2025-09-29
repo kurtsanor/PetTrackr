@@ -27,7 +27,7 @@
         <!--Profile Card-->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="110dp"
             app:cardCornerRadius="20dp"
             app:cardBackgroundColor="#F2F2F2">
 
