@@ -4,7 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PetsFragment">
+    tools:context=".PetsFragment"
+    android:layout_marginBottom="10dp">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add_pet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:contentDescription="Add Pet"
+        app:srcCompat="@drawable/add"
+        app:tint="@null"
+        android:backgroundTint="#08d46c"
+        android:layout_marginBottom="10dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -29,20 +42,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
 
-            >
-
-            <Button
-                style="@style/Widget.Material3.Button"
-                android:id="@+id/buttonAdd"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Add Pet"
-                android:layout_marginBottom="20dp"
-                android:backgroundTint="#08d46c"
-                />
-
-        </LinearLayout>
+            />
 
 
         <ScrollView
@@ -286,6 +286,13 @@
 
             </androidx.gridlayout.widget.GridLayout>
         </ScrollView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            tools:src="@tools:sample/avatars" />
 
     </LinearLayout>
 </FrameLayout>

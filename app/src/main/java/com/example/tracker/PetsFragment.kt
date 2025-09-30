@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class PetsFragment : Fragment() {
 
@@ -20,7 +21,7 @@ class PetsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val petDetailsBtn = view.findViewById< Button>(R.id.buttonAdd)
+        val petDetailsBtn = view.findViewById<FloatingActionButton>(R.id.fab_add_pet)
         petDetailsBtn.setOnClickListener {
             parentFragmentManager.beginTransaction()
                 .replace(R.id.fragmentContainerView2, PetProfileFragment())
