@@ -22,20 +22,23 @@
             android:textSize="20sp"
             android:textAlignment="center"
             android:textStyle="bold"
+            android:textColor="#212121"
             />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Pets Status Breakdown"
-            android:layout_marginBottom="10dp"/>
+            android:text="Pets Health Status"
+            android:layout_marginBottom="10dp"
+            android:textColor="#212121"
+            android:textStyle="bold"/>
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="3"
             android:layout_marginBottom="30dp"
-            app:cardBackgroundColor="#F2F2F2"
+            app:cardBackgroundColor="#F5F5F5"
             app:cardCornerRadius="20dp">
 
             <com.github.mikephil.charting.charts.PieChart
@@ -49,13 +52,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Monthly Progress"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="10dp"
+            android:textColor="#212121"
+            android:textStyle="bold"/>
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="2"
-            app:cardBackgroundColor="#F2F2F2"
+            app:cardBackgroundColor="#F5F5F5"
             app:cardCornerRadius="20dp"
             android:layout_marginBottom="20dp">
 
@@ -70,13 +75,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Notifications"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="10dp"
+            android:textColor="#212121"
+            android:textStyle="bold"/>
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            app:cardBackgroundColor="#F2F2F2"
+            app:cardBackgroundColor="#F5F5F5"
             app:cardCornerRadius="20dp"
             app:contentPadding="10dp">
             <LinearLayout
@@ -87,12 +94,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Reminder"
-                    android:textSize="10sp" />
+                    android:textSize="10sp"
+                    android:textColor="#212121"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="General Checkup is Near"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:textColor="#616161"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 

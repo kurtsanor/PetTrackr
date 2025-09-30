@@ -22,19 +22,21 @@
             android:text="Vaccination"
             android:textSize="20sp"
             android:layout_marginBottom="30dp"
-            android:textAlignment="center"/>
+            android:textAlignment="center"
+            android:textColor="#212121"/>
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="5"
-            app:cardCornerRadius="20dp">
+            app:cardCornerRadius="20dp"
+            >
 
             <CalendarView
                 android:id="@+id/calendarView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#F2F2F2"
+                android:background="#F5F5F5"
                 />
 
 
@@ -50,7 +52,8 @@
             android:text="Upcoming Vaccines"
             android:textSize="18sp"
             android:layout_marginBottom="30dp"
-            android:layout_marginTop="30dp"/>
+            android:layout_marginTop="30dp"
+            android:textColor="#212121"/>
 
         <ScrollView
             android:layout_width="match_parent"
@@ -66,7 +69,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="55dp"
                     android:layout_marginBottom="10dp"
-                    app:cardBackgroundColor="#F2F2F2"
+                    app:cardBackgroundColor="#F5F5F5"
                     app:cardCornerRadius="20dp"
                     app:contentPadding="10dp">
                     <LinearLayout
@@ -77,12 +80,40 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Aug 13 2025"
-                            android:textSize="10sp" />
+                            android:textSize="10sp"
+                            android:textColor="#212121"/>
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Vaccinated anti-rabies"
-                            android:textSize="14sp" />
+                            android:textSize="14sp"
+                            android:textColor="#616161"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_marginBottom="10dp"
+                    app:cardBackgroundColor="#F5F5F5"
+                    app:cardCornerRadius="20dp"
+                    app:contentPadding="10dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Aug 13 2025"
+                            android:textSize="10sp"
+                            android:textColor="#212121"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Vaccinated anti-rabies"
+                            android:textSize="14sp"
+                            android:textColor="#616161"/>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -101,36 +132,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Aug 13 2025"
-                            android:textSize="10sp" />
+                            android:textSize="10sp"
+                            android:textColor="#212121"/>
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Vaccinated anti-rabies"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="55dp"
-                    android:layout_marginBottom="10dp"
-                    app:cardBackgroundColor="#F2F2F2"
-                    app:cardCornerRadius="20dp"
-                    app:contentPadding="10dp">
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Aug 13 2025"
-                            android:textSize="10sp" />
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Vaccinated anti-rabies"
-                            android:textSize="14sp" />
+                            android:textSize="14sp"
+                            android:textColor="#616161"/>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 

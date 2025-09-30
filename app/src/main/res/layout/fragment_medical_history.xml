@@ -22,7 +22,8 @@
             android:text="Medical History"
             android:textSize="20sp"
             android:layout_marginBottom="30dp"
-            android:textAlignment="center"/>
+            android:textAlignment="center"
+            android:textColor="#212121"/>
 
         <SearchView
             style="@style/Widget.AppCompat.SearchView"
@@ -32,6 +33,7 @@
             android:background="@drawable/search_bar_design"
             android:queryHint="Search / Filter Records"
             android:layout_marginBottom="20dp"
+            android:backgroundTint="#F5F5F5"
             />
 
 
@@ -49,7 +51,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
-                    app:cardBackgroundColor="#F2F2F2"
+                    app:cardBackgroundColor="#F5F5F5"
                     app:cardCornerRadius="20dp"
                     app:contentPadding="10dp">
                     <LinearLayout
@@ -65,7 +67,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Vaccinated anti-rabies"
-                            android:textSize="14sp" />
+                            android:textSize="14sp"
+                            android:textColor="#616161"/>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -73,7 +76,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
-                    app:cardBackgroundColor="#F2F2F2"
+                    app:cardBackgroundColor="#F5F5F5"
                     app:cardCornerRadius="20dp"
                     app:contentPadding="10dp">
                     <LinearLayout
@@ -89,7 +92,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Vaccinated anti-rabies"
-                            android:textSize="14sp" />
+                            android:textSize="14sp"
+                            android:textColor="#616161"/>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -97,7 +101,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
-                    app:cardBackgroundColor="#F2F2F2"
+                    app:cardBackgroundColor="#F5F5F5"
                     app:cardCornerRadius="20dp"
                     app:contentPadding="10dp">
                     <LinearLayout
@@ -113,7 +117,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Vaccinated anti-rabies"
-                            android:textSize="14sp" />
+                            android:textSize="14sp"
+                            android:textColor="#616161"/>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
