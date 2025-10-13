@@ -21,8 +21,36 @@ class PetsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val petDetailsBtn = view.findViewById<FloatingActionButton>(R.id.fab_add_pet)
-        petDetailsBtn.setOnClickListener {
+            val button1 = view.findViewById<Button>(R.id.button1)
+        button1.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainerView2, PetProfileFragment())
+                .addToBackStack(null)
+                .commit()
+        }
+        val button2 = view.findViewById<Button>(R.id.button2)
+        button2.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainerView2, PetProfileFragment())
+                .addToBackStack(null)
+                .commit()
+        }
+        val button3 = view.findViewById<Button>(R.id.button3)
+        button3.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainerView2, PetProfileFragment())
+                .addToBackStack(null)
+                .commit()
+        }
+        val button4 = view.findViewById<Button>(R.id.button4)
+        button4.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainerView2, PetProfileFragment())
+                .addToBackStack(null)
+                .commit()
+        }
+        val button5 = view.findViewById<Button>(R.id.button5)
+        button5.setOnClickListener {
             parentFragmentManager.beginTransaction()
                 .replace(R.id.fragmentContainerView2, PetProfileFragment())
                 .addToBackStack(null)

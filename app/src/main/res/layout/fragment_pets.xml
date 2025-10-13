@@ -56,6 +56,7 @@
                 app:columnCount="2">
 
                 <Button
+                    android:id="@+id/button1"
                     style="@style/Widget.Material3.ExtendedFloatingActionButton.Icon.Surface"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -75,6 +76,7 @@
                     app:strokeColor="#C3C3C3" />
 
                 <Button
+                    android:id="@+id/button2"
                     style="@style/Widget.Material3.ExtendedFloatingActionButton.Icon.Surface"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -94,6 +96,7 @@
                     app:strokeColor="#C3C3C3" />
 
                 <Button
+                    android:id="@+id/button3"
                     style="@style/Widget.Material3.ExtendedFloatingActionButton.Icon.Surface"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -113,6 +116,7 @@
                     app:strokeColor="#C3C3C3" />
 
                 <Button
+                    android:id="@+id/button4"
                     style="@style/Widget.Material3.ExtendedFloatingActionButton.Icon.Surface"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -132,6 +136,7 @@
                     app:strokeColor="#C3C3C3" />
 
                 <Button
+                    android:id="@+id/button5"
                     style="@style/Widget.Material3.ExtendedFloatingActionButton.Icon.Surface"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
