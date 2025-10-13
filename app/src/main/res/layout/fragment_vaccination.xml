@@ -35,25 +35,23 @@
             <CalendarView
                 android:id="@+id/calendarView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#F5F5F5"
-                />
+                android:layout_height="255dp"
+                android:background="#F5F5F5" />
 
 
         </androidx.cardview.widget.CardView>
-
 
 
         <TextView
             android:id="@+id/textViewUpcomingVaccines"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:text="Upcoming Vaccines"
-            android:textSize="18sp"
-            android:layout_marginBottom="30dp"
             android:layout_marginTop="30dp"
-            android:textColor="#212121"/>
+            android:layout_marginBottom="30dp"
+            android:text="Upcoming Vaccines"
+            android:textColor="#212121"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <ScrollView
             android:layout_width="match_parent"
