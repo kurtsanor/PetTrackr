@@ -36,7 +36,21 @@ class PetProfileFragment : Fragment() {
                 .commit()
         }
 
+        val buttonGrowth = view.findViewById< Button>(R.id.buttonGrowth)
+        buttonGrowth.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainerView2, GrowthFragment())
+                .addToBackStack(null)
+                .commit()
+        }
 
+        val buttonDocuments = view.findViewById< Button>(R.id.buttonDocuments)
+        buttonDocuments.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainerView2, DocumentsFragment())
+                .addToBackStack(null)
+                .commit()
+        }
     }
 
 

@@ -91,6 +91,7 @@
             app:columnCount="2"
             >
             <Button
+                android:id="@+id/buttonDocuments"
                 style="@style/Widget.Material3.ExtendedFloatingActionButton.Icon.Surface"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -128,6 +129,7 @@
                 app:layout_columnWeight="1"
                 app:strokeColor="#C3C3C3" />
             <Button
+                android:id="@+id/buttonGrowth"
                 style="@style/Widget.Material3.ExtendedFloatingActionButton.Icon.Surface"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
