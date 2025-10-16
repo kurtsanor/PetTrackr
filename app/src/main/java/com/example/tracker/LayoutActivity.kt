@@ -33,6 +33,10 @@ class LayoutActivity : AppCompatActivity() {
                     openFragment(PetsFragment())
                     true
                 }
+                R.id.nav_account -> {
+                    openFragment(AccountFragment())
+                    true
+                }
                 else -> false
             }
         }
