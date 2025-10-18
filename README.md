@@ -20,19 +20,26 @@
 ![Login Screenshot](https://github.com/user-attachments/assets/91505cb1-ed26-4b11-9645-078d35741a96)
 
 ### 🏠 Home Page  
-![Home Screenshot](https://github.com/user-attachments/assets/69c01fcc-2606-4b3b-90d2-0280d64a09b2)
+![Home Screenshot](https://github.com/user-attachments/assets/ed1b4945-813a-49f9-b087-1c887a5a2807)
 
 ### 🐶 Pets Page  
-![Pets Screenshot](https://github.com/user-attachments/assets/08a2bb5a-6af2-4f55-955f-dc0f2c5a81b3)
+![Pets Screenshot](https://github.com/user-attachments/assets/3112759e-a244-4a9a-8fd7-ee616491d508)
 
 ### 📋 Pet Profile Page  
-![Pet Profile Screenshot](https://github.com/user-attachments/assets/14c1f294-bdfc-4a9d-a76f-52cda84d0d9e)
+![Pet Profile Screenshot](https://github.com/user-attachments/assets/f6afc379-6ca9-40cb-bda7-fcd7c0ab8dca)
 
 ### 💉 Pet Vaccinations Page  
-![Vaccinations Screenshot](https://github.com/user-attachments/assets/ff695afc-ac15-41fa-be4c-e6a9aca4babb)
+![Vaccinations Screenshot](https://github.com/user-attachments/assets/b380a8a9-bfd5-48f5-ac53-f9c1753ce010)
 
 ### 🏥 Pet Medical History Page  
-![Medical History Screenshot](https://github.com/user-attachments/assets/2b489380-d5c0-4d38-a56f-4166e5beb8c0)
+![Medical History Screenshot](https://github.com/user-attachments/assets/d00adabb-7784-43e2-80fb-69d69ccf2802)
+
+### 📈 Pet Growth History Page  
+![Growth History Screenshot](https://github.com/user-attachments/assets/b70d19eb-6a70-445f-bd4e-8def9c0070cd)
+
+### 👤 User Account Page  
+![User Account Screenshot](https://github.com/user-attachments/assets/06315d3e-0a03-4f2e-bf61-4ac77aba65e3)
+
 
 ---
 
