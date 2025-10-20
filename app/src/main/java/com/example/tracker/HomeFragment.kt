@@ -131,8 +131,8 @@ class HomeFragment : Fragment() {
 
         dataSet.colors = listOf(
             "#08D46C".toColorInt(), // base green
-            "#f4e04d".toColorInt(), // yellow
-            "#f5a94d".toColorInt(), // orange
+            "#FFD180".toColorInt(), // yellow
+            "#FF9E80".toColorInt(), // orange
             "#f45b5b".toColorInt(), // red
         )
 
