@@ -51,4 +51,7 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation(libs.mpandroidchart)
+//    implementation(libs.material.calendarview)
+    implementation(libs.material.calendarview.v143)
+
 }

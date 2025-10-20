@@ -52,13 +52,18 @@ class HomeFragment : Fragment() {
 
     private fun createBarChart(barChart: BarChart) {
         val entries = ArrayList<BarEntry>()
-        entries.add(BarEntry(0f, 10f)) // X = 0, Y = 5
-        entries.add(BarEntry(1f, 9f))
+        entries.add(BarEntry(0f, 9f)) // X = 0, Y = 5
+        entries.add(BarEntry(1f, 10f))
         entries.add(BarEntry(2f, 8f))
-        entries.add(BarEntry(3f, 10f))
+        entries.add(BarEntry(3f, 7f))
 
         val dataSet = BarDataSet(entries, null)
-        dataSet.color = "#08d46c".toColorInt() // bar color
+        dataSet.colors = listOf(
+            "#2fdc83".toColorInt(),
+            "#08d46c".toColorInt(),
+            "#56e49a".toColorInt(),
+            "#7eecb1".toColorInt()
+        )
         dataSet.valueTextColor = Color.BLACK
         dataSet.valueTextSize = 12f
 
@@ -125,11 +130,10 @@ class HomeFragment : Fragment() {
 //        donutChart.setCenterTextSize(16f)
 
         dataSet.colors = listOf(
-            "#08D46C".toColorInt(), // base
-            "#07BF61".toColorInt(), // slightly darker
-            "#06AA56".toColorInt(), // darker
-            "#05854A".toColorInt(), // deep green
-            "#036237".toColorInt()  // very dark green
+            "#08D46C".toColorInt(), // base green
+            "#f4e04d".toColorInt(), // yellow
+            "#f5a94d".toColorInt(), // orange
+            "#f45b5b".toColorInt(), // red
         )
 
         donutChart.invalidate() // refresh

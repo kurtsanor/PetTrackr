@@ -30,7 +30,7 @@
             android:layout_height="0dp"
             android:layout_weight="2"
             app:cardCornerRadius="20dp"
-            app:cardBackgroundColor="#F5F5F5">
+            app:cardBackgroundColor="#08d46c">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -52,14 +52,15 @@
                         android:layout_weight="1"
                         android:text="Barney"
                         android:textStyle="bold"
-                        android:textColor="#212121"/>
+                        android:textSize="17sp"
+                        android:textColor="@color/white"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"
                         android:text="8 months, Male"
                         android:textSize="13sp"
-                        android:textColor="#616161"
+                        android:textColor="@color/white"
                         />
                     <TextView
                         android:layout_width="match_parent"
@@ -67,7 +68,7 @@
                         android:layout_weight="1"
                         android:text="Golden Retriever, Beige"
                         android:textSize="13sp"
-                        android:textColor="#616161"/>
+                        android:textColor="@color/white"/>
                 </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -75,7 +76,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="My Stuffs"
+            android:text="My Stuff"
             android:textStyle="bold"
             android:textSize="18sp"
             android:layout_marginTop="30dp"
@@ -184,24 +185,48 @@
             app:cardBackgroundColor="#F5F5F5"
             app:cardCornerRadius="20dp"
             app:contentPadding="10dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="match_parent"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:text="Vaccine"
-                    android:textSize="10sp"
-                    android:textColor="#212121"/>
-                <TextView
-                    android:layout_width="match_parent"
+                    app:cardCornerRadius="8dp"
+                    android:layout_marginRight="8dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/syringe"
+                        android:background="#FF9E80"
+                        />
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="7"
                     android:layout_height="wrap_content"
-                    android:text="Vaccinated anti-rabies"
-                    android:textSize="14sp"
-                    android:textColor="#616161"
-                    />
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Vaccine"
+                        android:textSize="10sp"
+                        android:textColor="#212121"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Vaccinated anti-rabies"
+                        android:textSize="14sp"
+                        android:textColor="#616161"
+                        />
+                </LinearLayout>
             </LinearLayout>
+
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
@@ -212,24 +237,49 @@
             app:cardBackgroundColor="#F5F5F5"
             app:cardCornerRadius="20dp"
             app:contentPadding="10dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="match_parent"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:text="Checkup"
-                    android:textSize="10sp"
-                    android:textColor="#212121"/>
-                <TextView
-                    android:layout_width="match_parent"
+                    app:cardCornerRadius="8dp"
+                    android:layout_marginRight="8dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/checkup"
+                        android:background="#FFD180"
+                        />
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="7"
                     android:layout_height="wrap_content"
-                    android:text="Checkup in clinic"
-                    android:textSize="14sp"
-                    android:textColor="#616161"/>
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Checkup"
+                        android:textSize="10sp"
+                        android:textColor="#212121"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Checkup at the clinic"
+                        android:textSize="14sp"
+                        android:textColor="#616161"
+                        />
+                </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+
     </LinearLayout>
 
 </FrameLayout>

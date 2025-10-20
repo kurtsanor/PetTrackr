@@ -28,9 +28,9 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="1.1"
             app:cardCornerRadius="20dp"
-            app:cardBackgroundColor="#F5F5F5"
+            app:cardBackgroundColor="#08d46c"
             android:layout_marginBottom="20dp">
             <LinearLayout
                 android:layout_width="match_parent"
@@ -54,13 +54,13 @@
                         android:text="John Michael Doe"
                         android:textSize="18sp"
                         android:textStyle="bold"
-                        android:textColor="#212121"/>
+                        android:textColor="@color/white"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Pet Owner"
                         android:textSize="13sp"
-                        android:textColor="#616161"
+                        android:textColor="@color/white"
                         />
                 </LinearLayout>
             </LinearLayout>
@@ -108,6 +108,7 @@
                 android:textAlignment="viewStart"
                 android:textColor="#212121"
                 android:textStyle="bold"
+                android:textSize="16sp"
                 app:icon="@drawable/edit"
                 app:iconGravity="start"
                 app:iconTint="#212121" />
@@ -120,6 +121,7 @@
                 android:textAlignment="viewStart"
                 android:textColor="#212121"
                 android:textStyle="bold"
+                android:textSize="16sp"
                 app:icon="@drawable/key"
                 app:iconGravity="start"
                 app:iconTint="#212121" />
@@ -132,6 +134,7 @@
                 android:textAlignment="viewStart"
                 android:textColor="#212121"
                 android:textStyle="bold"
+                android:textSize="16sp"
                 app:icon="@drawable/settings"
                 app:iconGravity="start"
                 app:iconTint="#212121" />
@@ -158,6 +161,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Logout"
+                android:textSize="16sp"
                 android:textAlignment="viewStart"
                 android:textColor="#F81501"
                 android:textStyle="bold"
