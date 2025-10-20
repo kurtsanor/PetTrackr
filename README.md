@@ -27,7 +27,7 @@
 ![Pets Screenshot](https://github.com/user-attachments/assets/3112759e-a244-4a9a-8fd7-ee616491d508)
 
 ### 📋 Pet Profile Page  
-![Pet Profile Screenshot](https://github.com/user-attachments/assets/4c858816-e29b-431e-b474-dfb10d18427e)
+![Pet Profile Screenshot](https://github.com/user-attachments/assets/dc5474e7-21ab-4c4f-9c93-2beec21233b6)
 
 ### 💉 Pet Documents Page  
 ![Documents Screenshot](https://github.com/user-attachments/assets/ea427a51-56f2-437f-903c-202ced7d03d0)
@@ -42,7 +42,7 @@
 ![Growth History Screenshot](https://github.com/user-attachments/assets/b70d19eb-6a70-445f-bd4e-8def9c0070cd)
 
 ### 👤 User Account Page  
-![User Account Screenshot](https://github.com/user-attachments/assets/965243b6-9013-4505-bc9f-2e2b71affe9f)
+![User Account Screenshot](https://github.com/user-attachments/assets/50ed8f51-a76f-42ca-8a86-1726a058d486)
 
 
 ---
