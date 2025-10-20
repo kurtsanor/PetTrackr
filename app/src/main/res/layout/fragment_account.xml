@@ -30,7 +30,7 @@
             android:layout_height="0dp"
             android:layout_weight="1.1"
             app:cardCornerRadius="20dp"
-            app:cardBackgroundColor="#08d46c"
+            app:cardBackgroundColor="#F5F5F5"
             android:layout_marginBottom="20dp">
             <LinearLayout
                 android:layout_width="match_parent"
@@ -54,13 +54,13 @@
                         android:text="John Michael Doe"
                         android:textSize="18sp"
                         android:textStyle="bold"
-                        android:textColor="@color/white"/>
+                        android:textColor="#212121"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Pet Owner"
                         android:textSize="13sp"
-                        android:textColor="@color/white"
+                        android:textColor="#616161"
                         />
                 </LinearLayout>
             </LinearLayout>

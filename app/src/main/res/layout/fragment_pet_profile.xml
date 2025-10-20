@@ -30,7 +30,7 @@
             android:layout_height="0dp"
             android:layout_weight="2"
             app:cardCornerRadius="20dp"
-            app:cardBackgroundColor="#08d46c">
+            app:cardBackgroundColor="#F5F5F5">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -53,14 +53,14 @@
                         android:text="Barney"
                         android:textStyle="bold"
                         android:textSize="17sp"
-                        android:textColor="@color/white"/>
+                        android:textColor="#212121"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"
                         android:text="8 months, Male"
                         android:textSize="13sp"
-                        android:textColor="@color/white"
+                        android:textColor="#212121"
                         />
                     <TextView
                         android:layout_width="match_parent"
@@ -68,7 +68,7 @@
                         android:layout_weight="1"
                         android:text="Golden Retriever, Beige"
                         android:textSize="13sp"
-                        android:textColor="@color/white"/>
+                        android:textColor="#212121"/>
                 </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -107,7 +107,7 @@
                 app:iconGravity="top"
                 app:iconPadding="0dp"
                 app:iconSize="100dp"
-                app:iconTint="@null"
+                app:iconTint="#FFD180"
                 app:layout_columnWeight="1"
                 app:strokeColor="#C3C3C3" />
             <Button
@@ -126,7 +126,7 @@
                 app:iconGravity="top"
                 app:iconPadding="0dp"
                 app:iconSize="100dp"
-                app:iconTint="@null"
+                app:iconTint="#FF9E80"
                 app:layout_columnWeight="1"
                 app:strokeColor="#C3C3C3" />
             <Button
@@ -145,7 +145,7 @@
                 app:iconGravity="top"
                 app:iconPadding="0dp"
                 app:iconSize="100dp"
-                app:iconTint="@null"
+                app:iconTint="#08d46c"
                 app:layout_columnWeight="1"
                 app:strokeColor="#C3C3C3" />
             <Button
@@ -164,7 +164,7 @@
                 app:iconGravity="top"
                 app:iconPadding="0dp"
                 app:iconSize="100dp"
-                app:iconTint="@null"
+                app:iconTint="#f45b5b"
                 app:layout_columnWeight="1"
                 app:strokeColor="#C3C3C3" />
         </androidx.gridlayout.widget.GridLayout>
