@@ -20,8 +20,7 @@
 ![Login Screenshot](https://github.com/user-attachments/assets/91505cb1-ed26-4b11-9645-078d35741a96)
 
 ### 🏠 Home Page  
-![Home Screenshot](https://github.com/user-attachments/assets/2c59e559-9f5c-4e98-a752-b8ae6d1f1ad8
-)
+![Home Screenshot](https://github.com/user-attachments/assets/6792061c-032a-4d56-a902-d1f8f2dec45e)
 
 ### 🐶 Pets Page  
 ![Pets Screenshot](https://github.com/user-attachments/assets/3112759e-a244-4a9a-8fd7-ee616491d508)
