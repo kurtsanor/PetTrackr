@@ -1,6 +1,6 @@
-# 🐾 PetTrackr
+# 🐾 PawcketDoc
 
-**PetTrackr** is a Kotlin-first Android application designed to help pet owners manage and monitor their pets' health records. It features a clean, card-based interface for tracking growth metrics, vaccinations, medical history, and storing important documents.
+**PawcketDoc** is a Kotlin-first Android application designed to help pet owners manage and monitor their pets' health records. It features a clean, card-based interface for tracking growth metrics, vaccinations, medical history, and storing important documents.
 
 ---
 
