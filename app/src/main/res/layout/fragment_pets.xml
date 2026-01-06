@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PetsFragment"
-    android:layout_marginBottom="10dp">
+    android:layout_marginBottom="15dp">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_add_pet"
@@ -17,33 +17,29 @@
         app:srcCompat="@drawable/add"
         app:tint="@null"
         android:backgroundTint="#08d46c"
-        android:layout_marginBottom="10dp"/>
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FFFDFD"
+        android:background="#eff0f4"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:padding="10dp">
 
+        <!--Pets Header-->
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/greetings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="5dp"
             android:text="My Pets"
+            android:fontFamily="sans-serif-condensed-light"
             android:textSize="20sp"
-            android:layout_marginBottom="30dp"
             android:textAlignment="center"
-            android:textColor="#212121"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-
+            android:textStyle="bold"
+            android:textColor="@color/black"
             />
-
 
         <ScrollView
             android:id="@+id/scrollView"
@@ -53,107 +49,355 @@
             <androidx.gridlayout.widget.GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:columnCount="2">
+                app:columnCount="1"
+                >
+                <!--Pet Card Item-->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card1"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    app:cardCornerRadius="20dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginBottom="15dp"
+                    app:cardElevation="2dp"
+                    app:cardMaxElevation="3dp"
+                    app:cardPreventCornerOverlap="true"
+                    android:layout_marginHorizontal="3dp"
+                    app:contentPadding="10dp"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <!--Pet Picture-->
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:src="@drawable/doggy"/>
+                        <!--Right Section Outer Layout-->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="10"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <!--Right Section Inner Layout-->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/button1"
-                    style="@style/Widget.Material3.ExtendedFloatingActionButton.Icon.Surface"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:backgroundTint="#F5F5F5"
-                    android:text="Barney"
-                    android:textAlignment="center"
-                    android:textAllCaps="false"
-                    android:textColor="#050000"
-                    android:textColorLink="#100101"
-                    app:icon="@drawable/doggy"
-                    app:iconGravity="top"
-                    app:iconPadding="10dp"
-                    app:iconSize="100dp"
-                    app:iconTint="@null"
-                    app:layout_columnWeight="1"
-                    app:strokeColor="#C3C3C3" />
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_weight="5"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+                                    <!--Pet Name-->
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Buddy"
+                                        android:textStyle="bold"
+                                        android:textSize="20sp"
+                                        android:fontFamily="sans-serif-condensed-light"
+                                        android:textColor="@color/black"/>
+                                    <!--Pet Breed-->
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Golden Retriever"
+                                        android:textSize="15sp"
+                                        android:fontFamily="sans-serif-condensed-light"
+                                        android:textColor="#3E3E3E"/>
+                                </LinearLayout>
+                                <Button
+                                    style="@style/ShapeAppearanceOverlay.Material3.Button"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="40dp"
+                                    android:backgroundTint="#B9F6CA"
+                                    android:text="Healthy ✓"
+                                    android:textSize="12dp"
+                                    android:textColor="#2E9E54"
+                                    />
+                            </LinearLayout>
+                            <!--Line Break-->
+                            <com.google.android.material.divider.MaterialDivider
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:dividerColor="#EEEEEE"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="5dp"/>
+                            <!--Statistics-->
+                            <GridLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:columnCount="5"
+                                android:useDefaultMargins="true"
+                                android:alignmentMode="alignMargins">
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="20dp"
+                                    android:src="@drawable/checkup"
+                                    app:tint="#289045" />
+                                <!--Pet Health Percentage-->
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="75% Health"
+                                    android:textSize="14sp"
+                                    android:fontFamily="sans-serif-condensed-light"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold"/>
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="20dp"
+                                    android:src="@drawable/bandage"
+                                    app:tint="#8C9EFF"/>
+                                <!--Pet Activity Count-->
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="82 Activities"
+                                    android:textSize="14sp"
+                                    android:fontFamily="sans-serif-condensed-light"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold"/>
+                            </GridLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
-                <Button
-                    android:id="@+id/button2"
-                    style="@style/Widget.Material3.ExtendedFloatingActionButton.Icon.Surface"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:backgroundTint="#F5F5F5"
-                    android:text="Tucker"
-                    android:textAlignment="center"
-                    android:textAllCaps="false"
-                    android:textColor="#050000"
-                    android:textColorLink="#100101"
-                    app:icon="@drawable/dog2"
-                    app:iconGravity="top"
-                    app:iconPadding="10dp"
-                    app:iconSize="100dp"
-                    app:iconTint="@null"
-                    app:layout_columnWeight="1"
-                    app:strokeColor="#C3C3C3" />
+                <!--Pet Card Item-->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card2"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    app:cardCornerRadius="20dp"
+                    android:layout_marginBottom="15dp"
+                    app:cardElevation="2dp"
+                    app:cardMaxElevation="3dp"
+                    app:cardPreventCornerOverlap="true"
+                    android:layout_marginHorizontal="3dp"
+                    app:contentPadding="10dp"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <!--Pet Picture-->
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:src="@drawable/dog2"/>
+                        <!--Right Section Outer Layout-->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="10"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <!--Right Section Inner Layout-->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/button3"
-                    style="@style/Widget.Material3.ExtendedFloatingActionButton.Icon.Surface"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:backgroundTint="#F5F5F5"
-                    android:text="Asteroid Destroyer"
-                    android:textAlignment="center"
-                    android:textAllCaps="false"
-                    android:textColor="#050000"
-                    android:textColorLink="#100101"
-                    app:icon="@drawable/cat"
-                    app:iconGravity="top"
-                    app:iconPadding="10dp"
-                    app:iconSize="100dp"
-                    app:iconTint="@null"
-                    app:layout_columnWeight="1"
-                    app:strokeColor="#C3C3C3" />
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_weight="5"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+                                    <!--Pet Name-->
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Max"
+                                        android:textStyle="bold"
+                                        android:textSize="20sp"
+                                        android:fontFamily="sans-serif-condensed-light"
+                                        android:textColor="@color/black"/>
+                                    <!--Pet Breed-->
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Golden Retriever"
+                                        android:textSize="15sp"
+                                        android:fontFamily="sans-serif-condensed-light"
+                                        android:textColor="#3E3E3E"/>
+                                </LinearLayout>
+                                <Button
+                                    style="@style/ShapeAppearanceOverlay.Material3.Button"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="40dp"
+                                    android:backgroundTint="#FFD180"
+                                    android:text="Minor Issue ✓"
+                                    android:textColor="#87642D"
+                                    android:textSize="12dp"
+                                    />
+                            </LinearLayout>
+                            <!--Line Break-->
+                            <com.google.android.material.divider.MaterialDivider
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:dividerColor="#EEEEEE"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="5dp"/>
+                            <!--Statistics-->
+                            <GridLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:columnCount="5"
+                                android:useDefaultMargins="true"
+                                android:alignmentMode="alignMargins">
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="20dp"
+                                    android:src="@drawable/checkup"
+                                    app:tint="#289045"/>
+                                <!--Pet Health Percentage-->
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="75% Health"
+                                    android:textSize="14sp"
+                                    android:fontFamily="sans-serif-condensed-light"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold"/>
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="20dp"
+                                    android:src="@drawable/bandage"
+                                    app:tint="#8C9EFF"/>
+                                <!--Pet Activity Count-->
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="82 Activities"
+                                    android:textSize="14sp"
+                                    android:fontFamily="sans-serif-condensed-light"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold"/>
+                            </GridLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
-                <Button
-                    android:id="@+id/button4"
-                    style="@style/Widget.Material3.ExtendedFloatingActionButton.Icon.Surface"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:backgroundTint="#F5F5F5"
-                    android:text="Ming Ming"
-                    android:textAlignment="center"
-                    android:textAllCaps="false"
-                    android:textColor="#050000"
-                    android:textColorLink="#100101"
-                    app:icon="@drawable/cat2"
-                    app:iconGravity="top"
-                    app:iconPadding="10dp"
-                    app:iconSize="100dp"
-                    app:iconTint="@null"
-                    app:layout_columnWeight="1"
-                    app:strokeColor="#C3C3C3" />
+                <!--Pet Card Item-->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card3"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    app:cardCornerRadius="20dp"
+                    android:layout_marginBottom="15dp"
+                    app:cardElevation="2dp"
+                    app:cardMaxElevation="3dp"
+                    app:cardPreventCornerOverlap="true"
+                    android:layout_marginHorizontal="3dp"
+                    app:contentPadding="10dp"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <!--Pet Picture-->
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:src="@drawable/cat"/>
+                        <!--Right Section Outer Layout-->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="10"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <!--Right Section Inner Layout-->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/button5"
-                    style="@style/Widget.Material3.ExtendedFloatingActionButton.Icon.Surface"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:backgroundTint="#F5F5F5"
-                    android:text="Peanut"
-                    android:textAlignment="center"
-                    android:textAllCaps="false"
-                    android:textColor="#050000"
-                    android:textColorLink="#100101"
-                    app:icon="@drawable/hamster"
-                    app:iconGravity="top"
-                    app:iconPadding="10dp"
-                    app:iconSize="100dp"
-                    app:iconTint="@null"
-                    app:layout_columnWeight="1"
-                    app:strokeColor="#C3C3C3" />
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_weight="5"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+                                    <!--Pet Name-->
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Asteroid"
+                                        android:textStyle="bold"
+                                        android:textSize="20sp"
+                                        android:fontFamily="sans-serif-condensed-light"
+                                        android:textColor="@color/black"/>
+                                    <!--Pet Breed-->
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Cat"
+                                        android:textSize="15sp"
+                                        android:fontFamily="sans-serif-condensed-light"
+                                        android:textColor="#3E3E3E"/>
+                                </LinearLayout>
+                                <Button
+                                    style="@style/ShapeAppearanceOverlay.Material3.Button"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="40dp"
+                                    android:backgroundTint="#FFD180"
+                                    android:text="Minor Issue ✓"
+                                    android:textColor="#87642D"
+                                    android:textSize="12dp"
+                                    />
+                            </LinearLayout>
+                            <!--Line Break-->
+                            <com.google.android.material.divider.MaterialDivider
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:dividerColor="#EEEEEE"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="5dp"/>
+                            <!--Statistics-->
+                            <GridLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:columnCount="5"
+                                android:useDefaultMargins="true"
+                                android:alignmentMode="alignMargins">
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="20dp"
+                                    android:src="@drawable/checkup"
+                                    app:tint="#289045"/>
+                                <!--Pet Health Percentage-->
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="75% Health"
+                                    android:textSize="14sp"
+                                    android:fontFamily="sans-serif-condensed-light"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold"/>
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="20dp"
+                                    android:src="@drawable/bandage"
+                                    app:tint="#8C9EFF"/>
+                                <!--Pet Activity Count-->
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="82 Activities"
+                                    android:textSize="14sp"
+                                    android:fontFamily="sans-serif-condensed-light"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold"/>
+                            </GridLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
 
 
 
