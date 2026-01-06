@@ -1,4 +1,4 @@
-package com.example.tracker
+package com.example.tracker.ui
 
 import android.content.Intent
 import android.graphics.Color
@@ -14,15 +14,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.core.graphics.toColorInt
 import androidx.fragment.app.Fragment
+import com.example.tracker.R
 import com.github.mikephil.charting.animation.Easing
-import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.charts.LineChart
 import com.github.mikephil.charting.charts.PieChart
 import com.github.mikephil.charting.components.Legend
 import com.github.mikephil.charting.components.XAxis
-import com.github.mikephil.charting.data.BarData
-import com.github.mikephil.charting.data.BarDataSet
-import com.github.mikephil.charting.data.BarEntry
 import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry

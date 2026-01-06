@@ -1,4 +1,4 @@
-package com.example.tracker
+package com.example.tracker.ui
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
+import com.example.tracker.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class LayoutActivity : AppCompatActivity() {

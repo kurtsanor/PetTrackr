@@ -1,30 +1,32 @@
-package com.example.tracker
+package com.example.tracker.ui
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.prolificinteractive.materialcalendarview.CalendarDay
-import com.prolificinteractive.materialcalendarview.MaterialCalendarView
+import android.widget.TextView
+import com.example.tracker.R
 
-class VaccinationFragment : Fragment() {
-
+class AccountFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_vaccination, container, false)
+        return inflater.inflate(R.layout.fragment_account, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val calendarView = view.findViewById< MaterialCalendarView>(R.id.calendarView)
-        val today = CalendarDay.today()
-        calendarView.setDateSelected(today, true)
-    }
+        val buttonLogout = view.findViewById<TextView>(R.id.logout)
 
+        buttonLogout.setOnClickListener {
+            val loginPage = Intent(requireContext(), MainActivity:: class.java)
+            startActivity(loginPage)
+        }
+    }
 
 }

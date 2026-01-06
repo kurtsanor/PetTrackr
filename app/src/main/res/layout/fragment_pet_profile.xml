@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".PetProfileFragment"
+    tools:context=".ui.PetProfileFragment"
     android:background="@color/white">
 
     <!-- TODO: Update blank fragment layout -->
@@ -100,6 +100,7 @@
                     android:fontFamily="sans-serif-condensed-light"
                     android:text="My Stuff"
                     android:textColor="@color/black"
+                    android:layout_marginBottom="5dp"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
@@ -114,17 +115,17 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:backgroundTint="#F5F5F5"
                         android:text="Documents"
                         android:textAlignment="center"
                         android:textAllCaps="false"
                         android:textColor="@color/black"
                         android:textColorLink="#100101"
-                        app:icon="@drawable/docs"
+                        app:icon="@drawable/paper"
                         app:iconGravity="top"
                         app:iconPadding="0dp"
                         app:iconSize="60dp"
                         app:iconTint="#FFD180"
+                        app:backgroundTint="@color/white"
                         app:layout_columnWeight="1" />
                     <Button
                         android:id="@+id/buttonVaccination"
@@ -132,16 +133,16 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:backgroundTint="#F5F5F5"
                         android:text="Vaccinations"
                         android:textAlignment="center"
                         android:textAllCaps="false"
                         android:textColor="@color/black"
                         android:textColorLink="#100101"
-                        app:icon="@drawable/injection"
+                        app:icon="@drawable/vaccine"
                         app:iconGravity="top"
                         app:iconPadding="0dp"
                         app:iconSize="60dp"
+                        app:backgroundTint="@color/white"
                         app:iconTint="#FF9E80"
                         app:layout_columnWeight="1" />
                     <Button
@@ -150,16 +151,16 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:backgroundTint="#F5F5F5"
                         android:text="Growth"
                         android:textAlignment="center"
                         android:textAllCaps="false"
                         android:textColor="@color/black"
                         android:textColorLink="#100101"
-                        app:icon="@drawable/graph"
+                        app:icon="@drawable/rise"
                         app:iconGravity="top"
                         app:iconPadding="0dp"
                         app:iconSize="60dp"
+                        app:backgroundTint="@color/white"
                         app:iconTint="#08d46c"
                         app:layout_columnWeight="1" />
                     <Button
@@ -168,16 +169,16 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:backgroundTint="#F5F5F5"
                         android:text="Medical History"
                         android:textAlignment="center"
                         android:textAllCaps="false"
                         android:textColor="@color/black"
                         android:textColorLink="#100101"
-                        app:icon="@drawable/history"
+                        app:icon="@drawable/healthcare"
                         app:iconGravity="top"
                         app:iconPadding="0dp"
                         app:iconSize="60dp"
+                        app:backgroundTint="@color/white"
                         app:iconTint="#f45b5b"
                         app:layout_columnWeight="1" />
                 </androidx.gridlayout.widget.GridLayout>
@@ -323,9 +324,6 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
-
-
-
         </androidx.cardview.widget.CardView>
 
     </LinearLayout>

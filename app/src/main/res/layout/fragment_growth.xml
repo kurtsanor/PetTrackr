@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFDFD"
-    tools:context=".GrowthFragment">
+    tools:context=".ui.GrowthFragment">
 
     <LinearLayout
         android:layout_width="match_parent"

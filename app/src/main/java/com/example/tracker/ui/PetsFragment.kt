@@ -1,13 +1,12 @@
-package com.example.tracker
+package com.example.tracker.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.cardview.widget.CardView
-import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.example.tracker.R
 
 class PetsFragment : Fragment() {
 
