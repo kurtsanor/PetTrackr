@@ -91,7 +91,7 @@ class HomeFragment : Fragment() {
         lineChart.description.isEnabled = false
         lineChart.legend.isEnabled = false
 
-        // Remove grid lines and axes lines as you did before
+        // Remove grid lines and axes lines
         lineChart.xAxis.setDrawGridLines(false)
         lineChart.axisLeft.setDrawGridLines(false)
         lineChart.axisRight.setDrawGridLines(false)
@@ -101,8 +101,11 @@ class HomeFragment : Fragment() {
         // This removes the numbers/labels on the left side
         lineChart.axisLeft.isEnabled = false
 
-// This removes the actual line on the left side (optional, if not already gone)
+    // This removes the actual line on the left side (optional, if not already gone)
         lineChart.axisLeft.setDrawAxisLine(false)
+
+        // --- ANIMATION ---
+        lineChart.animateY(700, Easing.EaseInOutQuad) // Smooth entrance animation
 
         // X-Axis Labels
         val labels = listOf("Dog", "Cat", "Bird", "Rabbit")
