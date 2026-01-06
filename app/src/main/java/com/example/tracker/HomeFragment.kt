@@ -2,24 +2,35 @@ package com.example.tracker
 
 import android.content.Intent
 import android.graphics.Color
+import android.graphics.Typeface
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
+import android.text.style.RelativeSizeSpan
+import android.text.style.StyleSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.github.mikephil.charting.charts.PieChart
-import com.github.mikephil.charting.data.PieData
-import com.github.mikephil.charting.data.PieDataSet
-import com.github.mikephil.charting.data.PieEntry
 import androidx.core.graphics.toColorInt
+import androidx.fragment.app.Fragment
+import com.github.mikephil.charting.animation.Easing
 import com.github.mikephil.charting.charts.BarChart
+import com.github.mikephil.charting.charts.LineChart
+import com.github.mikephil.charting.charts.PieChart
 import com.github.mikephil.charting.components.Legend
 import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
+import com.github.mikephil.charting.data.PieData
+import com.github.mikephil.charting.data.PieDataSet
+import com.github.mikephil.charting.data.PieEntry
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
+import com.github.mikephil.charting.data.Entry
+import com.github.mikephil.charting.data.LineData
+import com.github.mikephil.charting.data.LineDataSet
+
 
 class HomeFragment : Fragment() {
 
@@ -37,8 +48,8 @@ class HomeFragment : Fragment() {
         val donutChart = view.findViewById<PieChart>(R.id.donutChart)
         createDonutChart(donutChart)
 
-        val barChart = view.findViewById< BarChart>(R.id.barChart)
-        createBarChart(barChart)
+        val barChart = view.findViewById<LineChart>(R.id.barChart)
+        createLineChart(barChart)
 
         val greetings = view.findViewById<TextView>(R.id.greetings)
 
@@ -50,52 +61,63 @@ class HomeFragment : Fragment() {
 
     }
 
-    private fun createBarChart(barChart: BarChart) {
-        val entries = ArrayList<BarEntry>()
-        entries.add(BarEntry(0f, 9f)) // X = 0, Y = 5
-        entries.add(BarEntry(1f, 10f))
-        entries.add(BarEntry(2f, 8f))
-        entries.add(BarEntry(3f, 7f))
+    private fun createLineChart(lineChart: LineChart) {
+        // 1. Change BarEntry to Entry
+        val entries = ArrayList<Entry>()
+        entries.add(Entry(0f, 9f))
+        entries.add(Entry(1f, 10f))
+        entries.add(Entry(2f, 8f))
+        entries.add(Entry(3f, 7f))
 
-        val dataSet = BarDataSet(entries, null)
-        dataSet.colors = listOf(
-            "#2fdc83".toColorInt(),
-            "#08d46c".toColorInt(),
-            "#56e49a".toColorInt(),
-            "#7eecb1".toColorInt()
-        )
-        dataSet.valueTextColor = Color.BLACK
+        // 2. Change BarDataSet to LineDataSet
+        val dataSet = LineDataSet(entries, "Pets")
+
+        // Styling the line
+        dataSet.color = "#08d46c".toColorInt() // Line color
+        dataSet.setCircleColor("#08d46c".toColorInt()) // Dot color
+        dataSet.lineWidth = 3f
+        dataSet.circleRadius = 5f
+        dataSet.setDrawCircleHole(true)
         dataSet.valueTextSize = 12f
 
+        // 3. Modern Look: Smoothing and Filling
+        dataSet.mode = LineDataSet.Mode.CUBIC_BEZIER // Makes the line curved
+        dataSet.setDrawFilled(true)
+        dataSet.fillColor = "#56e49a".toColorInt()
+        dataSet.fillAlpha = 50 // Transparency (0-255)
 
-        val barData = BarData(dataSet)
-        barData.barWidth = 0.6f // thickness
+        // 4. Change BarData to LineData
+        val lineData = LineData(dataSet)
+        lineChart.data = lineData
 
-        barChart.data = barData
-        barChart.description.isEnabled = false
-        barChart.setFitBars(true) // make the x-axis fit the bars
-        barChart.xAxis.setDrawGridLines(false)
-        barChart.axisLeft.setDrawGridLines(false)
-        barChart.axisRight.setDrawGridLines(false)
+        // 5. Chart Configuration
+        lineChart.description.isEnabled = false
+        lineChart.legend.isEnabled = false
 
-        barChart.xAxis.setDrawAxisLine(false)
-        barChart.axisLeft.setDrawAxisLine(false)
-        barChart.axisRight.setDrawAxisLine(false)
-        barChart.legend.isEnabled = false
+        // Remove grid lines and axes lines as you did before
+        lineChart.xAxis.setDrawGridLines(false)
+        lineChart.axisLeft.setDrawGridLines(false)
+        lineChart.axisRight.setDrawGridLines(false)
+        lineChart.xAxis.setDrawAxisLine(false)
+        lineChart.axisLeft.setDrawAxisLine(false)
+        lineChart.axisRight.isEnabled = false
+        // This removes the numbers/labels on the left side
+        lineChart.axisLeft.isEnabled = false
 
+// This removes the actual line on the left side (optional, if not already gone)
+        lineChart.axisLeft.setDrawAxisLine(false)
+
+        // X-Axis Labels
         val labels = listOf("Dog", "Cat", "Bird", "Rabbit")
-        val xAxis = barChart.xAxis
+        val xAxis = lineChart.xAxis
         xAxis.valueFormatter = IndexAxisValueFormatter(labels)
         xAxis.position = XAxis.XAxisPosition.BOTTOM
         xAxis.granularity = 1f
-        xAxis.setDrawGridLines(false)
 
-        barChart.axisRight.isEnabled = false
-
-        barChart.invalidate()
+        lineChart.invalidate() // Refresh
     }
 
-    private fun createDonutChart (donutChart: PieChart) {
+    private fun createDonutChart(donutChart: PieChart) {
         val entries = listOf(
             PieEntry(40f, "Healthy"),
             PieEntry(30f, "Minor Issues"),
@@ -103,40 +125,61 @@ class HomeFragment : Fragment() {
             PieEntry(10f, "Critical")
         )
 
-        val legend = donutChart.legend
-        legend.isEnabled = true
-        legend.horizontalAlignment = Legend.LegendHorizontalAlignment.CENTER
+        val dataSet = PieDataSet(entries, "").apply {
+            setDrawValues(false)
+            colors = listOf(
+                "#27634a".toColorInt(),
+                "#d9a750".toColorInt(),
+                "#df675f".toColorInt(),
+                "#a3303b".toColorInt()
+            )
 
-        val dataSet = PieDataSet(entries, "")
-//        dataSet.valueTextColor = Color.WHITE
-//        dataSet.valueTextSize = 14f
-        dataSet.setDrawValues(false)
+            // --- MODERN ENHANCEMENTS ---
+            sliceSpace = 4f            // Adds white gaps between slices
+            selectionShift = 8f        // Pops the slice out slightly when tapped
+        }
 
-        val data = PieData(dataSet)
+        donutChart.apply {
+            data = PieData(dataSet)
+            setUsePercentValues(true)
+            description.isEnabled = false
+            isRotationEnabled = true   // Allow users to spin it (feels more interactive)
+            setDrawEntryLabels(false)
 
-        donutChart.data = data
-        donutChart.setUsePercentValues(true)
-        donutChart.description.isEnabled = false
-        donutChart.isRotationEnabled = false
-        donutChart.setDrawEntryLabels(false)
+            // --- HOLE STYLING ---
+            isDrawHoleEnabled = true
+            holeRadius = 70f           // Thinner ring looks more "premium"
+            setHoleColor(Color.TRANSPARENT) // Better for cards with custom backgrounds
 
-        donutChart.isDrawHoleEnabled = true
-        donutChart.holeRadius = 55f
-        donutChart.transparentCircleRadius = 60f
-        donutChart.setHoleColor(Color.WHITE)
-        donutChart.transparentCircleRadius = 0f
+            // --- ANIMATION ---
+            animateY(1400, Easing.EaseInOutQuad) // Smooth entrance animation
 
-//        donutChart.centerText = "Pet Status"
-//        donutChart.setCenterTextSize(16f)
+            // --- CENTER TEXT (INTER FONT) ---
+            val text = "85%\nHealth"
+            val ss = SpannableString(text)
+            // Make the percentage big and bold
+            ss.setSpan(StyleSpan(Typeface.BOLD), 0, 3, 0)
+            ss.setSpan(RelativeSizeSpan(1.9f), 0, 3, 0)
+            // Make the "Health" label smaller and light
+            ss.setSpan(ForegroundColorSpan(Color.GRAY), 4, text.length, 0)
+            ss.setSpan(RelativeSizeSpan(0.9f), 4, text.length, 0)
 
-        dataSet.colors = listOf(
-            "#08D46C".toColorInt(), // base green
-            "#FFD180".toColorInt(), // yellow
-            "#FF9E80".toColorInt(), // orange
-            "#f45b5b".toColorInt(), // red
-        )
+            centerText = ss
+        }
 
-        donutChart.invalidate() // refresh
+        // --- LEGEND STYLING ---
+        donutChart.legend.apply {
+            isEnabled = true
+            verticalAlignment = Legend.LegendVerticalAlignment.BOTTOM
+            horizontalAlignment = Legend.LegendHorizontalAlignment.CENTER
+            orientation = Legend.LegendOrientation.HORIZONTAL
+            setDrawInside(false)
+            yOffset = 10f              // Adds space between chart and legend
+            form = Legend.LegendForm.CIRCLE // Modern circular legend indicators
+            textSize = 12f
+        }
+
+        donutChart.invalidate()
     }
 
 }
