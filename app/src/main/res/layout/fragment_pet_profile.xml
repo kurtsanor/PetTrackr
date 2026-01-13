@@ -15,20 +15,35 @@
         android:orientation="vertical"
         android:background="#eff0f4"
         >
-        <!--Pet Profile Header-->
-        <TextView
-            android:id="@+id/greetings"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
             android:layout_marginTop="5dp"
-            android:text="Pet Profile"
-            android:fontFamily="sans-serif-condensed-light"
-            android:textSize="20sp"
-            android:textAlignment="center"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            />
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="15dp">
+
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/back"
+                android:layout_marginLeft="10dp"
+                />
+
+            <!--Pet Profile Header-->
+            <TextView
+                android:id="@+id/greetings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:fontFamily="@font/inter_bold"
+                android:text="Pet Profile"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
         <!--Profile Card-->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -36,7 +51,8 @@
             android:layout_weight="2"
             android:layout_marginHorizontal="3dp"
             android:layout_marginBottom="15dp"
-            app:cardCornerRadius="20dp">
+            app:cardCornerRadius="20dp"
+            >
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -54,16 +70,15 @@
                     android:layout_height="wrap_content"
                     android:text="Buddy"
                     android:textSize="20sp"
-                    android:fontFamily="sans-serif-condensed-light"
+                    android:fontFamily="@font/inter_bold"
                     android:textColor="@color/black"
-                    android:textStyle="bold"
                     android:textAlignment="center"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="8 months, Male"
                     android:textSize="15sp"
-                    android:fontFamily="sans-serif-condensed"
+                    android:fontFamily="@font/inter_regular"
                     android:textColor="#7E7E7E"
                     android:textAlignment="center"/>
                 <TextView
@@ -71,7 +86,7 @@
                     android:layout_height="wrap_content"
                     android:text="Golden Retriever, Beige"
                     android:textSize="15sp"
-                    android:fontFamily="sans-serif-condensed"
+                    android:fontFamily="@font/inter_regular"
                     android:textColor="#7E7E7E"
                     android:textAlignment="center"/>
             </LinearLayout>
@@ -97,18 +112,18 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-condensed-light"
+                    android:fontFamily="@font/inter_bold"
                     android:text="My Stuff"
                     android:textColor="@color/black"
                     android:layout_marginBottom="5dp"
                     android:textSize="20sp"
-                    android:textStyle="bold" />
+                    />
 
                 <!--Buttons Grid-->
                 <androidx.gridlayout.widget.GridLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:columnCount="2">
+                    app:columnCount="3">
                     <Button
                         android:id="@+id/buttonDocuments"
                         style="@style/Widget.Material3.ExtendedFloatingActionButton.Icon.Surface"
@@ -125,6 +140,7 @@
                         app:iconPadding="0dp"
                         app:iconSize="60dp"
                         app:iconTint="#FFD180"
+                        android:textSize="11sp"
                         app:backgroundTint="@color/white"
                         app:layout_columnWeight="1" />
                     <Button
@@ -133,13 +149,14 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:text="Vaccinations"
+                        android:text="Vaccines"
                         android:textAlignment="center"
                         android:textAllCaps="false"
                         android:textColor="@color/black"
                         android:textColorLink="#100101"
                         app:icon="@drawable/vaccine"
                         app:iconGravity="top"
+                        android:textSize="11sp"
                         app:iconPadding="0dp"
                         app:iconSize="60dp"
                         app:backgroundTint="@color/white"
@@ -160,6 +177,7 @@
                         app:iconGravity="top"
                         app:iconPadding="0dp"
                         app:iconSize="60dp"
+                        android:textSize="11sp"
                         app:backgroundTint="@color/white"
                         app:iconTint="#08d46c"
                         app:layout_columnWeight="1" />
@@ -175,11 +193,50 @@
                         android:textColor="@color/black"
                         android:textColorLink="#100101"
                         app:icon="@drawable/healthcare"
+                        android:textSize="11sp"
                         app:iconGravity="top"
                         app:iconPadding="0dp"
                         app:iconSize="60dp"
                         app:backgroundTint="@color/white"
                         app:iconTint="#f45b5b"
+                        app:layout_columnWeight="1" />
+                    <Button
+                        android:id="@+id/buttonAppointments"
+                        style="@style/Widget.Material3.ExtendedFloatingActionButton.Icon.Surface"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:text="Appointments"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textSize="11sp"
+                        android:textColor="@color/black"
+                        android:textColorLink="#100101"
+                        app:icon="@drawable/appointment"
+                        app:iconGravity="top"
+                        app:iconPadding="0dp"
+                        app:iconSize="60dp"
+                        app:backgroundTint="@color/white"
+                        app:iconTint="#536DFE"
+                        app:layout_columnWeight="1" />
+                    <Button
+                        android:id="@+id/buttonMedications"
+                        style="@style/Widget.Material3.ExtendedFloatingActionButton.Icon.Surface"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="11sp"
+                        android:layout_margin="8dp"
+                        android:text="Medications"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textColorLink="#100101"
+                        app:icon="@drawable/pills"
+                        app:iconGravity="top"
+                        app:iconPadding="0dp"
+                        app:iconSize="60dp"
+                        app:backgroundTint="@color/white"
+                        app:iconTint="#FF6E40"
                         app:layout_columnWeight="1" />
                 </androidx.gridlayout.widget.GridLayout>
             </LinearLayout>
@@ -207,11 +264,11 @@
                     android:layout_height="wrap_content"
                     android:text="Recent Activities"
                     android:layout_marginVertical="10dp"
+                    android:fontFamily="@font/inter_bold"
                     android:textSize="20sp"
-                    android:fontFamily="sans-serif-condensed-light"
                     android:layout_marginStart="15dp"
                     android:textColor="@color/black"
-                    android:textStyle="bold"/>
+                    />
 
                 <!--Appointment Schedule Item-->
                 <androidx.cardview.widget.CardView

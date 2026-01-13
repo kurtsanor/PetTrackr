@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
         val buttonSignIn = findViewById<Button>(R.id.buttonSignIn)
 
         buttonSignIn.setOnClickListener {
+            finish()
             val mainPage = Intent(this, LayoutActivity:: class.java)
             startActivity(mainPage)
         }

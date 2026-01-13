@@ -3,6 +3,7 @@ package com.example.tracker.ui
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
+import android.os.Build
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
@@ -12,9 +13,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.core.graphics.toColorInt
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.tracker.R
+import com.example.tracker.adapter.AppointmentAdapter
+import com.example.tracker.model.Appointment
 import com.github.mikephil.charting.animation.Easing
 import com.github.mikephil.charting.charts.LineChart
 import com.github.mikephil.charting.charts.PieChart
@@ -27,6 +33,7 @@ import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
+import java.time.LocalDateTime
 
 
 class HomeFragment : Fragment() {
@@ -39,6 +46,7 @@ class HomeFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -51,10 +59,22 @@ class HomeFragment : Fragment() {
         val greetings = view.findViewById<TextView>(R.id.greetings)
 
         greetings.setOnClickListener {
-            val loginPage = Intent(requireContext(), MainActivity:: class.java)
-            startActivity(loginPage)
+            val bottomSheet = ProfileBottomSheet()
+            bottomSheet.show(parentFragmentManager, "ProfileBottomSheet")
         }
 
+        val mockDate = LocalDateTime.of(2003, 5, 2, 0,0,0,0)
+
+        val appointments = listOf(
+            Appointment(null, 1, "Check-up", "Urgent", mockDate, "Confirmed"),
+            Appointment(null, 1, "Check-up", "Urgent", mockDate, "Confirmed"),
+            Appointment(null, 1, "Check-up", "Urgent", mockDate, "Confirmed"),
+            Appointment(null, 1, "Check-up", "Urgent", mockDate, "Confirmed"),
+        )
+
+        val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewVaccinationHome)
+        recyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+        recyclerView.adapter = AppointmentAdapter(appointments)
 
     }
 

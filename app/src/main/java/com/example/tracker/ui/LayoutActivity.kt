@@ -6,6 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction.TRANSIT_FRAGMENT_FADE
+import androidx.fragment.app.FragmentTransaction.TRANSIT_FRAGMENT_MATCH_ACTIVITY_OPEN
+import androidx.fragment.app.FragmentTransaction.TRANSIT_FRAGMENT_OPEN
 import com.example.tracker.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -45,6 +48,8 @@ class LayoutActivity : AppCompatActivity() {
 
         private fun openFragment (fragment: Fragment) {
         supportFragmentManager.beginTransaction()
-            .replace(R.id.fragmentContainerView2, fragment).commit()
+            .replace(R.id.fragmentContainerView2, fragment)
+            .setTransition(TRANSIT_FRAGMENT_OPEN)
+            .commit()
     }
 }

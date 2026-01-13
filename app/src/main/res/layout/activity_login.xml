@@ -19,7 +19,7 @@
             android:layout_height="0dp"
             android:layout_weight="5"
             android:orientation="vertical"
-            android:background="#0A662F"
+            android:background="@drawable/green_gradient"
             >
             <ImageView
                 android:id="@+id/imageView"
@@ -51,7 +51,7 @@
                     android:layout_height="wrap_content"
                     android:text="Login"
                     android:textSize="30sp"
-                    android:fontFamily="sans-serif-condensed-light"
+                    android:fontFamily="@font/inter_bold"
                     android:textColor="@color/black"
                     android:textStyle="bold"/>
 
@@ -62,7 +62,7 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="25dp"
                     android:textSize="18sp"
-                    android:fontFamily="sans-serif-condensed"
+                    android:fontFamily="@font/inter_regular"
                     android:textColor="@color/black"
                     />
 
@@ -75,7 +75,9 @@
                     app:boxCornerRadiusBottomStart="15dp"
                     app:boxCornerRadiusTopEnd="15dp"
                     app:boxCornerRadiusTopStart="15dp"
-                    app:boxStrokeColor="#C3C3C3">
+                    app:boxStrokeColor="#C3C3C3"
+                    app:hintTextColor="#09BC5E"
+                    >
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
@@ -83,7 +85,9 @@
                         android:hint="Email"
                         android:inputType="textEmailAddress"
                         android:textColorLink="#205890"
-                        android:textSize="12sp"/>
+                        android:textSize="12sp"
+                        android:fontFamily="@font/inter_regular"
+                        />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -96,6 +100,8 @@
                     app:boxCornerRadiusTopEnd="15dp"
                     app:boxCornerRadiusTopStart="15dp"
                     app:boxStrokeColor="#C3C3C3"
+                    app:endIconMode="password_toggle"
+                    app:hintTextColor="#09BC5E"
                     >
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -103,7 +109,8 @@
                         android:layout_height="wrap_content"
                         android:hint="Password"
                         android:inputType="textPassword"
-                        android:textSize="12sp"/>
+                        android:textSize="12sp"
+                        />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -113,7 +120,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:backgroundTint="#09BC5E"
-                    android:text="Sign In" />
+                    android:text="Sign In"
+                    android:fontFamily="@font/inter_bold"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -121,7 +129,7 @@
                     android:text="Or Sign In With"
                     android:layout_marginVertical="15dp"
                     android:textSize="14sp"
-                    android:fontFamily="sans-serif-condensed"
+                    android:fontFamily="@font/inter_regular"
                     android:textColor="@color/black"
                     android:textAlignment="center"/>
 
@@ -140,7 +148,8 @@
                     app:iconGravity="textStart"
                     app:iconPadding="10dp"
                     app:iconTint="@null"
-                    app:strokeColor="#C3C3C3" />
+                    app:strokeColor="#C3C3C3"
+                    android:fontFamily="@font/inter_bold"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 

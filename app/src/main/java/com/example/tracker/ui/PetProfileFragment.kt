@@ -6,6 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
+import androidx.fragment.app.FragmentTransaction.TRANSIT_FRAGMENT_MATCH_ACTIVITY_CLOSE
+import androidx.fragment.app.FragmentTransaction.TRANSIT_FRAGMENT_OPEN
 import com.example.tracker.R
 
 class PetProfileFragment : Fragment() {
@@ -25,6 +28,7 @@ class PetProfileFragment : Fragment() {
         buttonVaccination.setOnClickListener {
             parentFragmentManager.beginTransaction()
                 .replace(R.id.fragmentContainerView2, VaccinationFragment())
+                .setTransition(TRANSIT_FRAGMENT_OPEN)
                 .addToBackStack(null)
                 .commit()
         }
@@ -33,6 +37,7 @@ class PetProfileFragment : Fragment() {
         buttonMedicalHistory.setOnClickListener {
             parentFragmentManager.beginTransaction()
                 .replace(R.id.fragmentContainerView2, MedicalHistoryFragment())
+                .setTransition(TRANSIT_FRAGMENT_OPEN)
                 .addToBackStack(null)
                 .commit()
         }
@@ -41,6 +46,7 @@ class PetProfileFragment : Fragment() {
         buttonGrowth.setOnClickListener {
             parentFragmentManager.beginTransaction()
                 .replace(R.id.fragmentContainerView2, GrowthFragment())
+                .setTransition(TRANSIT_FRAGMENT_OPEN)
                 .addToBackStack(null)
                 .commit()
         }
@@ -49,7 +55,34 @@ class PetProfileFragment : Fragment() {
         buttonDocuments.setOnClickListener {
             parentFragmentManager.beginTransaction()
                 .replace(R.id.fragmentContainerView2, DocumentsFragment())
+                .setTransition(TRANSIT_FRAGMENT_OPEN)
                 .addToBackStack(null)
+                .commit()
+        }
+
+        val buttonAppointments = view.findViewById< Button>(R.id.buttonAppointments)
+        buttonAppointments.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainerView2, AppointmentFragment())
+                .setTransition(TRANSIT_FRAGMENT_OPEN)
+                .addToBackStack(null)
+                .commit()
+        }
+
+        val buttonMedications = view.findViewById< Button>(R.id.buttonMedications)
+        buttonMedications.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainerView2, MedicationFragment())
+                .setTransition(TRANSIT_FRAGMENT_OPEN)
+                .addToBackStack(null)
+                .commit()
+        }
+
+        val buttonBack = view.findViewById<ImageButton>(R.id.btnBack)
+        buttonBack.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainerView2, PetsFragment())
+                .setTransition(TRANSIT_FRAGMENT_MATCH_ACTIVITY_CLOSE)
                 .commit()
         }
     }

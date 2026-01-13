@@ -12,7 +12,7 @@
         android:name="androidx.appcompat.app.AppCompatDialogFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/system_inverse_primary_light"
+        android:background="@color/white"
         android:paddingBottom="85dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
