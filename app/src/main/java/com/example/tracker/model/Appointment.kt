@@ -8,6 +8,7 @@ data class Appointment(
     val petId: Long,
     val title: String,
     val notes: String,
+    val location: String,
     val datetime: LocalDateTime,
     val status: String,
 )

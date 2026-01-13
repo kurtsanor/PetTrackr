@@ -24,6 +24,7 @@ class AccountFragment : Fragment() {
         val buttonLogout = view.findViewById<TextView>(R.id.logout)
 
         buttonLogout.setOnClickListener {
+            requireActivity().finish()
             val loginPage = Intent(requireContext(), MainActivity:: class.java)
             startActivity(loginPage)
         }

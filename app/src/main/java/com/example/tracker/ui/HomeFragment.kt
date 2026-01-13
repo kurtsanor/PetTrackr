@@ -66,10 +66,10 @@ class HomeFragment : Fragment() {
         val mockDate = LocalDateTime.of(2003, 5, 2, 0,0,0,0)
 
         val appointments = listOf(
-            Appointment(null, 1, "Check-up", "Urgent", mockDate, "Confirmed"),
-            Appointment(null, 1, "Check-up", "Urgent", mockDate, "Confirmed"),
-            Appointment(null, 1, "Check-up", "Urgent", mockDate, "Confirmed"),
-            Appointment(null, 1, "Check-up", "Urgent", mockDate, "Confirmed"),
+            Appointment(null, 1, "Check-up", "Urgent", "123 Plaza",mockDate, "Confirmed"),
+            Appointment(null, 1, "Check-up", "Urgent", "123 Plaza",mockDate, "Confirmed"),
+            Appointment(null, 1, "Check-up", "Urgent", "123 Plaza",mockDate, "Confirmed"),
+            Appointment(null, 1, "Check-up", "Urgent", "123 Plaza",mockDate, "Confirmed"),
         )
 
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewVaccinationHome)

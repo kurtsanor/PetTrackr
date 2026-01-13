@@ -1,11 +1,13 @@
 package com.example.tracker.ui
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageButton
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.FragmentTransaction.TRANSIT_FRAGMENT_MATCH_ACTIVITY_CLOSE
@@ -42,10 +44,10 @@ class AppointmentFragment : Fragment() {
         val mockDate = LocalDateTime.of(2003, 5, 2, 0,0,0,0)
 
         val appointments = listOf(
-            Appointment(null, 1, "Check-up", "Urgent", mockDate, "Confirmed"),
-            Appointment(null, 1, "Check-up", "Urgent", mockDate, "Confirmed"),
-            Appointment(null, 1, "Check-up", "Urgent", mockDate, "Confirmed"),
-            Appointment(null, 1, "Check-up", "Urgent", mockDate, "Confirmed"),
+            Appointment(null, 1, "Check-up", "Urgent", "123 Plaza", mockDate, "Confirmed"),
+            Appointment(null, 1, "Check-up", "Urgent", "123 Plaza", mockDate, "Confirmed"),
+            Appointment(null, 1, "Check-up", "Urgent", "123 Plaza", mockDate, "Confirmed"),
+            Appointment(null, 1, "Check-up", "Urgent", "123 Plaza", mockDate, "Confirmed"),
         )
 
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewAppointments)
@@ -58,6 +60,12 @@ class AppointmentFragment : Fragment() {
                 .replace(R.id.fragmentContainerView2, PetProfileFragment())
                 .setTransition(TRANSIT_FRAGMENT_MATCH_ACTIVITY_CLOSE)
                 .commit()
+        }
+
+        val buttonAdd = view.findViewById<Button>(R.id.buttonAddAppointment)
+        buttonAdd.setOnClickListener {
+            val appointmentForm = Intent(requireContext(), AppointmentForm:: class.java)
+            startActivity(appointmentForm)
         }
     }
 }

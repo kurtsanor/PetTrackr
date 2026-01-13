@@ -1,12 +1,19 @@
 package com.example.tracker.ui
 
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
 import androidx.core.graphics.toColorInt
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.tracker.R
+import com.example.tracker.adapter.AppointmentAdapter
+import com.example.tracker.adapter.GrowthAdapter
+import com.example.tracker.model.Growth
 import com.github.mikephil.charting.animation.Easing
 import com.github.mikephil.charting.charts.LineChart
 import com.github.mikephil.charting.components.XAxis
@@ -14,6 +21,7 @@ import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
+import java.time.LocalDate
 
 class GrowthFragment : Fragment() {
 
@@ -26,11 +34,23 @@ class GrowthFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_growth, container, false)
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         val barChart = view.findViewById<LineChart>(R.id.barChart)
         createLineChart(barChart)
+
+        val growths = listOf(
+            Growth(null, 0, 12.4.toFloat(), 14.toFloat(), "Growing", LocalDate.of(2025,1,1)),
+            Growth(null, 0, 12.4.toFloat(), 14.toFloat(), "Growing", LocalDate.of(2025,1,1)),
+            Growth(null, 0, 12.4.toFloat(), 14.toFloat(), "Growing", LocalDate.of(2025,1,1)),
+            Growth(null, 0, 12.4.toFloat(), 14.toFloat(), "Growing", LocalDate.of(2025,1,1)),
+        )
+
+        val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewGrowth)
+        recyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+        recyclerView.adapter = GrowthAdapter(growths)
     }
 
     private fun createLineChart(lineChart: LineChart) {

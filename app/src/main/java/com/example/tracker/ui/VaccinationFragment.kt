@@ -1,5 +1,6 @@
 package com.example.tracker.ui
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -60,6 +61,12 @@ class VaccinationFragment : Fragment() {
                 .replace(R.id.fragmentContainerView2, PetProfileFragment())
                 .setTransition(TRANSIT_FRAGMENT_MATCH_ACTIVITY_CLOSE)
                 .commit()
+        }
+
+        val buttonAdd = view.findViewById<Button>(R.id.buttonAddVaccine)
+        buttonAdd.setOnClickListener {
+            val vaccineForm = Intent(requireContext(), VaccinationForm:: class.java)
+            startActivity(vaccineForm)
         }
     }
 

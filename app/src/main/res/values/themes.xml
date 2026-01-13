@@ -29,6 +29,5 @@
     </style>
 
 
-
     <style name="Theme.CRUD_prac" parent="Base.Theme.CRUD_prac" />
 </resources>

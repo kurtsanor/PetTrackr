@@ -12,6 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CRUD_prac">
         <activity
+            android:name=".ui.MedicalForm"
+            android:exported="false" />
+        <activity
+            android:name=".ui.AppointmentForm"
+            android:exported="false"
+            android:theme="@style/Theme.CRUD_prac" />
+        <activity
+            android:name=".ui.VaccinationForm"
+            android:exported="false" />
+        <activity
             android:name=".ui.PetFormActivity"
             android:exported="false" />
         <activity
