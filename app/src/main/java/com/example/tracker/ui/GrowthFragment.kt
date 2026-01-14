@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import androidx.annotation.RequiresApi
 import androidx.core.graphics.toColorInt
 import androidx.fragment.app.Fragment
@@ -40,6 +41,9 @@ class GrowthFragment : Fragment() {
 
         val barChart = view.findViewById<LineChart>(R.id.barChart)
         createLineChart(barChart)
+
+        val btnBack = view.findViewById<ImageButton>(R.id.btnBack)
+        btnBack.setOnClickListener { parentFragmentManager.popBackStack() }
 
         val growths = listOf(
             Growth(null, 0, 12.4.toFloat(), 14.toFloat(), "Growing", LocalDate.of(2025,1,1)),

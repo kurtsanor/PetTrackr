@@ -42,7 +42,6 @@
                 android:text="Vaccination"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
-
         </RelativeLayout>
 
 

@@ -1,11 +1,13 @@
 package com.example.tracker.ui
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -13,6 +15,7 @@ import com.example.tracker.R
 import com.example.tracker.adapter.MedicalRecordAdapter
 import com.example.tracker.adapter.VaccinationAdapter
 import com.example.tracker.model.MedicalRecord
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import java.time.LocalDate
 
 class MedicalHistoryFragment : Fragment() {
@@ -29,6 +32,9 @@ class MedicalHistoryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val btnBack = view.findViewById<ImageButton>(R.id.btnBack)
+        btnBack.setOnClickListener { parentFragmentManager.popBackStack() }
+
         val medicals = listOf(
             MedicalRecord(null, 0, "General Check-up", LocalDate.of(2025, 1, 1), "Fever", "Anti-biotics", "Take care"),
             MedicalRecord(null, 0, "General Check-up", LocalDate.of(2025, 1, 1), "Fever", "Anti-biotics", "Take care"),
@@ -41,6 +47,12 @@ class MedicalHistoryFragment : Fragment() {
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewMedical)
         recyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         recyclerView.adapter = MedicalRecordAdapter(medicals)
+
+        val fabAdd = view.findViewById<FloatingActionButton>(R.id.fab_add_medical)
+        fabAdd.setOnClickListener {
+            val intent = Intent(requireContext(), MedicalForm:: class.java)
+            startActivity(intent)
+        }
     }
 
 

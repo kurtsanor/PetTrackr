@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CRUD_prac">
         <activity
+            android:name=".ui.MedicationForm"
+            android:exported="false" />
+        <activity
             android:name=".ui.MedicalForm"
             android:exported="false" />
         <activity

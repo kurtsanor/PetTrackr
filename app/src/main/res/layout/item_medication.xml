@@ -91,9 +91,7 @@
                 android:fontFamily="@font/inter_regular"
                 android:textColor="#1A73E8"
                 android:layout_marginTop="4dp" />
-
         </LinearLayout>
-
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

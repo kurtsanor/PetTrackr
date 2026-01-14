@@ -56,10 +56,7 @@ class AppointmentFragment : Fragment() {
 
         val buttonBack = view.findViewById<ImageButton>(R.id.btnBack)
         buttonBack.setOnClickListener {
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.fragmentContainerView2, PetProfileFragment())
-                .setTransition(TRANSIT_FRAGMENT_MATCH_ACTIVITY_CLOSE)
-                .commit()
+            parentFragmentManager.popBackStack()
         }
 
         val buttonAdd = view.findViewById<Button>(R.id.buttonAddAppointment)
