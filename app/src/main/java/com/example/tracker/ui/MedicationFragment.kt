@@ -40,21 +40,21 @@ class MedicationFragment : Fragment() {
         btnBack.setOnClickListener { parentFragmentManager.popBackStack() }
 
         val mockData = listOf(
-            Medication(null, 0, "Amoxicillin", "50mg", "Twice/day", LocalDate.of(2025, 1, 2),
+            Medication(1, 0, "Amoxicillin", "50mg", "Twice/day", LocalDate.of(2025, 1, 2),
                 LocalDate.of(2025, 2, 2), "For infection", "Lorem ipsum dolor"),
-            Medication(null, 0, "Amoxicillin", "50mg", "Twice/day", LocalDate.of(2025, 1, 2),
+            Medication(1, 0, "Amoxicillin", "50mg", "Twice/day", LocalDate.of(2025, 1, 2),
                 LocalDate.of(2025, 2, 2), "For infection", "Lorem ipsum dolor"),
-            Medication(null, 0, "Amoxicillin", "50mg", "Twice/day", LocalDate.of(2025, 1, 2),
+            Medication(1, 0, "Amoxicillin", "50mg", "Twice/day", LocalDate.of(2025, 1, 2),
                 LocalDate.of(2025, 2, 2), "For infection", "Lorem ipsum dolor"),
-            Medication(null, 0, "Amoxicillin", "50mg", "Twice/day", LocalDate.of(2025, 1, 2),
+            Medication(1, 0, "Amoxicillin", "50mg", "Twice/day", LocalDate.of(2025, 1, 2),
                 LocalDate.of(2025, 2, 2), "For infection", "Lorem ipsum dolor"),
-            Medication(null, 0, "Amoxicillin", "50mg", "Twice/day", LocalDate.of(2025, 1, 2),
+            Medication(1, 0, "Amoxicillin", "50mg", "Twice/day", LocalDate.of(2025, 1, 2),
                 LocalDate.of(2025, 2, 2), "For infection", "Lorem ipsum dolor"),
-            Medication(null, 0, "Amoxicillin", "50mg", "Twice/day", LocalDate.of(2025, 1, 2),
+            Medication(1, 0, "Amoxicillin", "50mg", "Twice/day", LocalDate.of(2025, 1, 2),
                 LocalDate.of(2025, 2, 2), "For infection", "Lorem ipsum dolor"),
-            Medication(null, 0, "Amoxicillin", "50mg", "Twice/day", LocalDate.of(2025, 1, 2),
+            Medication(1, 0, "Amoxicillin", "50mg", "Twice/day", LocalDate.of(2025, 1, 2),
                 LocalDate.of(2025, 2, 2), "For infection", "Lorem ipsum dolor"),
-            Medication(null, 0, "Amoxicillin", "50mg", "Twice/day", LocalDate.of(2025, 1, 2),
+            Medication(1, 0, "Amoxicillin", "50mg", "Twice/day", LocalDate.of(2025, 1, 2),
                 LocalDate.of(2025, 2, 2), "For infection", "Lorem ipsum dolor")
         )
 

@@ -1,0 +1,72 @@
+package com.example.tracker.ui
+
+import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
+import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.lifecycleScope
+import com.example.tracker.R
+import com.example.tracker.database.AppDatabase
+import com.example.tracker.database.DatabaseProvider
+import com.example.tracker.dto.SignUpRequest
+import com.example.tracker.service.AuthService
+import com.google.android.material.textfield.TextInputEditText
+import kotlinx.coroutines.launch
+import java.lang.RuntimeException
+
+class SignUpActivity : AppCompatActivity() {
+
+    private lateinit var db: AppDatabase
+    private lateinit var authService: AuthService
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContentView(R.layout.activity_sign_up)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.signup)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(0, 0, 0, 0)
+            insets
+        }
+        val signInLink = findViewById<TextView>(R.id.textViewSignIn)
+        signInLink.setOnClickListener {
+            finish()
+        }
+
+        val firstName = findViewById<TextInputEditText>(R.id.textViewFirstName)
+        val surName = findViewById<TextInputEditText>(R.id.textViewLastName)
+        val email = findViewById<TextInputEditText>(R.id.textViewEmail)
+        val password = findViewById<TextInputEditText>(R.id.textViewPassword)
+        val confirmPassword = findViewById<TextInputEditText>(R.id.textViewConfirmPassword)
+
+        db = DatabaseProvider.getDatabase(this)
+        authService = AuthService(db.userDao(), db.credentialsDao())
+
+        val buttonSignup = findViewById<Button>(R.id.buttonSignUp)
+        buttonSignup.setOnClickListener {
+            if (password.text.toString() != confirmPassword.text.toString()) {
+                Toast.makeText(this@SignUpActivity, "Passwords do not match", Toast.LENGTH_LONG).show()
+                return@setOnClickListener
+            }
+            lifecycleScope.launch {
+                try {
+                    val signupRequest = SignUpRequest(
+                        firstName.text.toString(),
+                        surName.text.toString(),
+                        email.text.toString(),
+                        password.text.toString()
+                    )
+                    authService.register(signupRequest)
+                    Toast.makeText(this@SignUpActivity, "Account has been created", Toast.LENGTH_LONG).show()
+                    finish()
+                } catch (e: RuntimeException) {
+                    Toast.makeText(this@SignUpActivity, e.message, Toast.LENGTH_LONG).show()
+                }
+            }
+        }
+    }
+}

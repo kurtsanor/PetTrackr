@@ -33,18 +33,18 @@ class PetsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val petList = listOf(
-            Pet(null, 0,"Buddy", "Dog", "Golden Retriever", "Male", LocalDate.of(2003,5, 21)),
-            Pet(null, 0,"Max", "Dog", "Golden Retriever", "Female", LocalDate.of(2003,5, 21)),
-            Pet(null, 0,"Tucker", "Dog", "Golden Retriever", "Male", LocalDate.of(2003,5, 21)),
-            Pet(null,0,"Buddy", "Dog", "Golden Retriever", "Female", LocalDate.of(2003,5, 21)),
-            Pet(null,0,"Max", "Dog", "Golden Retriever", "Male", LocalDate.of(2003,5, 21)),
-            Pet(null, 0,"Tucker", "Dog", "Golden Retriever", "Female", LocalDate.of(2003,5, 21)),
-            Pet(null,0,"Buddy", "Dog", "Golden Retriever", "Male", LocalDate.of(2003,5, 21)),
-            Pet(null,0,"Max", "Dog", "Golden Retriever", "Male", LocalDate.of(2003,5, 21)),
-            Pet(null, 0,"Tucker", "Dog", "Golden Retriever", "Male", LocalDate.of(2003,5, 21)),
-            Pet(null,0,"Buddy", "Dog", "Golden Retriever", "Male", LocalDate.of(2003,5, 21)),
-            Pet(null,0,"Max", "Dog", "Golden Retriever", "Male", LocalDate.of(2003,5, 21)),
-            Pet(null, 0,"Tucker", "Dog", "Golden Retriever", "Male", LocalDate.of(2003,5, 21))
+            Pet(1, 0,"Buddy", "Dog", "Golden Retriever", "Male", LocalDate.of(2003,5, 21)),
+            Pet(1, 0,"Max", "Dog", "Golden Retriever", "Female", LocalDate.of(2003,5, 21)),
+            Pet(1, 0,"Tucker", "Dog", "Golden Retriever", "Male", LocalDate.of(2003,5, 21)),
+            Pet(1,0,"Buddy", "Dog", "Golden Retriever", "Female", LocalDate.of(2003,5, 21)),
+            Pet(1,0,"Max", "Dog", "Golden Retriever", "Male", LocalDate.of(2003,5, 21)),
+            Pet(1, 0,"Tucker", "Dog", "Golden Retriever", "Female", LocalDate.of(2003,5, 21)),
+            Pet(1,0,"Buddy", "Dog", "Golden Retriever", "Male", LocalDate.of(2003,5, 21)),
+            Pet(1,0,"Max", "Dog", "Golden Retriever", "Male", LocalDate.of(2003,5, 21)),
+            Pet(1, 0,"Tucker", "Dog", "Golden Retriever", "Male", LocalDate.of(2003,5, 21)),
+            Pet(1,0,"Buddy", "Dog", "Golden Retriever", "Male", LocalDate.of(2003,5, 21)),
+            Pet(1,0,"Max", "Dog", "Golden Retriever", "Male", LocalDate.of(2003,5, 21)),
+            Pet(1, 0,"Tucker", "Dog", "Golden Retriever", "Male", LocalDate.of(2003,5, 21))
         )
 
         val recyclerView = view.findViewById<RecyclerView>(R.id.petRecyclerView)

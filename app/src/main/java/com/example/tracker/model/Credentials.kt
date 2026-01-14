@@ -4,22 +4,18 @@ import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.Index
 import androidx.room.PrimaryKey
-import java.time.LocalDate
 
 @Entity(foreignKeys = [ForeignKey(
-    entity = Pet::class,
+    entity = User::class,
     parentColumns = ["id"],
-    childColumns = ["petId"],
+    childColumns = ["userId"],
     onDelete = ForeignKey.CASCADE
 )],
-    indices = [Index(value = ["petId"])])
-data class MedicalRecord(
+    indices = [Index(value = ["userId"])])
+data class Credentials(
     @PrimaryKey(autoGenerate = true)
     val id: Long = 0L,
-    val petId: Long,
-    val title: String,
-    val date: LocalDate,
-    val diagnosis: String,
-    val treatment: String,
-    val notes: String
+    val userId: Long,
+    val email: String,
+    val password: String,
 )

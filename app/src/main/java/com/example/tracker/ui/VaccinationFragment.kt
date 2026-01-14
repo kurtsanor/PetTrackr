@@ -42,13 +42,13 @@ class VaccinationFragment : Fragment() {
         calendarView.setDateSelected(today, true)
 
         val vaccinations = listOf(
-            Vaccination(null, 0, "Booster", "Max needs booster lorem ipsum dolor lorem", LocalDate.of(2025, 5, 5)),
-            Vaccination(null, 0, "Anti-Rabies", "Max needs rabies lorem ipsum dolor lorem", LocalDate.of(2025, 5, 5)),
-            Vaccination(null, 0, "Anti-Rabies", "Max needs rabies lorem ipsum dolor lorem", LocalDate.of(2025, 5, 5)),
-            Vaccination(null, 0, "Anti-Rabies", "Max needs rabies lorem ipsum dolor lorem", LocalDate.of(2025, 5, 5)),
-            Vaccination(null, 0, "Anti-Rabies", "Max needs rabies lorem ipsum dolor lorem", LocalDate.of(2025, 5, 5)),
-            Vaccination(null, 0, "Anti-Rabies", "Max needs rabies lorem ipsum dolor lorem", LocalDate.of(2025, 5, 5)),
-            Vaccination(null, 0, "Anti-Rabies", "Max needs rabies lorem ipsum dolor lorem", LocalDate.of(2025, 5, 5))
+            Vaccination(1, 0, "Booster", "Max needs booster lorem ipsum dolor lorem", LocalDate.of(2025, 5, 5)),
+            Vaccination(1, 0, "Anti-Rabies", "Max needs rabies lorem ipsum dolor lorem", LocalDate.of(2025, 5, 5)),
+            Vaccination(1, 0, "Anti-Rabies", "Max needs rabies lorem ipsum dolor lorem", LocalDate.of(2025, 5, 5)),
+            Vaccination(1, 0, "Anti-Rabies", "Max needs rabies lorem ipsum dolor lorem", LocalDate.of(2025, 5, 5)),
+            Vaccination(1, 0, "Anti-Rabies", "Max needs rabies lorem ipsum dolor lorem", LocalDate.of(2025, 5, 5)),
+            Vaccination(1, 0, "Anti-Rabies", "Max needs rabies lorem ipsum dolor lorem", LocalDate.of(2025, 5, 5)),
+            Vaccination(1, 0, "Anti-Rabies", "Max needs rabies lorem ipsum dolor lorem", LocalDate.of(2025, 5, 5))
         )
 
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewVaccination)

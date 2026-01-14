@@ -46,10 +46,10 @@ class GrowthFragment : Fragment() {
         btnBack.setOnClickListener { parentFragmentManager.popBackStack() }
 
         val growths = listOf(
-            Growth(null, 0, 12.4.toFloat(), 14.toFloat(), "Growing", LocalDate.of(2025,1,1)),
-            Growth(null, 0, 12.4.toFloat(), 14.toFloat(), "Growing", LocalDate.of(2025,1,1)),
-            Growth(null, 0, 12.4.toFloat(), 14.toFloat(), "Growing", LocalDate.of(2025,1,1)),
-            Growth(null, 0, 12.4.toFloat(), 14.toFloat(), "Growing", LocalDate.of(2025,1,1)),
+            Growth(1,0, 12.4.toFloat(), 14.toFloat(), "Growing", LocalDate.of(2025,1,1)),
+            Growth(1,0, 12.4.toFloat(), 14.toFloat(), "Growing", LocalDate.of(2025,1,1)),
+            Growth(1,0, 12.4.toFloat(), 14.toFloat(), "Growing", LocalDate.of(2025,1,1)),
+            Growth(1,0, 12.4.toFloat(), 14.toFloat(), "Growing", LocalDate.of(2025,1,1)),
         )
 
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewGrowth)
