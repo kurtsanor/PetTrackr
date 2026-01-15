@@ -16,20 +16,20 @@
         >
 
         <!--Account Header-->
+
+        <!--Profile Card-->
         <TextView
             android:id="@+id/greetings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
             android:layout_marginTop="5dp"
-            android:text="Account"
+            android:layout_marginBottom="15dp"
             android:fontFamily="@font/inter_bold"
-            android:textSize="20sp"
+            android:text="Account"
             android:textAlignment="center"
             android:textColor="@color/black"
-            />
+            android:textSize="22sp" />
 
-        <!--Profile Card-->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -49,19 +49,21 @@
                     android:layout_height="150dp"
                     android:src="@drawable/finalpfp"
                     />
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="John Doe"
-                    android:textSize="20sp"
                     android:fontFamily="@font/inter_bold"
+                    android:text="John Doe"
+                    android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textAlignment="center"/>
+                    android:textSize="20sp" />
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Pet Owner"
-                    android:textSize="15sp"
+                    android:textSize="16sp"
                     android:fontFamily="@font/inter_regular"
                     android:textColor="#7E7E7E"
                     android:textAlignment="center"/>
@@ -69,7 +71,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="johndoe@gmail.com"
-                    android:textSize="15sp"
+                    android:textSize="16sp"
                     android:fontFamily="@font/inter_regular"
                     android:textColor="#7E7E7E"
                     android:textAlignment="center"
@@ -100,7 +102,7 @@
                     android:layout_height="wrap_content"
                     android:text="Account Settings"
                     android:layout_marginBottom="20dp"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:fontFamily="@font/inter_bold"
                     android:textColor="@color/black"
                     />
@@ -109,7 +111,7 @@
                         android:layout_height="wrap_content"
                         android:text="Edit Profile"
                         android:textSize="18sp"
-                        android:fontFamily="@font/inter_regular"
+                        android:fontFamily="@font/inter_semibold"
                         android:textColor="@color/black"
                         android:layout_marginBottom="20dp"
                         android:drawableLeft="@drawable/edit"
@@ -120,7 +122,7 @@
                         android:layout_height="wrap_content"
                         android:text="Change Password"
                         android:textSize="18sp"
-                        android:fontFamily="@font/inter_regular"
+                        android:fontFamily="@font/inter_semibold"
                         android:textColor="@color/black"
                         android:drawableLeft="@drawable/reset"
                         android:drawableRight="@drawable/rightarrow"

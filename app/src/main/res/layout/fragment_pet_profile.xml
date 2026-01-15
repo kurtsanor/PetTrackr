@@ -41,7 +41,7 @@
                 android:fontFamily="@font/inter_bold"
                 android:text="Pet Profile"
                 android:textColor="@color/black"
-                android:textSize="20sp" />
+                android:textSize="22sp" />
 
         </RelativeLayout>
         <!--Profile Card-->
@@ -77,7 +77,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="8 months, Male"
-                    android:textSize="15sp"
+                    android:textSize="16sp"
                     android:fontFamily="@font/inter_regular"
                     android:textColor="#7E7E7E"
                     android:textAlignment="center"/>
@@ -85,7 +85,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Golden Retriever, Beige"
-                    android:textSize="15sp"
+                    android:textSize="16sp"
                     android:fontFamily="@font/inter_regular"
                     android:textColor="#7E7E7E"
                     android:textAlignment="center"/>
@@ -116,7 +116,7 @@
                     android:text="My Stuff"
                     android:textColor="@color/black"
                     android:layout_marginBottom="5dp"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     />
 
                 <!--Buttons Grid-->
@@ -124,28 +124,33 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:columnCount="3">
+
+                    <!-- Documents -->
                     <Button
                         android:id="@+id/buttonDocuments"
-                        style="@style/Widget.Material3.ExtendedFloatingActionButton.Icon.Surface"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:text="Documents"
+                        android:text="Docs"
                         android:textAlignment="center"
                         android:textAllCaps="false"
                         android:textColor="@color/black"
-                        android:textColorLink="#100101"
+                        android:textSize="12sp"
+                        android:singleLine="false"
+                        android:ellipsize="none"
+                        android:scrollHorizontally="false"
                         app:icon="@drawable/paper"
                         app:iconGravity="top"
                         app:iconPadding="0dp"
                         app:iconSize="60dp"
                         app:iconTint="#FFD180"
-                        android:textSize="11sp"
-                        app:backgroundTint="@color/white"
-                        app:layout_columnWeight="1" />
+                        app:backgroundTint="#FFF9E5"
+                        app:layout_columnWeight="1"
+                        app:cornerRadius="15dp"/>
+
+                    <!-- Vaccines -->
                     <Button
                         android:id="@+id/buttonVaccination"
-                        style="@style/Widget.Material3.ExtendedFloatingActionButton.Icon.Surface"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
@@ -153,18 +158,22 @@
                         android:textAlignment="center"
                         android:textAllCaps="false"
                         android:textColor="@color/black"
-                        android:textColorLink="#100101"
+                        android:textSize="12sp"
+                        android:singleLine="false"
+                        android:ellipsize="none"
+                        android:scrollHorizontally="false"
                         app:icon="@drawable/vaccine"
                         app:iconGravity="top"
-                        android:textSize="11sp"
                         app:iconPadding="0dp"
                         app:iconSize="60dp"
-                        app:backgroundTint="@color/white"
                         app:iconTint="#FF9E80"
-                        app:layout_columnWeight="1" />
+                        app:backgroundTint="#FFF3F0"
+                        app:layout_columnWeight="1"
+                        app:cornerRadius="15dp"/>
+
+                    <!-- Growth -->
                     <Button
                         android:id="@+id/buttonGrowth"
-                        style="@style/Widget.Material3.ExtendedFloatingActionButton.Icon.Surface"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
@@ -172,18 +181,22 @@
                         android:textAlignment="center"
                         android:textAllCaps="false"
                         android:textColor="@color/black"
-                        android:textColorLink="#100101"
+                        android:textSize="12sp"
+                        android:singleLine="false"
+                        android:ellipsize="none"
+                        android:scrollHorizontally="false"
                         app:icon="@drawable/rise"
                         app:iconGravity="top"
                         app:iconPadding="0dp"
                         app:iconSize="60dp"
-                        android:textSize="11sp"
-                        app:backgroundTint="@color/white"
-                        app:iconTint="#08d46c"
-                        app:layout_columnWeight="1" />
+                        app:iconTint="#08D46C"
+                        app:backgroundTint="#F0FDF6"
+                        app:layout_columnWeight="1"
+                        app:cornerRadius="15dp"/>
+
+                    <!-- Medical History -->
                     <Button
                         android:id="@+id/buttonMedicalHistory"
-                        style="@style/Widget.Material3.ExtendedFloatingActionButton.Icon.Surface"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
@@ -191,54 +204,70 @@
                         android:textAlignment="center"
                         android:textAllCaps="false"
                         android:textColor="@color/black"
-                        android:textColorLink="#100101"
+                        android:textSize="12sp"
+                        android:singleLine="false"
+                        android:ellipsize="none"
+                        android:scrollHorizontally="false"
                         app:icon="@drawable/healthcare"
-                        android:textSize="11sp"
                         app:iconGravity="top"
                         app:iconPadding="0dp"
                         app:iconSize="60dp"
-                        app:backgroundTint="@color/white"
-                        app:iconTint="#f45b5b"
-                        app:layout_columnWeight="1" />
+                        app:iconTint="#F45B5B"
+                        app:backgroundTint="#FFF5F5"
+                        app:layout_columnWeight="1"
+                        app:cornerRadius="15dp"/>
+
+                    <!-- Appointments -->
                     <Button
                         android:id="@+id/buttonAppointments"
-                        style="@style/Widget.Material3.ExtendedFloatingActionButton.Icon.Surface"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:text="Appointments"
+                        android:text="Appointment List"
                         android:textAlignment="center"
                         android:textAllCaps="false"
-                        android:textSize="11sp"
                         android:textColor="@color/black"
-                        android:textColorLink="#100101"
-                        app:icon="@drawable/appointment"
+                        android:textSize="12sp"
+                        android:singleLine="false"
+                        android:ellipsize="none"
+                        android:scrollHorizontally="false"
+                        app:icon="@drawable/clock"
                         app:iconGravity="top"
                         app:iconPadding="0dp"
                         app:iconSize="60dp"
-                        app:backgroundTint="@color/white"
                         app:iconTint="#536DFE"
-                        app:layout_columnWeight="1" />
+                        app:backgroundTint="#F2F4FF"
+                        app:layout_columnWeight="1"
+                        app:cornerRadius="15dp"/>
+
+                    <!-- Medications -->
                     <Button
                         android:id="@+id/buttonMedications"
-                        style="@style/Widget.Material3.ExtendedFloatingActionButton.Icon.Surface"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:textSize="11sp"
                         android:layout_margin="8dp"
                         android:text="Medications"
                         android:textAlignment="center"
                         android:textAllCaps="false"
                         android:textColor="@color/black"
-                        android:textColorLink="#100101"
+                        android:textSize="12sp"
+                        android:singleLine="false"
+                        android:ellipsize="none"
+                        android:scrollHorizontally="false"
                         app:icon="@drawable/pills"
                         app:iconGravity="top"
                         app:iconPadding="0dp"
                         app:iconSize="60dp"
-                        app:backgroundTint="@color/white"
                         app:iconTint="#FF6E40"
-                        app:layout_columnWeight="1" />
+                        app:backgroundTint="#FFF8F6"
+                        app:layout_columnWeight="1"
+                        app:cornerRadius="15dp"/>
+
                 </androidx.gridlayout.widget.GridLayout>
+
+
+
+
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -265,7 +294,7 @@
                     android:text="Recent Activities"
                     android:layout_marginVertical="10dp"
                     android:fontFamily="@font/inter_bold"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:layout_marginStart="15dp"
                     android:textColor="@color/black"
                     />

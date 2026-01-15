@@ -44,8 +44,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="General Check-up"
-                    android:fontFamily="@font/inter_bold"
-                    android:textSize="18sp"
+                    android:fontFamily="@font/inter_semibold"
+                    android:textSize="16sp"
                     android:textColor="@android:color/black" />
 
                 <LinearLayout

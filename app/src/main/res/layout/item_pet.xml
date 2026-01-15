@@ -57,7 +57,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Buddy"
-                        android:textSize="20sp"
+                        android:textSize="18sp"
                         android:fontFamily="@font/inter_bold"
                         android:textColor="@color/black"/>
                     <!--Pet Breed-->
@@ -65,10 +65,10 @@
                         android:id="@+id/petBreed"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Golden Retriever"
-                        android:textSize="15sp"
                         android:fontFamily="@font/inter_regular"
-                        android:textColor="#3E3E3E"/>
+                        android:text="Golden Retriever"
+                        android:textColor="#3E3E3E"
+                        android:textSize="16sp" />
                 </LinearLayout>
                 <Button
                     style="@style/ShapeAppearanceOverlay.Material3.Button"
@@ -78,7 +78,7 @@
                     android:text="Healthy ✓"
                     android:textSize="12dp"
                     android:textColor="#176832"
-                    android:fontFamily="@font/inter_regular"
+                    android:fontFamily="@font/inter_semibold"
                     />
             </LinearLayout>
             <!--Line Break-->
@@ -116,7 +116,7 @@
                         android:layout_height="wrap_content"
                         android:text="Dog"
                         android:textSize="14sp"
-                        android:fontFamily="@font/inter_bold"
+                        android:fontFamily="@font/inter_semibold"
                         android:textColor="@color/black"
                         android:layout_marginRight="20dp"
                         />
@@ -134,7 +134,7 @@
                         android:layout_height="wrap_content"
                         android:text="Male"
                         android:textSize="14sp"
-                        android:fontFamily="@font/inter_bold"
+                        android:fontFamily="@font/inter_semibold"
                         android:textColor="@color/black"
                         />
 

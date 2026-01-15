@@ -185,7 +185,7 @@ class HomeFragment : Fragment() {
             ss.setSpan(RelativeSizeSpan(1.9f), 0, 3, 0)
             // Make the "Health" label smaller and light
             ss.setSpan(ForegroundColorSpan(Color.GRAY), 4, text.length, 0)
-            ss.setSpan(RelativeSizeSpan(0.9f), 4, text.length, 0)
+            ss.setSpan(RelativeSizeSpan(1.3f), 4, text.length, 0)
 
             centerText = ss
         }

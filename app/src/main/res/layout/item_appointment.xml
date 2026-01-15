@@ -11,12 +11,11 @@
     >
 
     <ImageView
+        style="@style/CircleShape"
         android:layout_width="65dp"
         android:layout_height="match_parent"
-        android:src="@drawable/checkup"
-        style="@style/CircleShape"
         android:layout_marginEnd="15dp"
-        />
+        android:src="@drawable/clock" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -30,7 +29,7 @@
             android:layout_height="wrap_content"
             android:text="Annual Checkup"
             android:textSize="16sp"
-            android:fontFamily="@font/inter_bold"
+            android:fontFamily="@font/inter_semibold"
             android:textColor="@color/black" />
 
         <!-- Appointment Date and Time -->
@@ -51,7 +50,7 @@
             android:layout_height="wrap_content"
             android:text="Confirmed"
             android:textSize="12sp"
-            android:fontFamily="@font/inter_bold"
+            android:fontFamily="@font/inter_semibold"
             android:textColor="#1A73E8"
             android:layout_marginTop="6dp"/>
 
