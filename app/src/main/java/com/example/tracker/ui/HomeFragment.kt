@@ -13,6 +13,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.core.graphics.toColorInt
 import androidx.fragment.app.Fragment
@@ -76,6 +77,8 @@ class HomeFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         recyclerView.adapter = AppointmentAdapter(appointments)
 
+        val userId = requireActivity().intent.getLongExtra("USER_ID", -1L)
+        Toast.makeText(requireContext(), "Id is $userId", Toast.LENGTH_SHORT).show()
     }
 
     private fun createLineChart(lineChart: LineChart) {

@@ -171,7 +171,7 @@
         android:padding="16dp">
 
         <Button
-            android:id="@+id/buttonSignIn"
+            android:id="@+id/buttonAddPet"
             style="@style/Widget.Material3.Button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -1,20 +1,39 @@
 package com.example.tracker.ui
 
+import android.os.Build
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
+import android.widget.Button
 import android.widget.ImageButton
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.lifecycleScope
 import com.example.tracker.R
+import com.example.tracker.database.AppDatabase
+import com.example.tracker.database.DatabaseProvider
+import com.example.tracker.model.Pet
+import com.example.tracker.service.PetService
 import com.google.android.material.datepicker.MaterialDatePicker
+import com.google.android.material.textfield.TextInputEditText
+import kotlinx.coroutines.launch
+import java.lang.RuntimeException
 import java.text.SimpleDateFormat
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 import java.util.Date
 import java.util.Locale
 
 class PetFormActivity : AppCompatActivity() {
+
+    private lateinit var db: AppDatabase
+    private lateinit var petService: PetService
+
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -31,6 +50,38 @@ class PetFormActivity : AppCompatActivity() {
 
         setupDatePicker()
         setupGenderDropdown()
+
+        db = DatabaseProvider.getDatabase(this)
+        petService = PetService(db.petDao())
+
+        val petName = findViewById<TextInputEditText>(R.id.etPetName)
+        val petType = findViewById<TextInputEditText>(R.id.etPetType)
+        val petBreed = findViewById<TextInputEditText>(R.id.etBreed)
+        val petGender = findViewById<AutoCompleteTextView>(R.id.actvGender)
+        val petBirthdate = findViewById<TextInputEditText>(R.id.etBirthDate)
+
+        val buttonAddPet = findViewById<Button>(R.id.buttonAddPet)
+        buttonAddPet.setOnClickListener {
+            lifecycleScope.launch {
+                val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
+                val newPet = Pet(
+                    userId = intent.getLongExtra("USER_ID", -1L),
+                    name = petName.text.toString(),
+                    type = petType.text.toString(),
+                    breed = petBreed.text.toString(),
+                    gender = petGender.text.toString(),
+                    birthDate = LocalDate.parse(petBirthdate.text.toString(), formatter)
+                )
+                try {
+                    petService.insert(newPet)
+                    Toast.makeText(this@PetFormActivity, "Pet has been added", Toast.LENGTH_SHORT).show()
+                    finish()
+                } catch (e: RuntimeException) {
+                    Toast.makeText(this@PetFormActivity, e.message, Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+
     }
 
 

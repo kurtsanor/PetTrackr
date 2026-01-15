@@ -5,6 +5,7 @@ import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
 import com.example.tracker.model.Appointment
+import com.example.tracker.model.Growth
 
 @Dao
 interface AppointmentDao {
@@ -16,4 +17,14 @@ interface AppointmentDao {
 
     @Query("DELETE FROM Appointment WHERE id = :id")
     suspend fun deleteById(id: Long)
+
+    @Query("SELECT * FROM Appointment WHERE petId = :petId")
+    suspend fun findAllByPetId(petId: Long): List<Appointment>
+
+    @Query("""SELECT a.* FROM Pet p
+            JOIN User u ON p.userId = u.id
+            JOIN Appointment a ON p.id = a.petId
+            WHERE u.id = :userId""")
+    suspend fun findAllByUserId(userId: Long): List<Appointment>
+
 }
