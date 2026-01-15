@@ -51,6 +51,10 @@
 
         </androidx.recyclerview.widget.RecyclerView>
 
+        <include
+            android:id="@+id/placeholder_empty_pet"
+            layout="@layout/placeholder_empty_pets"
+            />
 
     </LinearLayout>
 </FrameLayout>

@@ -34,4 +34,11 @@ class PetService(private val petDao: PetDao) {
         petDao.update(pet)
     }
 
+    suspend fun deleteById(id: Long) {
+        if (id < 0) {
+            throw RuntimeException("Invalid id")
+        }
+        petDao.deleteById(id)
+    }
+
 }
