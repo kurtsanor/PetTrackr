@@ -15,20 +15,6 @@
         android:background="#eff0f4"
         >
 
-        <!--Account Header-->
-        <TextView
-            android:id="@+id/greetings"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:layout_marginTop="5dp"
-            android:text="Account"
-            android:fontFamily="@font/inter_bold"
-            android:textSize="20sp"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            />
-
         <!--Profile Card-->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.core.graphics.toColorInt
 import androidx.fragment.app.Fragment
@@ -23,6 +24,12 @@ import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
 import java.time.LocalDate
+import android.widget.Button
+import android.widget.Toast
+import androidx.appcompat.widget.TooltipCompat
+import com.google.android.material.textfield.TextInputLayout
+import com.google.android.material.R as MaterialR
+
 
 class GrowthFragment : Fragment() {
 
@@ -39,11 +46,35 @@ class GrowthFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        requireActivity()
+            .findViewById<TextView>(R.id.txtHeaderTitle)
+            .text = "Growth"
+
+        val weightLayout = view.findViewById<TextInputLayout>(R.id.weightLayout)
+        val heightLayout = view.findViewById<TextInputLayout>(R.id.heightLayout)
+        val notesLayout = view.findViewById<TextInputLayout>(R.id.notesLayout)
+        val buttonSaveRecord = view.findViewById<Button>(R.id.buttonSaveRecord)
+
+        fun TextInputLayout.setEndIconTooltip(text: CharSequence) {
+            val iconView = findViewById<View>(MaterialR.id.text_input_end_icon) ?: return
+            TooltipCompat.setTooltipText(iconView, text)
+
+            iconView.setOnClickListener {
+                iconView.post { iconView.performLongClick() }
+            }
+        }
+
+        buttonSaveRecord.setOnClickListener {
+            Toast.makeText(context, "Record Saved!", Toast.LENGTH_SHORT).show()
+            parentFragmentManager.popBackStack()
+        }
+
+        weightLayout.setEndIconTooltip("Weight in kilograms e.g '19.4'")
+        heightLayout.setEndIconTooltip("Height in inches e.g '23.1'")
+        notesLayout.setEndIconTooltip("Any notes e.g personality change etc")
+
         val barChart = view.findViewById<LineChart>(R.id.barChart)
         createLineChart(barChart)
-
-        val btnBack = view.findViewById<ImageButton>(R.id.btnBack)
-        btnBack.setOnClickListener { parentFragmentManager.popBackStack() }
 
         val growths = listOf(
             Growth(null, 0, 12.4.toFloat(), 14.toFloat(), "Growing", LocalDate.of(2025,1,1)),
@@ -55,6 +86,8 @@ class GrowthFragment : Fragment() {
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewGrowth)
         recyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         recyclerView.adapter = GrowthAdapter(growths)
+
+
     }
 
     private fun createLineChart(lineChart: LineChart) {

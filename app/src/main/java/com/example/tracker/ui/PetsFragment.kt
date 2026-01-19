@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.FragmentTransaction.TRANSIT_FRAGMENT_OPEN
@@ -31,6 +32,10 @@ class PetsFragment : Fragment() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        requireActivity()
+            .findViewById<TextView>(R.id.txtHeaderTitle)
+            .text = "My Pets"
 
         val petList = listOf(
             Pet(null, 0,"Buddy", "Dog", "Golden Retriever", "Male", LocalDate.of(2003,5, 21)),
@@ -59,11 +64,13 @@ class PetsFragment : Fragment() {
         }
 
         val fabAddPet = view.findViewById<FloatingActionButton>(R.id.fab_add_pet)
-        fabAddPet.setOnClickListener {
-            val petForm = Intent(requireContext(), PetFormActivity:: class.java)
-            startActivity(petForm)
-        }
 
+        fabAddPet.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainerView2, PetFormActivityFragment())
+                .addToBackStack(null)
+                .commit()
+        }
 
     }
 

@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -32,8 +33,9 @@ class MedicalHistoryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val btnBack = view.findViewById<ImageButton>(R.id.btnBack)
-        btnBack.setOnClickListener { parentFragmentManager.popBackStack() }
+        requireActivity()
+            .findViewById<TextView>(R.id.txtHeaderTitle)
+            .text = "Medical History"
 
         val medicals = listOf(
             MedicalRecord(null, 0, "General Check-up", LocalDate.of(2025, 1, 1), "Fever", "Anti-biotics", "Take care"),
@@ -48,11 +50,15 @@ class MedicalHistoryFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         recyclerView.adapter = MedicalRecordAdapter(medicals)
 
-        val fabAdd = view.findViewById<FloatingActionButton>(R.id.fab_add_medical)
-        fabAdd.setOnClickListener {
-            val intent = Intent(requireContext(), MedicalForm:: class.java)
-            startActivity(intent)
+        val fabAddMedical = view.findViewById<FloatingActionButton>(R.id.fab_add_medical)
+
+        fabAddMedical.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainerView2, MedicalFormFragment())
+                .addToBackStack(null)
+                .commit()
         }
+
     }
 
 

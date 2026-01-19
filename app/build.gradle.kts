@@ -60,5 +60,6 @@ dependencies {
     implementation(libs.mpandroidchart)
 //    implementation(libs.material.calendarview)
     implementation(libs.material.calendarview.v143)
+    implementation(libs.androidx.core.splashscreen)
 
 }

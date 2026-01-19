@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.TextView
 import androidx.fragment.app.FragmentTransaction.TRANSIT_FRAGMENT_MATCH_ACTIVITY_CLOSE
 import androidx.fragment.app.FragmentTransaction.TRANSIT_FRAGMENT_OPEN
 import com.example.tracker.R
@@ -23,6 +24,10 @@ class PetProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        requireActivity()
+            .findViewById<TextView>(R.id.txtHeaderTitle)
+            .text = "Pet Profile"
 
         val buttonVaccination = view.findViewById< Button>(R.id.buttonVaccination)
         buttonVaccination.setOnClickListener {
@@ -78,13 +83,6 @@ class PetProfileFragment : Fragment() {
                 .commit()
         }
 
-        val buttonBack = view.findViewById<ImageButton>(R.id.btnBack)
-        buttonBack.setOnClickListener {
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.fragmentContainerView2, PetsFragment())
-                .setTransition(TRANSIT_FRAGMENT_MATCH_ACTIVITY_CLOSE)
-                .commit()
-        }
     }
 
 
