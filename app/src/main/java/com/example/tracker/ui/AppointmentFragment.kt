@@ -9,6 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.TextView
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.FragmentTransaction.TRANSIT_FRAGMENT_MATCH_ACTIVITY_CLOSE
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -37,6 +39,11 @@ class AppointmentFragment : Fragment() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        requireActivity()
+            .findViewById<TextView>(R.id.txtHeaderTitle)
+            .text = "Appointments"
+
         val calendarView = view.findViewById< MaterialCalendarView>(R.id.calendarAppointments)
         val today = CalendarDay.today()
         calendarView.setDateSelected(today, true)
@@ -54,15 +61,14 @@ class AppointmentFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         recyclerView.adapter = AppointmentAdapter(appointments)
 
-        val buttonBack = view.findViewById<ImageButton>(R.id.btnBack)
-        buttonBack.setOnClickListener {
-            parentFragmentManager.popBackStack()
-        }
-
         val buttonAdd = view.findViewById<Button>(R.id.buttonAddAppointment)
+
         buttonAdd.setOnClickListener {
-            val appointmentForm = Intent(requireContext(), AppointmentForm:: class.java)
-            startActivity(appointmentForm)
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainerView2, AppointmentFormFragment())
+                .addToBackStack(null)
+                .commit()
+
         }
     }
 }

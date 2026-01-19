@@ -12,6 +12,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
@@ -49,14 +50,16 @@ class PetsFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-
         loadPets()
-
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        requireActivity()
+            .findViewById<TextView>(R.id.txtHeaderTitle)
+            .text = "My Pets"
 
         recyclerView = view.findViewById<RecyclerView>(R.id.petRecyclerView)
         recyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
@@ -66,10 +69,15 @@ class PetsFragment : Fragment() {
 
         val fabAddPet = view.findViewById<FloatingActionButton>(R.id.fab_add_pet)
         fabAddPet.setOnClickListener {
-            val userId = requireActivity().intent.getLongExtra("USER_ID", -1L)
-            val petForm = Intent(requireContext(), PetFormActivity:: class.java)
-            petForm.putExtra("USER_ID", userId)
-            startActivity(petForm)
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainerView2, PetFormActivityFragment())
+                .setTransition(TRANSIT_FRAGMENT_OPEN)
+                .addToBackStack(null)
+                .commit()
+//            val userId = requireActivity().intent.getLongExtra("USER_ID", -1L)
+//            val petForm = Intent(requireContext(), PetFormActivity:: class.java)
+//            petForm.putExtra("USER_ID", userId)
+//            startActivity(petForm)
         }
     }
 

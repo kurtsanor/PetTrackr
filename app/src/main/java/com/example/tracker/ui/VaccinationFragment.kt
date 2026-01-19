@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.FragmentTransaction.TRANSIT_FRAGMENT_CLOSE
 import androidx.fragment.app.FragmentTransaction.TRANSIT_FRAGMENT_FADE
@@ -37,6 +38,10 @@ class VaccinationFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        requireActivity()
+            .findViewById<TextView>(R.id.txtHeaderTitle)
+            .text = "Vaccination"
+
         val calendarView = view.findViewById< MaterialCalendarView>(R.id.calendarView)
         val today = CalendarDay.today()
         calendarView.setDateSelected(today, true)
@@ -55,15 +60,13 @@ class VaccinationFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         recyclerView.adapter = VaccinationAdapter(vaccinations)
 
-        val buttonBack = view.findViewById<ImageButton>(R.id.btnBack)
-        buttonBack.setOnClickListener {
-            parentFragmentManager.popBackStack()
-        }
-
         val buttonAdd = view.findViewById<Button>(R.id.buttonAddVaccine)
+
         buttonAdd.setOnClickListener {
-            val vaccineForm = Intent(requireContext(), VaccinationForm:: class.java)
-            startActivity(vaccineForm)
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainerView2, VaccinationFormFragment())
+                .addToBackStack(null)
+                .commit()
         }
     }
 

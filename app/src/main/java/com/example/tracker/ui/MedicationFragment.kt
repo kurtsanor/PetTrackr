@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -36,8 +37,9 @@ class MedicationFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val btnBack = view.findViewById<ImageButton>(R.id.btnBack)
-        btnBack.setOnClickListener { parentFragmentManager.popBackStack() }
+        requireActivity()
+            .findViewById<TextView>(R.id.txtHeaderTitle)
+            .text = "Medication"
 
         val mockData = listOf(
             Medication(1, 0, "Amoxicillin", "50mg", "Twice/day", LocalDate.of(2025, 1, 2),
@@ -63,9 +65,12 @@ class MedicationFragment : Fragment() {
         recyclerView.adapter = MedicationAdapter(mockData)
 
         val fabAdd = view.findViewById<FloatingActionButton>(R.id.fab_add_medication)
+
         fabAdd.setOnClickListener {
-            val intent = Intent(requireContext(), MedicationForm:: class.java)
-            startActivity(intent)
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainerView2, MedicationFormFragment())
+                .addToBackStack(null)
+                .commit()
         }
     }
 }

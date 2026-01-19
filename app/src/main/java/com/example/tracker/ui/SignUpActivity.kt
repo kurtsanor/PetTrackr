@@ -1,6 +1,7 @@
 package com.example.tracker.ui
 
 import android.os.Bundle
+import android.util.Patterns
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
@@ -8,6 +9,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.lifecycleScope
 import com.example.tracker.R
 import com.example.tracker.database.AppDatabase
@@ -43,15 +45,51 @@ class SignUpActivity : AppCompatActivity() {
         val password = findViewById<TextInputEditText>(R.id.textViewPassword)
         val confirmPassword = findViewById<TextInputEditText>(R.id.textViewConfirmPassword)
 
+        firstName.addTextChangedListener { if (it.toString().isBlank()) firstName.error = "Required field" }
+        surName.addTextChangedListener { if (it.toString().isBlank()) surName.error = "Required field" }
+        email.addTextChangedListener { if (!Patterns.EMAIL_ADDRESS.matcher(it.toString()).matches()) email.error = "Invalid email format" }
+        password.addTextChangedListener { if (it.toString().isEmpty()) password.error = "Required field" }
+        confirmPassword.addTextChangedListener { if (it.toString() != password.text.toString()) confirmPassword.error = "Passwords do not match" }
+
+        fun areValidFields(): Boolean {
+            return when {
+                firstName.text.toString().isBlank() -> {
+                    firstName.error = "Required field"
+                    false
+                }
+                surName.text.toString().isBlank() -> {
+                    surName.error = "Required field"
+                    false
+                }
+                !Patterns.EMAIL_ADDRESS.matcher(email.text.toString()).matches() -> {
+                    email.error = "Invalid email format"
+                    false
+                }
+                password.text.toString().isEmpty() -> {
+                    password.error = "Required field"
+                    false
+                }
+                confirmPassword.text.toString() != password.text.toString() -> {
+                    confirmPassword.error = "Passwords do not match"
+                    false
+                }
+                else -> {
+                    firstName.error = null
+                    surName.error = null
+                    email.error = null
+                    password.error = null
+                    confirmPassword.error = null
+                    true
+                }
+            }
+        }
+
         db = DatabaseProvider.getDatabase(this)
         authService = AuthService(db.userDao(), db.credentialsDao())
 
         val buttonSignup = findViewById<Button>(R.id.buttonSignUp)
         buttonSignup.setOnClickListener {
-            if (password.text.toString() != confirmPassword.text.toString()) {
-                Toast.makeText(this@SignUpActivity, "Passwords do not match", Toast.LENGTH_LONG).show()
-                return@setOnClickListener
-            }
+            if (!areValidFields()) return@setOnClickListener
             lifecycleScope.launch {
                 try {
                     val signupRequest = SignUpRequest(
@@ -68,5 +106,8 @@ class SignUpActivity : AppCompatActivity() {
                 }
             }
         }
+
+
+
     }
 }

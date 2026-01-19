@@ -27,21 +27,7 @@
         android:orientation="vertical"
         android:padding="10dp">
 
-        <!--Pets Header-->
-
         <!--Recycler View-->
-        <TextView
-            android:id="@+id/greetings"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="15dp"
-            android:fontFamily="@font/inter_bold"
-            android:text="My Pets"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="22sp" />
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/petRecyclerView"
             android:layout_width="match_parent"

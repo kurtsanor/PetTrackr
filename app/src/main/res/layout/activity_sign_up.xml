@@ -83,7 +83,7 @@
                         android:layout_height="wrap_content"
                         android:hint="First Name"
                         android:inputType="textPersonName"
-                        android:textSize="12sp"
+                        android:textSize="14sp"
                         android:fontFamily="@font/inter_regular"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -106,7 +106,7 @@
                         android:layout_height="wrap_content"
                         android:hint="Last Name"
                         android:inputType="textPersonName"
-                        android:textSize="12sp"
+                        android:textSize="14sp"
                         android:fontFamily="@font/inter_regular"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -129,7 +129,7 @@
                         android:layout_height="wrap_content"
                         android:hint="Email"
                         android:inputType="textEmailAddress"
-                        android:textSize="12sp"
+                        android:textSize="14sp"
                         android:fontFamily="@font/inter_regular"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -153,7 +153,7 @@
                         android:layout_height="wrap_content"
                         android:hint="Password"
                         android:inputType="textPassword"
-                        android:textSize="12sp"/>
+                        android:textSize="14sp"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <!-- Confirm Password -->
@@ -176,7 +176,7 @@
                         android:layout_height="wrap_content"
                         android:hint="Confirm Password"
                         android:inputType="textPassword"
-                        android:textSize="12sp"/>
+                        android:textSize="14sp"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <Button

@@ -52,6 +52,7 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     implementation(libs.mpandroidchart)
     implementation(libs.material.calendarview.v143)
+    implementation(libs.androidx.core.splashscreen)
 
     // Room
     implementation(libs.androidx.room.runtime)

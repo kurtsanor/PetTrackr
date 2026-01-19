@@ -15,27 +15,12 @@
             android:name=".ui.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.MedicationForm"
-            android:exported="false" />
-        <activity
-            android:name=".ui.MedicalForm"
-            android:exported="false" />
-        <activity
-            android:name=".ui.AppointmentForm"
-            android:exported="false"
-            android:theme="@style/Theme.CRUD_prac" />
-        <activity
-            android:name=".ui.VaccinationForm"
-            android:exported="false" />
-        <activity
-            android:name=".ui.PetFormActivity"
-            android:exported="false" />
-        <activity
             android:name=".ui.LayoutActivity"
             android:exported="false" />
         <activity
             android:name=".ui.MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.PetTrackr.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

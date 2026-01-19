@@ -15,40 +15,12 @@
         android:orientation="vertical"
         android:background="#eff0f4"
         >
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="0dp"
-            android:layout_marginBottom="15dp">
 
-            <ImageButton
-                android:id="@+id/btnBack"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/back"
-                android:layout_marginLeft="10dp"
-                />
-
-            <!--Pet Profile Header-->
-            <TextView
-                android:id="@+id/greetings"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:fontFamily="@font/inter_bold"
-                android:text="Pet Profile"
-                android:textColor="@color/black"
-                android:textSize="22sp" />
-
-        </RelativeLayout>
         <!--Profile Card-->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="2"
+            android:layout_weight="4"
             android:layout_marginHorizontal="3dp"
             android:layout_marginBottom="15dp"
             app:cardCornerRadius="20dp"
@@ -97,7 +69,7 @@
             android:layout_height="0dp"
             android:layout_marginHorizontal="3dp"
             android:layout_marginBottom="15dp"
-            android:layout_weight="3"
+            android:layout_weight="5"
             app:cardCornerRadius="20dp"
             app:cardElevation="2dp"
             app:cardMaxElevation="3dp"
@@ -142,7 +114,7 @@
                         app:icon="@drawable/paper"
                         app:iconGravity="top"
                         app:iconPadding="0dp"
-                        app:iconSize="60dp"
+                        app:iconSize="50dp"
                         app:iconTint="#FFD180"
                         app:backgroundTint="#FFF9E5"
                         app:layout_columnWeight="1"
@@ -165,7 +137,7 @@
                         app:icon="@drawable/vaccine"
                         app:iconGravity="top"
                         app:iconPadding="0dp"
-                        app:iconSize="60dp"
+                        app:iconSize="50dp"
                         app:iconTint="#FF9E80"
                         app:backgroundTint="#FFF3F0"
                         app:layout_columnWeight="1"
@@ -188,7 +160,7 @@
                         app:icon="@drawable/rise"
                         app:iconGravity="top"
                         app:iconPadding="0dp"
-                        app:iconSize="60dp"
+                        app:iconSize="50dp"
                         app:iconTint="#08D46C"
                         app:backgroundTint="#F0FDF6"
                         app:layout_columnWeight="1"
@@ -211,7 +183,7 @@
                         app:icon="@drawable/healthcare"
                         app:iconGravity="top"
                         app:iconPadding="0dp"
-                        app:iconSize="60dp"
+                        app:iconSize="50dp"
                         app:iconTint="#F45B5B"
                         app:backgroundTint="#FFF5F5"
                         app:layout_columnWeight="1"
@@ -234,7 +206,7 @@
                         app:icon="@drawable/clock"
                         app:iconGravity="top"
                         app:iconPadding="0dp"
-                        app:iconSize="60dp"
+                        app:iconSize="50dp"
                         app:iconTint="#536DFE"
                         app:backgroundTint="#F2F4FF"
                         app:layout_columnWeight="1"
@@ -257,7 +229,7 @@
                         app:icon="@drawable/pills"
                         app:iconGravity="top"
                         app:iconPadding="0dp"
-                        app:iconSize="60dp"
+                        app:iconSize="50dp"
                         app:iconTint="#FF6E40"
                         app:backgroundTint="#FFF8F6"
                         app:layout_columnWeight="1"
@@ -275,9 +247,9 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="2"
+            android:layout_weight="3"
             app:cardCornerRadius="20dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="10dp"
             app:cardElevation="2dp"
             app:cardMaxElevation="3dp"
             app:cardPreventCornerOverlap="true"

@@ -37,6 +37,13 @@
         <item name="tint">#0C6631</item>
     </style>
 
+    <style name="Theme.PetTrackr.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@android:color/white</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splash_logo</item>
+        <item name="postSplashScreenTheme">@style/Theme.CRUD_prac</item>
+    </style>
+
+
 
     <style name="Theme.CRUD_prac" parent="Base.Theme.CRUD_prac" />
 </resources>

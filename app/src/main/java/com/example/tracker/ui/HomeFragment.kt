@@ -51,18 +51,20 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val headerTitle = requireActivity().findViewById<TextView>(R.id.txtHeaderTitle)
+
+        headerTitle.text = "Dashboard"
+
+        headerTitle.setOnClickListener {
+            val bottomSheet = ProfileBottomSheet()
+            bottomSheet.show(parentFragmentManager, "ProfileBottomSheet")
+        }
+
         val donutChart = view.findViewById<PieChart>(R.id.donutChart)
         createDonutChart(donutChart)
 
         val barChart = view.findViewById<LineChart>(R.id.barChart)
         createLineChart(barChart)
-
-        val greetings = view.findViewById<TextView>(R.id.greetings)
-
-        greetings.setOnClickListener {
-            val bottomSheet = ProfileBottomSheet()
-            bottomSheet.show(parentFragmentManager, "ProfileBottomSheet")
-        }
 
         val mockDate = LocalDateTime.of(2003, 5, 2, 0,0,0,0)
 
@@ -185,7 +187,7 @@ class HomeFragment : Fragment() {
             ss.setSpan(RelativeSizeSpan(1.9f), 0, 3, 0)
             // Make the "Health" label smaller and light
             ss.setSpan(ForegroundColorSpan(Color.GRAY), 4, text.length, 0)
-            ss.setSpan(RelativeSizeSpan(1.3f), 4, text.length, 0)
+            ss.setSpan(RelativeSizeSpan(1.0f), 4, text.length, 0)
 
             centerText = ss
         }

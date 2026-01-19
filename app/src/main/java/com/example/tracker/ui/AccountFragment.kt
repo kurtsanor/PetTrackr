@@ -21,6 +21,10 @@ class AccountFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        requireActivity()
+            .findViewById<TextView>(R.id.txtHeaderTitle)
+            .text = "Account"
+
         val buttonLogout = view.findViewById<TextView>(R.id.logout)
 
         buttonLogout.setOnClickListener {
