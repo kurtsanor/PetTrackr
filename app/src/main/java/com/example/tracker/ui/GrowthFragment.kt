@@ -27,6 +27,7 @@ import java.time.LocalDate
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.widget.TooltipCompat
+import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.google.android.material.R as MaterialR
 
@@ -53,6 +54,8 @@ class GrowthFragment : Fragment() {
         val weightLayout = view.findViewById<TextInputLayout>(R.id.weightLayout)
         val heightLayout = view.findViewById<TextInputLayout>(R.id.heightLayout)
         val notesLayout = view.findViewById<TextInputLayout>(R.id.notesLayout)
+        val weightInput = view.findViewById<TextInputEditText>(R.id.weightInput)
+        val heightInput = view.findViewById<TextInputEditText>(R.id.heightInput)
         val buttonSaveRecord = view.findViewById<Button>(R.id.buttonSaveRecord)
 
         fun TextInputLayout.setEndIconTooltip(text: CharSequence) {
@@ -65,6 +68,40 @@ class GrowthFragment : Fragment() {
         }
 
         buttonSaveRecord.setOnClickListener {
+            // Validate Weight
+            if (weightInput.text.isNullOrBlank()) {
+                weightInput.error = "Weight is required"
+                return@setOnClickListener
+            } else {
+                weightInput.error = null
+            }
+
+            // Validate weight is a valid number and greater than 0
+            val weight = weightInput.text.toString().toDoubleOrNull()
+            if (weight == null || weight <= 0) {
+                weightInput.error = "Please enter a valid weight"
+                return@setOnClickListener
+            } else {
+                weightInput.error = null
+            }
+
+            // Validate Height
+            if (heightInput.text.isNullOrBlank()) {
+                heightInput.error = "Height is required"
+                return@setOnClickListener
+            } else {
+                heightInput.error = null
+            }
+
+            // Validate height is a valid number and greater than 0
+            val height = heightInput.text.toString().toDoubleOrNull()
+            if (height == null || height <= 0) {
+                heightInput.error = "Please enter a valid height"
+                return@setOnClickListener
+            } else {
+                heightInput.error = null
+            }
+
             Toast.makeText(context, "Record Saved!", Toast.LENGTH_SHORT).show()
             parentFragmentManager.popBackStack()
         }
@@ -86,8 +123,6 @@ class GrowthFragment : Fragment() {
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewGrowth)
         recyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         recyclerView.adapter = GrowthAdapter(growths)
-
-
     }
 
     private fun createLineChart(lineChart: LineChart) {

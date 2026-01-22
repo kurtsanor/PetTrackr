@@ -60,13 +60,6 @@ class PetFormActivityFragment : Fragment() {
         subtitle.text = "Add new pet to your list"
         subtitle.visibility = View.VISIBLE
 
-//        val buttonSavePet = view.findViewById<Button>(R.id.buttonAddPet)
-//
-//        buttonSavePet.setOnClickListener {
-//            Toast.makeText(context, "New pet added!", Toast.LENGTH_SHORT).show()
-//            parentFragmentManager.popBackStack()
-//        }
-
         setupDatePicker(view)
         setupGenderDropdown(view)
 
@@ -81,6 +74,38 @@ class PetFormActivityFragment : Fragment() {
 
         val buttonAddPet = view.findViewById<Button>(R.id.buttonAddPet)
         buttonAddPet.setOnClickListener {
+            if (petName.text.isNullOrBlank()) {
+                petName.error = "Pet name is required"
+                return@setOnClickListener
+            } else {
+                petName.error = null
+            }
+
+            if (petType.text.isNullOrBlank()) {
+                petType.error = "Pet type is required"
+                return@setOnClickListener
+            } else {
+                petType.error = null
+            }
+            if (petBreed.text.isNullOrBlank()) {
+                petBreed.error = "Breed is required"
+                return@setOnClickListener
+            } else {
+                petBreed.error = null
+            }
+            if (petGender.text.isNullOrBlank()) {
+                petGender.error = "Gender is required"
+                return@setOnClickListener
+            } else {
+                petGender.error = null
+            }
+            if (petBirthdate.text.isNullOrBlank()) {
+                petBirthdate.error = "Birthdate is required"
+                return@setOnClickListener
+            } else {
+                petBirthdate.error = null
+            }
+
             lifecycleScope.launch {
                 val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
                 val newPet = Pet(

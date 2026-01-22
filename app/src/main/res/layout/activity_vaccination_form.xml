@@ -75,7 +75,7 @@
                 android:id="@+id/etVaccineNotes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Notes / Remarks"
+                android:hint="Notes / Remarks (Optional)"
                 android:gravity="top"
                 android:inputType="textMultiLine"
                 android:lines="4"

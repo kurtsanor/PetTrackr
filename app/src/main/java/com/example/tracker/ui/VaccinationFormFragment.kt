@@ -12,6 +12,7 @@ import com.example.tracker.R
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.textfield.TextInputEditText
 import java.text.SimpleDateFormat
+import java.util.Calendar
 import java.util.Date
 import java.util.Locale
 
@@ -41,9 +42,41 @@ class VaccinationFormFragment : Fragment() {
 
         setupDatePicker(view)
 
+        val etVaccineName = view.findViewById<TextInputEditText>(R.id.etVaccineName)
+        val etAdministeredDate = view.findViewById<TextInputEditText>(R.id.etAdministeredDate)
         val buttonSaveVaccination = view.findViewById<Button>(R.id.btnSaveVaccination)
 
         buttonSaveVaccination.setOnClickListener {
+            if (etVaccineName.text.isNullOrBlank()) {
+                etVaccineName.error = "Vaccine name is required"
+                return@setOnClickListener
+            } else {
+                etVaccineName.error = null
+            }
+
+            if (etAdministeredDate.text.isNullOrBlank()) {
+                etAdministeredDate.error = "Date is required"
+                return@setOnClickListener
+            } else {
+                etAdministeredDate.error = null
+            }
+
+            // dont allow dates in the future
+            try {
+                val dateFormat = SimpleDateFormat("MM/dd/yyyy", Locale.getDefault())
+                val selectedDate = dateFormat.parse(etAdministeredDate.text.toString())
+                val currentDate = Calendar.getInstance().time
+
+                if (selectedDate != null && selectedDate.after(currentDate)) {
+                    etAdministeredDate.error = "Date cannot be in the future"
+                    Toast.makeText(context, "Date cannot be in the future", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+            } catch (e: Exception) {
+                etAdministeredDate.error = "Invalid date format"
+                return@setOnClickListener
+            }
+
             Toast.makeText(context, "Vaccination Saved!", Toast.LENGTH_SHORT).show()
             parentFragmentManager.popBackStack()
         }
@@ -86,7 +119,7 @@ class VaccinationFormFragment : Fragment() {
             datePicker.show(parentFragmentManager, "vaccination_date_picker")
 
             datePicker.addOnPositiveButtonClickListener { selection ->
-                val formatter = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+                val formatter = SimpleDateFormat("MM/dd/yyyy", Locale.getDefault())
                 val dateString = formatter.format(Date(selection))
                 dateInput.setText(dateString)
             }

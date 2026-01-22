@@ -46,12 +46,53 @@ class AppointmentFormFragment : Fragment() {
         subtitle.text = "Schedule a visit for your pet."
         subtitle.visibility = View.VISIBLE
 
+        val etAppointmentTitle = view.findViewById<TextInputEditText>(R.id.etAppointmentTitle)
+        val etAppointmentLocation = view.findViewById<TextInputEditText>(R.id.etAppointmentLocation)
+        val etAppointmentDateTime = view.findViewById<TextInputEditText>(R.id.etAppointmentDateTime)
         val buttonSaveAppointment = view.findViewById<Button>(R.id.btnSaveAppointment)
 
         buttonSaveAppointment.setOnClickListener {
+            if (etAppointmentTitle.text.isNullOrBlank()) {
+                etAppointmentTitle.error = "Appointment title is required"
+                return@setOnClickListener
+            } else {
+                etAppointmentTitle.error = null
+            }
+
+            if (etAppointmentLocation.text.isNullOrBlank()) {
+                etAppointmentLocation.error = "Location is required"
+                return@setOnClickListener
+            } else {
+                etAppointmentLocation.error = null
+            }
+
+            if (etAppointmentDateTime.text.isNullOrBlank()) {
+                etAppointmentDateTime.error = "Date and time is required"
+                return@setOnClickListener
+            } else {
+                etAppointmentDateTime.error = null
+            }
+
+            try {
+                val formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy h:mm a")
+                val selectedDateTime = LocalDateTime.parse(etAppointmentDateTime.text.toString(), formatter)
+                val currentDateTime = LocalDateTime.now()
+
+                if (selectedDateTime.isBefore(currentDateTime)) {
+                    etAppointmentDateTime.error = "Appointment cannot be in the past"
+                    Toast.makeText(context, "Appointment cannot be in the past", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+            } catch (e: Exception) {
+                etAppointmentDateTime.error = "Invalid date/time format"
+                return@setOnClickListener
+            }
+
             Toast.makeText(context, "Appointment set!", Toast.LENGTH_SHORT).show()
             parentFragmentManager.popBackStack()
         }
+
+        setupDateTimePicker(view)
 
     }
 
@@ -121,7 +162,7 @@ class AppointmentFormFragment : Fragment() {
                     val selectedDateTime = LocalDateTime.of(year, month, day, hour, minute)
 
                     // 4. Format for display (UI only)
-                    val uiFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy h:mm a")
+                    val uiFormat = DateTimeFormatter.ofPattern("MM/dd/yyyy h:mm a")
                     val formatted = selectedDateTime.format(uiFormat)
 
                     // 5. Display in text field

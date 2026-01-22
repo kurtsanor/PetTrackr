@@ -44,9 +44,73 @@ class MedicationFormFragment : Fragment() {
         subtitle.text = "Record new medication schedule"
         subtitle.visibility = View.VISIBLE
 
+        val etMedicationName = view.findViewById<TextInputEditText>(R.id.etMedicationName)
+        val etDosage = view.findViewById<TextInputEditText>(R.id.etDosage)
+        val etFrequency = view.findViewById<TextInputEditText>(R.id.etFrequency)
+        val etStartDate = view.findViewById<TextInputEditText>(R.id.etStartDate)
+        val etEndDate = view.findViewById<TextInputEditText>(R.id.etEndDate)
+        val etReason = view.findViewById<TextInputEditText>(R.id.etReason)
         val buttonSaveMedication = view.findViewById<Button>(R.id.btnSaveMedication)
 
         buttonSaveMedication.setOnClickListener {
+            if (etMedicationName.text.isNullOrBlank()) {
+                etMedicationName.error = "Medication name is required"
+                return@setOnClickListener
+            } else {
+                etMedicationName.error = null
+            }
+
+            if (etDosage.text.isNullOrBlank()) {
+                etDosage.error = "Dosage is required"
+                return@setOnClickListener
+            } else {
+                etDosage.error = null
+            }
+
+            if (etFrequency.text.isNullOrBlank()) {
+                etFrequency.error = "Frequency is required"
+                return@setOnClickListener
+            } else {
+                etFrequency.error = null
+            }
+
+            if (etStartDate.text.isNullOrBlank()) {
+                etStartDate.error = "Start date is required"
+                return@setOnClickListener
+            } else {
+                etStartDate.error = null
+            }
+
+            if (etEndDate.text.isNullOrBlank()) {
+                etEndDate.error = "End date is required"
+                return@setOnClickListener
+            } else {
+                etEndDate.error = null
+            }
+
+            // Validate End Date is after Start Date
+            try {
+                val dateFormat = SimpleDateFormat("MM/dd/yyyy", Locale.getDefault())
+                val startDate = dateFormat.parse(etStartDate.text.toString())
+                val endDate = dateFormat.parse(etEndDate.text.toString())
+
+                if (startDate != null && endDate != null && endDate.before(startDate)) {
+                    etEndDate.error = "End date must be after start date"
+                    Toast.makeText(context, "End date must be after start date", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+            } catch (e: Exception) {
+                etEndDate.error = "Invalid date format"
+                return@setOnClickListener
+            }
+
+            if (etReason.text.isNullOrBlank()) {
+                etReason.error = "Reason is required"
+                return@setOnClickListener
+            } else {
+                etReason.error = null
+            }
+
             Toast.makeText(context, "Medication Saved!", Toast.LENGTH_SHORT).show()
             parentFragmentManager.popBackStack()
         }
@@ -86,7 +150,7 @@ class MedicationFormFragment : Fragment() {
             datePicker.show(requireActivity().supportFragmentManager, "start_date_picker")
 
             datePicker.addOnPositiveButtonClickListener { selection ->
-                val formatter = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+                val formatter = SimpleDateFormat("MM/dd/yyyy", Locale.getDefault())
                 val dateString = formatter.format(Date(selection))
                 dateInput.setText(dateString)
             }
@@ -106,7 +170,7 @@ class MedicationFormFragment : Fragment() {
             datePicker.show(requireActivity().supportFragmentManager, "end_date_picker")
 
             datePicker.addOnPositiveButtonClickListener { selection ->
-                val formatter = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+                val formatter = SimpleDateFormat("MM/dd/yyyy", Locale.getDefault())
                 val dateString = formatter.format(Date(selection))
                 dateInput.setText(dateString)
             }

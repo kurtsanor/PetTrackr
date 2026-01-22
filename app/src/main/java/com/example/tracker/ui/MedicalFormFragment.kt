@@ -12,6 +12,7 @@ import com.example.tracker.R
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.textfield.TextInputEditText
 import java.text.SimpleDateFormat
+import java.util.Calendar
 import java.util.Date
 import java.util.Locale
 
@@ -42,13 +43,59 @@ class MedicalFormFragment : Fragment() {
         subtitle.text = "Record medical history."
         subtitle.visibility = View.VISIBLE
 
+        val etRecordTitle = view.findViewById<TextInputEditText>(R.id.etRecordTitle)
+        val etRecordDate = view.findViewById<TextInputEditText>(R.id.etRecordDate)
+        val etDiagnosis = view.findViewById<TextInputEditText>(R.id.etDiagnosis)
+        val etTreatment = view.findViewById<TextInputEditText>(R.id.etTreatment)
         val buttonSaveMedical = view.findViewById<Button>(R.id.btnSaveRecord)
 
         buttonSaveMedical.setOnClickListener {
+            if (etRecordTitle.text.isNullOrBlank()) {
+                etRecordTitle.error = "Record title is required"
+                return@setOnClickListener
+            } else {
+                etRecordTitle.error = null
+            }
+
+            if (etRecordDate.text.isNullOrBlank()) {
+                etRecordDate.error = "Date is required"
+                return@setOnClickListener
+            } else {
+                etRecordDate.error = null
+            }
+
+            try {
+                val dateFormat = SimpleDateFormat("MM/dd/yyyy", Locale.getDefault())
+                val selectedDate = dateFormat.parse(etRecordDate.text.toString())
+                val currentDate = Calendar.getInstance().time
+
+                if (selectedDate != null && selectedDate.after(currentDate)) {
+                    etRecordDate.error = "Date cannot be in the future"
+                    return@setOnClickListener
+                }
+            } catch (e: Exception) {
+                etRecordDate.error = "Invalid date format"
+                return@setOnClickListener
+            }
+
+            if (etDiagnosis.text.isNullOrBlank()) {
+                etDiagnosis.error = "Diagnosis is required"
+                return@setOnClickListener
+            } else {
+                etDiagnosis.error = null
+            }
+
+            if (etTreatment.text.isNullOrBlank()) {
+                etTreatment.error = "Treatment is required"
+                return@setOnClickListener
+            } else {
+                etTreatment.error = null
+            }
+
             Toast.makeText(context, "Record Saved!", Toast.LENGTH_SHORT).show()
             parentFragmentManager.popBackStack()
         }
-
+        setupDatePicker(view)
     }
 
     override fun onDestroyView() {
@@ -85,7 +132,7 @@ class MedicalFormFragment : Fragment() {
             datePicker.show(parentFragmentManager, "RECORD_DATE_PICKER")
 
             datePicker.addOnPositiveButtonClickListener { selection ->
-                val formatter = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+                val formatter = SimpleDateFormat("MM/dd/yyyy", Locale.getDefault())
                 val dateString = formatter.format(Date(selection))
                 dateInput.setText(dateString)
             }
