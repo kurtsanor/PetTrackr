@@ -15,6 +15,7 @@ import androidx.fragment.app.FragmentTransaction.TRANSIT_FRAGMENT_CLOSE
 import androidx.fragment.app.FragmentTransaction.TRANSIT_FRAGMENT_FADE
 import androidx.fragment.app.FragmentTransaction.TRANSIT_FRAGMENT_MATCH_ACTIVITY_CLOSE
 import androidx.fragment.app.FragmentTransaction.TRANSIT_FRAGMENT_OPEN
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tracker.R
@@ -34,13 +35,22 @@ class VaccinationFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_vaccination, container, false)
     }
 
+    override fun onResume() {
+        super.onResume()
+        requireActivity()
+            .findViewById<TextView>(R.id.txtHeaderTitle)
+            .text = "Vaccinations"
+        requireActivity().findViewById<View>(R.id.bottomNavigationView)?.visibility = View.GONE
+    }
+
+    override fun onPause() {
+        super.onPause()
+        requireActivity().findViewById<View>(R.id.bottomNavigationView)?.visibility = View.VISIBLE
+    }
+
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        requireActivity()
-            .findViewById<TextView>(R.id.txtHeaderTitle)
-            .text = "Vaccination"
 
         val calendarView = view.findViewById< MaterialCalendarView>(R.id.calendarView)
         val today = CalendarDay.today()
@@ -63,10 +73,7 @@ class VaccinationFragment : Fragment() {
         val buttonAdd = view.findViewById<Button>(R.id.buttonAddVaccine)
 
         buttonAdd.setOnClickListener {
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.fragmentContainerView2, VaccinationFormFragment())
-                .addToBackStack(null)
-                .commit()
+            findNavController().navigate(R.id.action_vaccinations_to_vaccinationForm)
         }
     }
 

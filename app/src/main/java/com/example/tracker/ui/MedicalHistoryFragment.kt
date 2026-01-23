@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.annotation.RequiresApi
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tracker.R
@@ -29,13 +30,22 @@ class MedicalHistoryFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_medical_history, container, false)
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
+    override fun onResume() {
+        super.onResume()
         requireActivity()
             .findViewById<TextView>(R.id.txtHeaderTitle)
             .text = "Medical History"
+        requireActivity().findViewById<View>(R.id.bottomNavigationView)?.visibility = View.GONE
+    }
+
+    override fun onPause() {
+        super.onPause()
+        requireActivity().findViewById<View>(R.id.bottomNavigationView)?.visibility = View.VISIBLE
+    }
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         val medicals = listOf(
             MedicalRecord(1, 0, "General Check-up", LocalDate.of(2025, 1, 1), "Fever", "Anti-biotics", "Take care"),
@@ -53,10 +63,7 @@ class MedicalHistoryFragment : Fragment() {
         val fabAddMedical = view.findViewById<FloatingActionButton>(R.id.fab_add_medical)
 
         fabAddMedical.setOnClickListener {
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.fragmentContainerView2, MedicalFormFragment())
-                .addToBackStack(null)
-                .commit()
+            findNavController().navigate(R.id.action_medicalHistory_to_medicalHistoryForm)
         }
 
     }

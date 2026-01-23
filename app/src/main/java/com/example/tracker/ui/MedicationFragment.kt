@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.annotation.RequiresApi
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tracker.R
@@ -33,13 +34,23 @@ class MedicationFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_medication, container, false)
     }
 
+    override fun onResume() {
+        super.onResume()
+        requireActivity()
+            .findViewById<TextView>(R.id.txtHeaderTitle)
+            .text = "Medications"
+        requireActivity().findViewById<View>(R.id.bottomNavigationView)?.visibility = View.GONE
+    }
+
+    override fun onPause() {
+        super.onPause()
+        requireActivity().findViewById<View>(R.id.bottomNavigationView)?.visibility = View.VISIBLE
+    }
+
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        requireActivity()
-            .findViewById<TextView>(R.id.txtHeaderTitle)
-            .text = "Medication"
 
         val mockData = listOf(
             Medication(1, 0, "Amoxicillin", "50mg", "Twice/day", LocalDate.of(2025, 1, 2),
@@ -67,10 +78,7 @@ class MedicationFragment : Fragment() {
         val fabAdd = view.findViewById<FloatingActionButton>(R.id.fab_add_medication)
 
         fabAdd.setOnClickListener {
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.fragmentContainerView2, MedicationFormFragment())
-                .addToBackStack(null)
-                .commit()
+            findNavController().navigate(R.id.action_medication_to_medicationForm)
         }
     }
 }

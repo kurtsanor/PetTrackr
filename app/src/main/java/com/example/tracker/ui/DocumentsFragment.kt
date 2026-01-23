@@ -17,12 +17,22 @@ class DocumentsFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_document, container, false)
     }
 
+    override fun onResume() {
+        super.onResume()
+        requireActivity()
+            .findViewById<TextView>(R.id.txtHeaderTitle)
+            .text = "Documents"
+        requireActivity().findViewById<View>(R.id.bottomNavigationView)?.visibility = View.GONE
+    }
+
+    override fun onPause() {
+        super.onPause()
+        requireActivity().findViewById<View>(R.id.bottomNavigationView)?.visibility = View.VISIBLE
+    }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        requireActivity()
-            .findViewById<TextView>(R.id.txtHeaderTitle)
-            .text = "Documents"
     }
 }

@@ -11,6 +11,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction.TRANSIT_FRAGMENT_FADE
 import androidx.fragment.app.FragmentTransaction.TRANSIT_FRAGMENT_MATCH_ACTIVITY_OPEN
 import androidx.fragment.app.FragmentTransaction.TRANSIT_FRAGMENT_OPEN
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
 import com.example.tracker.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -28,37 +30,32 @@ class LayoutActivity : AppCompatActivity() {
         val navBar = findViewById< BottomNavigationView>(R.id.bottomNavigationView)
         val backBtn = findViewById<ImageButton>(R.id.buttonBack)
 
-        openFragment(HomeFragment())
+        val navHostFragment = supportFragmentManager
+            .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        val navController = navHostFragment.navController
 
-        navBar.setOnItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.nav_home -> { openFragment(HomeFragment()); true }
-                R.id.nav_pets -> { openFragment(PetsFragment()); true }
-                R.id.nav_account -> { openFragment(AccountFragment()); true }
-                else -> false
+        navBar.setupWithNavController(navController)
+
+//        navBar.setOnItemSelectedListener { item ->
+//            val popped = navController.popBackStack(item.itemId, inclusive = false)
+//            if (!popped) {
+//                navController.navigate(item.itemId)
+//            }
+//            true
+//        }
+
+
+        backBtn.setOnClickListener {
+            navController.popBackStack()
+        }
+
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            // show back button only when not on bottom nav destinations
+            backBtn.visibility = when (destination.id) {
+                R.id.homeFragment, R.id.petsFragment, R.id.accountFragment -> View.GONE
+                else -> View.VISIBLE
             }
         }
 
-        backBtn.setOnClickListener {
-            supportFragmentManager.popBackStack()
-        }
-
-        supportFragmentManager.addOnBackStackChangedListener {
-            backBtn.visibility =
-                if (supportFragmentManager.backStackEntryCount > 0) View.VISIBLE else View.GONE
-        }
-
-    }
-
-        private fun openFragment (fragment: Fragment) {
-            supportFragmentManager.popBackStack(
-                null,
-                androidx.fragment.app.FragmentManager.POP_BACK_STACK_INCLUSIVE
-            )
-
-            supportFragmentManager.beginTransaction()
-            .replace(R.id.fragmentContainerView2, fragment)
-            .setTransition(TRANSIT_FRAGMENT_OPEN)
-            .commit()
     }
 }

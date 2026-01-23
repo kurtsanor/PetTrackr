@@ -13,6 +13,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.FragmentTransaction.TRANSIT_FRAGMENT_MATCH_ACTIVITY_CLOSE
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tracker.R
@@ -36,13 +37,22 @@ class AppointmentFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_appointment, container, false)
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
+    override fun onResume() {
+        super.onResume()
         requireActivity()
             .findViewById<TextView>(R.id.txtHeaderTitle)
             .text = "Appointments"
+        requireActivity().findViewById<View>(R.id.bottomNavigationView)?.visibility = View.GONE
+    }
+
+    override fun onPause() {
+        super.onPause()
+        requireActivity().findViewById<View>(R.id.bottomNavigationView)?.visibility = View.VISIBLE
+    }
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         val calendarView = view.findViewById< MaterialCalendarView>(R.id.calendarAppointments)
         val today = CalendarDay.today()
@@ -64,11 +74,7 @@ class AppointmentFragment : Fragment() {
         val buttonAdd = view.findViewById<Button>(R.id.buttonAddAppointment)
 
         buttonAdd.setOnClickListener {
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.fragmentContainerView2, AppointmentFormFragment())
-                .addToBackStack(null)
-                .commit()
-
+            findNavController().navigate(R.id.action_appointment_to_appointmentForm)
         }
     }
 }

@@ -43,13 +43,22 @@ class GrowthFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_growth, container, false)
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
+    override fun onResume() {
+        super.onResume()
         requireActivity()
             .findViewById<TextView>(R.id.txtHeaderTitle)
             .text = "Growth"
+        requireActivity().findViewById<View>(R.id.bottomNavigationView)?.visibility = View.GONE
+    }
+
+    override fun onPause() {
+        super.onPause()
+        requireActivity().findViewById<View>(R.id.bottomNavigationView)?.visibility = View.VISIBLE
+    }
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         val weightLayout = view.findViewById<TextInputLayout>(R.id.weightLayout)
         val heightLayout = view.findViewById<TextInputLayout>(R.id.heightLayout)
