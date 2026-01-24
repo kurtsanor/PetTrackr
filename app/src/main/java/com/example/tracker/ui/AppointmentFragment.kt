@@ -69,7 +69,10 @@ class AppointmentFragment : Fragment() {
 
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewAppointments)
         recyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
-        recyclerView.adapter = AppointmentAdapter(appointments)
+        recyclerView.adapter = AppointmentAdapter(appointments, {appointment ->
+            val bottomSheet = AppointmentDetailsBottomSheet()
+            bottomSheet.show(parentFragmentManager, "AppointmentDetailsBottomSheet")
+        })
 
         val buttonAdd = view.findViewById<Button>(R.id.buttonAddAppointment)
 

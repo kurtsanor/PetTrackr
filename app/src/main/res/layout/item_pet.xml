@@ -58,6 +58,8 @@
                         android:layout_height="wrap_content"
                         android:text="Buddy"
                         android:textSize="18sp"
+                        android:maxLines="1"
+                        android:ellipsize="end"
                         android:fontFamily="@font/inter_bold"
                         android:textColor="@color/black"/>
                     <!--Pet Breed-->
@@ -68,6 +70,8 @@
                         android:fontFamily="@font/inter_regular"
                         android:text="Golden Retriever"
                         android:textColor="#3E3E3E"
+                        android:maxLines="1"
+                        android:ellipsize="end"
                         android:textSize="16sp" />
                 </LinearLayout>
                 <Button

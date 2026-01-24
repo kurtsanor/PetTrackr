@@ -67,8 +67,8 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="25dp"
         android:contentDescription="Add Medication"
-        app:srcCompat="@drawable/add"
-        app:tint="@null"
+        app:srcCompat="@drawable/add_meds"
+        app:tint="@color/white"
         android:backgroundTint="#08d46c"
         app:shapeAppearanceOverlay="@style/CircleFAB"
         />

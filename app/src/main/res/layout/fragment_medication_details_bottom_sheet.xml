@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- Icon at top -->
+        <ImageView
+            android:id="@+id/bsIcon"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/medicine"
+            style="@style/CircleShape"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Header: Title + Date -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="16dp"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/bsMedName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Carprofen"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/inter_semibold"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/bsDateRange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jan 10 – Jan 17, 2026"
+                android:textSize="14sp"
+                android:textColor="#555555"
+                android:fontFamily="@font/inter_regular"
+                android:layout_marginTop="4dp"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <!-- Reason -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reason"
+            android:textSize="14sp"
+            android:fontFamily="@font/inter_semibold"
+            android:layout_marginBottom="4dp"/>
+        <TextView
+            android:id="@+id/bsReason"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="For arthritis pain"
+            android:textColor="#555555"
+            android:textSize="14sp"
+            android:fontFamily="@font/inter_regular"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Dosage -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dosage"
+            android:textSize="14sp"
+            android:fontFamily="@font/inter_semibold"
+            android:layout_marginBottom="4dp"/>
+        <TextView
+            android:id="@+id/bsDosage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="25mg"
+            android:textColor="#555555"
+            android:textSize="14sp"
+            android:fontFamily="@font/inter_regular"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Frequency -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Frequency"
+            android:textSize="14sp"
+            android:fontFamily="@font/inter_semibold"
+            android:layout_marginBottom="4dp"/>
+        <TextView
+            android:id="@+id/bsFrequency"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Twice/day"
+            android:textColor="#555555"
+            android:textSize="14sp"
+            android:fontFamily="@font/inter_regular"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Notes -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Notes"
+            android:textSize="14sp"
+            android:fontFamily="@font/inter_semibold"
+            android:layout_marginBottom="4dp"/>
+        <TextView
+            android:id="@+id/bsNotes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Give with food."
+            android:textColor="#555555"
+            android:textSize="14sp"
+            android:fontFamily="@font/inter_regular"/>
+    </LinearLayout>
+</ScrollView>

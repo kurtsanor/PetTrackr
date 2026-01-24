@@ -13,7 +13,8 @@ import com.example.tracker.model.Medication
 import com.example.tracker.util.DateFormatter
 
 class MedicationAdapter(
-    private val medications: List<Medication>
+    private val medications: List<Medication>,
+    private val onClick: (Medication) -> Unit
 ) : RecyclerView.Adapter<MedicationAdapter.MedicationViewHolder>() {
 
     class MedicationViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -44,6 +45,8 @@ class MedicationAdapter(
         holder.reason.text = medication.reason
         holder.dose.text = medication.dosage
         holder.frequency.text = medication.frequency
+
+        holder.itemView.setOnClickListener { onClick(medication) }
     }
 
     override fun getItemCount(): Int {

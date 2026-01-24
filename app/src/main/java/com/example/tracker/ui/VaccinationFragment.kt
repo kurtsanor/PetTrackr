@@ -68,7 +68,10 @@ class VaccinationFragment : Fragment() {
 
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewVaccination)
         recyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
-        recyclerView.adapter = VaccinationAdapter(vaccinations)
+        recyclerView.adapter = VaccinationAdapter(vaccinations) { vaccination ->
+            val bottomSheet = VaccinationDetailsBottomSheet()
+            bottomSheet.show(parentFragmentManager, "VaccinationDetailsBottomSheet")
+        }
 
         val buttonAdd = view.findViewById<Button>(R.id.buttonAddVaccine)
 

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Header row: Icon + Title + Date -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:id="@+id/bsIcon"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/healthcare"
+                app:tint="#A61B1B"
+                android:layout_marginEnd="16dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/bsTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="General Check-up"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/inter_semibold"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/bsDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="January 12, 2026"
+                    android:textSize="14sp"
+                    android:textColor="#1A73E8"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/inter_regular"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E0E0E0"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Diagnosis Section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Diagnosis"
+            android:textSize="14sp"
+            android:fontFamily="@font/inter_semibold" />
+
+        <TextView
+            android:id="@+id/bsDiagnosis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fever and mild dehydration"
+            android:layout_marginTop="4dp"
+            android:textColor="#555555"
+            android:textSize="14sp"
+            android:fontFamily="@font/inter_regular"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E0E0E0"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Treatment Section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:text="Treatment"
+            android:textSize="14sp"
+            android:fontFamily="@font/inter_semibold"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/bsTreatment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Antibiotics for 5 days"
+            android:layout_marginTop="4dp"
+            android:textColor="#555555"
+            android:textSize="14sp"
+            android:fontFamily="@font/inter_regular"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E0E0E0"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Notes -->
+        <TextView
+            android:layout_width="match_parent"
+            android:text="Notes"
+            android:textSize="14sp"
+            android:fontFamily="@font/inter_semibold"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/bsNotes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pet was slightly anxious during exam."
+            android:textColor="#555555"
+            android:textSize="14sp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/inter_regular"/>
+
+    </LinearLayout>
+
+</ScrollView>

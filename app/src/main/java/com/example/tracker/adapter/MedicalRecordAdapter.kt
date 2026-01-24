@@ -13,7 +13,8 @@ import com.example.tracker.model.MedicalRecord
 import com.example.tracker.util.DateFormatter
 
 class MedicalRecordAdapter(
-    val medicalRecords: List<MedicalRecord>
+    val medicalRecords: List<MedicalRecord>,
+    private val onClick: (MedicalRecord) -> Unit
 ) : RecyclerView.Adapter<MedicalRecordAdapter.MedicalRecordViewHolder>() {
 
     class MedicalRecordViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -42,6 +43,8 @@ class MedicalRecordAdapter(
         ("Diagnosis: " + medicalRecord.diagnosis).also { holder.diagnosis.text = it }
         ("Treatment: " + medicalRecord.treatment).also { holder.treatment.text = it }
         holder.date.text = DateFormatter.toShortMonthFormat(medicalRecord.date)
+
+        holder.itemView.setOnClickListener { onClick(medicalRecord) }
     }
 
     override fun getItemCount(): Int {

@@ -58,7 +58,10 @@ class MedicalHistoryFragment : Fragment() {
 
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewMedical)
         recyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
-        recyclerView.adapter = MedicalRecordAdapter(medicals)
+        recyclerView.adapter = MedicalRecordAdapter(medicals) { record ->
+            val bottomSheet = MedicalRecordBottomSheet()
+            bottomSheet.show(parentFragmentManager, "MedicalDetailsBottomSheet")
+        }
 
         val fabAddMedical = view.findViewById<FloatingActionButton>(R.id.fab_add_medical)
 

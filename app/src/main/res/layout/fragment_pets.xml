@@ -14,8 +14,8 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
         android:contentDescription="Add Pet"
-        app:srcCompat="@drawable/add"
-        app:tint="@null"
+        app:srcCompat="@drawable/pet_add"
+        app:tint="@color/white"
         android:backgroundTint="#08d46c"
         app:shapeAppearanceOverlay="@style/CircleFAB"
         />

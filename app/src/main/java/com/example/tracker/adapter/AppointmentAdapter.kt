@@ -13,7 +13,8 @@ import com.example.tracker.adapter.PetAdapter.PetViewHolder
 import com.example.tracker.util.DateFormatter
 
 class AppointmentAdapter(
-    private val appointments: List<Appointment>
+    private val appointments: List<Appointment>,
+    private val onClick: (Appointment) -> Unit
 ) : RecyclerView.Adapter<AppointmentAdapter.AppointmentViewHolder>() {
 
     class AppointmentViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -40,6 +41,8 @@ class AppointmentAdapter(
         holder.title.text = appointment.title
         holder.datetime.text = DateFormatter.toShortMonthFormat(appointment.datetime)
         holder.status.text = appointment.status
+
+        holder.itemView.setOnClickListener { onClick(appointment) }
     }
 
     override fun getItemCount(): Int {

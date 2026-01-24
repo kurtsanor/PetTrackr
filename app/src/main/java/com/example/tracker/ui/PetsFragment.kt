@@ -86,18 +86,22 @@ class PetsFragment : Fragment() {
         viewLifecycleOwner.lifecycleScope.launch {
             val userId = requireActivity().intent.getLongExtra("USER_ID", -1L)
             petList = petService.findAllByUserId(userId).toMutableList()
-            val placeholder: LinearLayout? = view?.findViewById(R.id.placeholder_empty_pet)
-            if (petList.isEmpty()) {
-                placeholder?.visibility = View.VISIBLE
-                recyclerView.visibility = View.GONE
-            } else {
-                placeholder?.visibility = View.GONE
-                recyclerView.visibility = View.VISIBLE
-            }
+            setupPlaceholders()
             recyclerView.adapter = PetAdapter(petList) { pet ->
                 findNavController().navigate(R.id.action_pets_to_petProfile)
                 Toast.makeText(requireContext(), "Clicked: ${pet.name}", Toast.LENGTH_SHORT).show()
             }
+        }
+    }
+
+    fun setupPlaceholders () {
+        val placeholder: LinearLayout? = view?.findViewById(R.id.placeholder_empty_pet)
+        if (petList.isEmpty()) {
+            placeholder?.visibility = View.VISIBLE
+            recyclerView.visibility = View.GONE
+        } else {
+            placeholder?.visibility = View.GONE
+            recyclerView.visibility = View.VISIBLE
         }
     }
 
@@ -131,6 +135,7 @@ class PetsFragment : Fragment() {
                                 // User confirmed, remove pet from list then update adapter
                                 petList.removeAt(position)
                                 recyclerView.adapter?.notifyItemRemoved(position)
+                                setupPlaceholders()
                                 Toast.makeText(requireContext(), "${pet.name} deleted", Toast.LENGTH_SHORT).show()
                                 dialog.dismiss()
                             } catch (e: RuntimeException) {}

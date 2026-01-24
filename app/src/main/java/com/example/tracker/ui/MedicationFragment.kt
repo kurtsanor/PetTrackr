@@ -73,7 +73,10 @@ class MedicationFragment : Fragment() {
 
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewMedications)
         recyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
-        recyclerView.adapter = MedicationAdapter(mockData)
+        recyclerView.adapter = MedicationAdapter(mockData, {medication ->
+            val bottomSheet = MedicationDetailsBottomSheet()
+            bottomSheet.show(parentFragmentManager, "MedicationDetailsBottomSheet")
+        })
 
         val fabAdd = view.findViewById<FloatingActionButton>(R.id.fab_add_medication)
 

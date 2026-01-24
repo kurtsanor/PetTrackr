@@ -13,7 +13,8 @@ import com.example.tracker.model.Growth
 import com.example.tracker.util.DateFormatter
 
 class GrowthAdapter(
-    private val growthEntries: List<Growth>
+    private val growthEntries: List<Growth>,
+    private val onClick: (Growth) -> Unit
 ) : RecyclerView.Adapter<GrowthAdapter.GrowthViewHolder>(){
 
     class GrowthViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -40,6 +41,8 @@ class GrowthAdapter(
         holder.weight.text = growth.weight.toString() + " kg"
         holder.height.text = growth.height.toString() + " cm"
         holder.dateRecorded.text = DateFormatter.toShortMonthFormat(growth.dateRecorded)
+
+        holder.itemView.setOnClickListener { onClick(growth) }
     }
 
     override fun getItemCount(): Int {

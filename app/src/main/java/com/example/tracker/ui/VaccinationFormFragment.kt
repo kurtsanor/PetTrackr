@@ -37,7 +37,7 @@ class VaccinationFormFragment : Fragment() {
             .text = "New Vaccination"
 
         val subtitle = requireActivity().findViewById<TextView>(R.id.txtHeaderSubtitle)
-        subtitle.text = "Record a new vaccination schedule"
+        subtitle.text = "Log a past vaccination"
         subtitle.visibility = View.VISIBLE
 
         setupDatePicker(view)

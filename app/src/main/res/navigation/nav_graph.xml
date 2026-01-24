@@ -26,7 +26,7 @@
             />
         <action
             android:id="@+id/action_pets_to_petForm"
-            app:destination="@+id/petForm"
+            app:destination="@+id/petFormFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@android:anim/fade_out"
             app:popEnterAnim="@android:anim/fade_in"

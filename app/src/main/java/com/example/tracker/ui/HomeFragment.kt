@@ -1,6 +1,5 @@
 package com.example.tracker.ui
 
-import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Build
@@ -56,8 +55,7 @@ class HomeFragment : Fragment() {
         headerTitle.text = "Dashboard"
 
         headerTitle.setOnClickListener {
-            val bottomSheet = ProfileBottomSheet()
-            bottomSheet.show(parentFragmentManager, "ProfileBottomSheet")
+
         }
 
         val donutChart = view.findViewById<PieChart>(R.id.donutChart)
@@ -77,21 +75,22 @@ class HomeFragment : Fragment() {
 
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewVaccinationHome)
         recyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
-        recyclerView.adapter = AppointmentAdapter(appointments)
+        recyclerView.adapter = AppointmentAdapter(appointments, {appointment ->
+            val bottomSheet = AppointmentDetailsBottomSheet()
+            bottomSheet.show(parentFragmentManager, "AppointmentDetailsBottomSheet")
+        })
 
         val userId = requireActivity().intent.getLongExtra("USER_ID", -1L)
         Toast.makeText(requireContext(), "Id is $userId", Toast.LENGTH_SHORT).show()
     }
 
     private fun createLineChart(lineChart: LineChart) {
-        // 1. Change BarEntry to Entry
         val entries = ArrayList<Entry>()
         entries.add(Entry(0f, 9f))
         entries.add(Entry(1f, 10f))
         entries.add(Entry(2f, 8f))
         entries.add(Entry(3f, 7f))
 
-        // 2. Change BarDataSet to LineDataSet
         val dataSet = LineDataSet(entries, "Pets")
 
         // Styling the line
@@ -102,17 +101,17 @@ class HomeFragment : Fragment() {
         dataSet.setDrawCircleHole(true)
         dataSet.valueTextSize = 12f
 
-        // 3. Modern Look: Smoothing and Filling
+
         dataSet.mode = LineDataSet.Mode.CUBIC_BEZIER // Makes the line curved
         dataSet.setDrawFilled(true)
         dataSet.fillColor = "#56e49a".toColorInt()
         dataSet.fillAlpha = 50 // Transparency (0-255)
 
-        // 4. Change BarData to LineData
+
         val lineData = LineData(dataSet)
         lineChart.data = lineData
 
-        // 5. Chart Configuration
+
         lineChart.description.isEnabled = false
         lineChart.legend.isEnabled = false
 
@@ -123,23 +122,22 @@ class HomeFragment : Fragment() {
         lineChart.xAxis.setDrawAxisLine(false)
         lineChart.axisLeft.setDrawAxisLine(false)
         lineChart.axisRight.isEnabled = false
-        // This removes the numbers/labels on the left side
+
         lineChart.axisLeft.isEnabled = false
 
-    // This removes the actual line on the left side (optional, if not already gone)
         lineChart.axisLeft.setDrawAxisLine(false)
 
-        // --- ANIMATION ---
+
         lineChart.animateY(700, Easing.EaseInOutQuad) // Smooth entrance animation
 
-        // X-Axis Labels
+
         val labels = listOf("Dog", "Cat", "Bird", "Rabbit")
         val xAxis = lineChart.xAxis
         xAxis.valueFormatter = IndexAxisValueFormatter(labels)
         xAxis.position = XAxis.XAxisPosition.BOTTOM
         xAxis.granularity = 1f
 
-        lineChart.invalidate() // Refresh
+        lineChart.invalidate()
     }
 
     private fun createDonutChart(donutChart: PieChart) {
@@ -168,15 +166,13 @@ class HomeFragment : Fragment() {
             data = PieData(dataSet)
             setUsePercentValues(true)
             description.isEnabled = false
-            isRotationEnabled = true   // Allow users to spin it (feels more interactive)
+            isRotationEnabled = true
             setDrawEntryLabels(false)
 
-            // --- HOLE STYLING ---
             isDrawHoleEnabled = true
-            holeRadius = 70f           // Thinner ring looks more "premium"
-            setHoleColor(Color.TRANSPARENT) // Better for cards with custom backgrounds
+            holeRadius = 70f
+            setHoleColor(Color.TRANSPARENT)
 
-            // --- ANIMATION ---
             animateY(1400, Easing.EaseInOutQuad) // Smooth entrance animation
 
             // --- CENTER TEXT (INTER FONT) ---
@@ -199,8 +195,8 @@ class HomeFragment : Fragment() {
             horizontalAlignment = Legend.LegendHorizontalAlignment.CENTER
             orientation = Legend.LegendOrientation.HORIZONTAL
             setDrawInside(false)
-            yOffset = 10f              // Adds space between chart and legend
-            form = Legend.LegendForm.CIRCLE // Modern circular legend indicators
+            yOffset = 10f
+            form = Legend.LegendForm.CIRCLE
             textSize = 12f
         }
 

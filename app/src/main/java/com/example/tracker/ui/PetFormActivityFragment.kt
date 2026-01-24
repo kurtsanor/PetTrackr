@@ -13,6 +13,7 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.example.tracker.R
 import com.example.tracker.database.AppDatabase
 import com.example.tracker.database.DatabaseProvider
@@ -119,7 +120,7 @@ class PetFormActivityFragment : Fragment() {
                 try {
                     petService.insert(newPet)
                     Toast.makeText(requireContext(), "Pet has been added", Toast.LENGTH_SHORT).show()
-                    parentFragmentManager.popBackStack()
+                    findNavController().popBackStack()
                 } catch (e: RuntimeException) {
                     Toast.makeText(requireContext(), e.message, Toast.LENGTH_SHORT).show()
                 }

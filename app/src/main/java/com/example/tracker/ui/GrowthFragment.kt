@@ -131,7 +131,10 @@ class GrowthFragment : Fragment() {
 
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewGrowth)
         recyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
-        recyclerView.adapter = GrowthAdapter(growths)
+        recyclerView.adapter = GrowthAdapter(growths, {growth ->
+            val bottomSheet = GrowthDetailsBottomSheet()
+            bottomSheet.show(parentFragmentManager, "GrowthDetailsBottomSheet")
+        })
     }
 
     private fun createLineChart(lineChart: LineChart) {
