@@ -20,12 +20,15 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             app:boxBackgroundMode="outline"
-            app:boxCornerRadiusBottomEnd="15dp"
-            app:boxCornerRadiusBottomStart="15dp"
-            app:boxCornerRadiusTopEnd="15dp"
-            app:boxCornerRadiusTopStart="15dp"
-            app:boxStrokeColor="#C3C3C3"
-            app:hintTextColor="#09BC5E">
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxStrokeColor="#E0E0E0"
+            app:boxStrokeWidth="1.5dp"
+            app:boxStrokeWidthFocused="1.5dp"
+            app:boxBackgroundColor="@android:color/white"
+            app:hintTextColor="@color/accent">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etAppointmentTitle"
@@ -33,7 +36,9 @@
                 android:layout_height="wrap_content"
                 android:hint="Appointment Title (e.g. Annual Checkup)"
                 android:inputType="textCapWords"
-                android:textSize="12sp" />
+                android:textSize="14sp"
+                android:fontFamily="@font/inter_regular"
+                android:background="@drawable/rounded_edit_text" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -41,13 +46,17 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             app:boxBackgroundMode="outline"
-            app:boxCornerRadiusBottomEnd="15dp"
-            app:boxCornerRadiusBottomStart="15dp"
-            app:boxCornerRadiusTopEnd="15dp"
-            app:boxCornerRadiusTopStart="15dp"
-            app:boxStrokeColor="#C3C3C3"
-            app:hintTextColor="#09BC5E"
-            app:startIconDrawable="@android:drawable/ic_menu_directions">
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxStrokeColor="#E0E0E0"
+            app:boxStrokeWidth="1.5dp"
+            app:boxStrokeWidthFocused="1.5dp"
+            app:boxBackgroundColor="@android:color/white"
+            app:hintTextColor="@color/accent"
+            app:startIconDrawable="@android:drawable/ic_menu_directions"
+            app:startIconTint="@color/accent">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etAppointmentLocation"
@@ -55,7 +64,9 @@
                 android:layout_height="wrap_content"
                 android:hint="Location / Clinic Name"
                 android:inputType="textCapWords"
-                android:textSize="12sp" />
+                android:textSize="14sp"
+                android:fontFamily="@font/inter_regular"
+                android:background="@drawable/rounded_edit_text" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -63,13 +74,17 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             app:boxBackgroundMode="outline"
-            app:boxCornerRadiusBottomEnd="15dp"
-            app:boxCornerRadiusBottomStart="15dp"
-            app:boxCornerRadiusTopEnd="15dp"
-            app:boxCornerRadiusTopStart="15dp"
-            app:boxStrokeColor="#C3C3C3"
-            app:hintTextColor="#09BC5E"
-            app:startIconDrawable="@android:drawable/ic_menu_my_calendar">
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxStrokeColor="#E0E0E0"
+            app:boxStrokeWidth="1.5dp"
+            app:boxStrokeWidthFocused="1.5dp"
+            app:boxBackgroundColor="@android:color/white"
+            app:hintTextColor="@color/accent"
+            app:startIconDrawable="@android:drawable/ic_menu_my_calendar"
+            app:startIconTint="@color/accent">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etAppointmentDateTime"
@@ -78,7 +93,9 @@
                 android:clickable="true"
                 android:focusable="false"
                 android:hint="Date and Time"
-                android:textSize="12sp" />
+                android:textSize="14sp"
+                android:fontFamily="@font/inter_regular"
+                android:background="@drawable/rounded_edit_text" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -86,12 +103,15 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             app:boxBackgroundMode="outline"
-            app:boxCornerRadiusBottomEnd="15dp"
-            app:boxCornerRadiusBottomStart="15dp"
-            app:boxCornerRadiusTopEnd="15dp"
-            app:boxCornerRadiusTopStart="15dp"
-            app:boxStrokeColor="#C3C3C3"
-            app:hintTextColor="#09BC5E">
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxStrokeColor="#E0E0E0"
+            app:boxStrokeWidth="1.5dp"
+            app:boxStrokeWidthFocused="1.5dp"
+            app:boxBackgroundColor="@android:color/white"
+            app:hintTextColor="@color/accent">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etAppointmentNotes"
@@ -101,7 +121,9 @@
                 android:gravity="top"
                 android:inputType="textMultiLine"
                 android:lines="4"
-                android:textSize="12sp" />
+                android:textSize="14sp"
+                android:fontFamily="@font/inter_regular"
+                android:background="@drawable/rounded_edit_text" />
         </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
@@ -114,12 +136,14 @@
 
         <Button
             android:id="@+id/btnSaveAppointment"
-            style="@style/Widget.Material3.Button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#09BC5E"
+            android:background="@drawable/button_3d"
+            app:backgroundTint="@null"
             android:layout_marginBottom="20dp"
-            android:text="Schedule Appointment" />
+            android:fontFamily="@font/inter_bold"
+            android:text="Schedule Appointment"
+            android:textColor="@color/white" />
 
     </LinearLayout>
 

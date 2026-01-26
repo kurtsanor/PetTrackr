@@ -93,49 +93,49 @@ class HomeFragment : Fragment() {
 
         val dataSet = LineDataSet(entries, "Pets")
 
-        // Styling the line
-        dataSet.color = "#08d46c".toColorInt() // Line color
-        dataSet.setCircleColor("#08d46c".toColorInt()) // Dot color
+        val accentColor = Color.parseColor("#4da972")
+
+        dataSet.color = accentColor
+        dataSet.setCircleColor(accentColor)
+        dataSet.circleHoleColor = Color.WHITE // Makes the dots pop
         dataSet.lineWidth = 3f
         dataSet.circleRadius = 5f
         dataSet.setDrawCircleHole(true)
         dataSet.valueTextSize = 12f
+        dataSet.valueTextColor = Color.DKGRAY // Keeps text legible
 
+        // Smooth Curved Line styling
+        dataSet.mode = LineDataSet.Mode.CUBIC_BEZIER
+        dataSet.cubicIntensity = 0.15f //
 
-        dataSet.mode = LineDataSet.Mode.CUBIC_BEZIER // Makes the line curved
         dataSet.setDrawFilled(true)
-        dataSet.fillColor = "#56e49a".toColorInt()
-        dataSet.fillAlpha = 50 // Transparency (0-255)
-
+        dataSet.fillColor = accentColor
+        dataSet.fillAlpha = 65
 
         val lineData = LineData(dataSet)
         lineChart.data = lineData
 
-
+        // Chart Configuration
         lineChart.description.isEnabled = false
         lineChart.legend.isEnabled = false
 
-        // Remove grid lines and axes lines
         lineChart.xAxis.setDrawGridLines(false)
         lineChart.axisLeft.setDrawGridLines(false)
         lineChart.axisRight.setDrawGridLines(false)
         lineChart.xAxis.setDrawAxisLine(false)
         lineChart.axisLeft.setDrawAxisLine(false)
-        lineChart.axisRight.isEnabled = false
 
+        lineChart.axisRight.isEnabled = false
         lineChart.axisLeft.isEnabled = false
 
-        lineChart.axisLeft.setDrawAxisLine(false)
-
-
-        lineChart.animateY(700, Easing.EaseInOutQuad) // Smooth entrance animation
-
+        lineChart.animateY(800, Easing.EaseInOutQuad)
 
         val labels = listOf("Dog", "Cat", "Bird", "Rabbit")
         val xAxis = lineChart.xAxis
         xAxis.valueFormatter = IndexAxisValueFormatter(labels)
         xAxis.position = XAxis.XAxisPosition.BOTTOM
         xAxis.granularity = 1f
+        xAxis.textColor = Color.parseColor("#757575")
 
         lineChart.invalidate()
     }
@@ -150,16 +150,17 @@ class HomeFragment : Fragment() {
 
         val dataSet = PieDataSet(entries, "").apply {
             setDrawValues(false)
+
+            // Harmonized colors with new primary green
             colors = listOf(
-                "#27634a".toColorInt(),
-                "#d9a750".toColorInt(),
-                "#df675f".toColorInt(),
-                "#a3303b".toColorInt()
+                "#2C9270".toColorInt(), // Healthy - primary green
+                "#D9B750".toColorInt(), // Minor Issues - warm yellow
+                "#DF6F5F".toColorInt(), // Serious Issues - muted red/orange
+                "#A3303B".toColorInt()  // Critical - deep red
             )
 
-            // --- MODERN ENHANCEMENTS ---
-            sliceSpace = 4f            // Adds white gaps between slices
-            selectionShift = 8f        // Pops the slice out slightly when tapped
+            sliceSpace = 4f
+            selectionShift = 8f
         }
 
         donutChart.apply {
@@ -173,22 +174,18 @@ class HomeFragment : Fragment() {
             holeRadius = 70f
             setHoleColor(Color.TRANSPARENT)
 
-            animateY(1400, Easing.EaseInOutQuad) // Smooth entrance animation
+            animateY(1400, Easing.EaseInOutQuad)
 
-            // --- CENTER TEXT (INTER FONT) ---
             val text = "85%\nHealth"
             val ss = SpannableString(text)
-            // Make the percentage big and bold
             ss.setSpan(StyleSpan(Typeface.BOLD), 0, 3, 0)
             ss.setSpan(RelativeSizeSpan(1.9f), 0, 3, 0)
-            // Make the "Health" label smaller and light
             ss.setSpan(ForegroundColorSpan(Color.GRAY), 4, text.length, 0)
             ss.setSpan(RelativeSizeSpan(1.0f), 4, text.length, 0)
 
             centerText = ss
         }
 
-        // --- LEGEND STYLING ---
         donutChart.legend.apply {
             isEnabled = true
             verticalAlignment = Legend.LegendVerticalAlignment.BOTTOM
@@ -202,5 +199,6 @@ class HomeFragment : Fragment() {
 
         donutChart.invalidate()
     }
+
 
 }

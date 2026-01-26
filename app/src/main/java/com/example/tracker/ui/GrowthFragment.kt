@@ -1,5 +1,6 @@
 package com.example.tracker.ui
 
+import android.annotation.SuppressLint
 import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -149,8 +150,8 @@ class GrowthFragment : Fragment() {
         val dataSet = LineDataSet(entries, "Pets")
 
         // Styling the line
-        dataSet.color = "#08d46c".toColorInt() // Line color
-        dataSet.setCircleColor("#08d46c".toColorInt()) // Dot color
+        dataSet.color = "#2C9270".toColorInt() // Line color
+        dataSet.setCircleColor("#2C9270".toColorInt()) // Dot color
         dataSet.lineWidth = 3f
         dataSet.circleRadius = 5f
         dataSet.setDrawCircleHole(true)
@@ -159,8 +160,8 @@ class GrowthFragment : Fragment() {
         // 3. Modern Look: Smoothing and Filling
         dataSet.mode = LineDataSet.Mode.CUBIC_BEZIER // Makes the line curved
         dataSet.setDrawFilled(true)
-        dataSet.fillColor = "#56e49a".toColorInt()
-        dataSet.fillAlpha = 50 // Transparency (0-255)
+        dataSet.fillColor = "#A7D8C3".toColorInt()
+        dataSet.fillAlpha = 100 // Transparency (0-255)
 
         // 4. Change BarData to LineData
         val lineData = LineData(dataSet)

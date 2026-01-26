@@ -19,18 +19,20 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- Medication Name -->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 app:boxBackgroundMode="outline"
-                app:boxCornerRadiusTopEnd="15dp"
-                app:boxCornerRadiusTopStart="15dp"
-                app:boxCornerRadiusBottomEnd="15dp"
-                app:boxCornerRadiusBottomStart="15dp"
-                app:boxStrokeColor="#C3C3C3"
-                app:hintTextColor="#09BC5E">
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxStrokeColor="#E0E0E0"
+                app:boxStrokeWidth="1.5dp"
+                app:boxStrokeWidthFocused="1.5dp"
+                app:boxBackgroundColor="@android:color/white"
+                app:hintTextColor="@color/accent">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etMedicationName"
@@ -38,21 +40,25 @@
                     android:layout_height="wrap_content"
                     android:hint="Medication Name"
                     android:inputType="textCapWords"
-                    android:textSize="12sp"/>
+                    android:textSize="14sp"
+                    android:fontFamily="@font/inter_regular"
+                    android:background="@drawable/rounded_edit_text"/>
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Dosage -->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 app:boxBackgroundMode="outline"
-                app:boxCornerRadiusTopEnd="15dp"
-                app:boxCornerRadiusTopStart="15dp"
-                app:boxCornerRadiusBottomEnd="15dp"
-                app:boxCornerRadiusBottomStart="15dp"
-                app:boxStrokeColor="#C3C3C3"
-                app:hintTextColor="#09BC5E">
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxStrokeColor="#E0E0E0"
+                app:boxStrokeWidth="1.5dp"
+                app:boxStrokeWidthFocused="1.5dp"
+                app:boxBackgroundColor="@android:color/white"
+                app:hintTextColor="@color/accent">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etDosage"
@@ -60,21 +66,25 @@
                     android:layout_height="wrap_content"
                     android:hint="Dosage (e.g. 5mg)"
                     android:inputType="text"
-                    android:textSize="12sp"/>
+                    android:textSize="14sp"
+                    android:fontFamily="@font/inter_regular"
+                    android:background="@drawable/rounded_edit_text"/>
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Frequency -->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 app:boxBackgroundMode="outline"
-                app:boxCornerRadiusTopEnd="15dp"
-                app:boxCornerRadiusTopStart="15dp"
-                app:boxCornerRadiusBottomEnd="15dp"
-                app:boxCornerRadiusBottomStart="15dp"
-                app:boxStrokeColor="#C3C3C3"
-                app:hintTextColor="#09BC5E">
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxStrokeColor="#E0E0E0"
+                app:boxStrokeWidth="1.5dp"
+                app:boxStrokeWidthFocused="1.5dp"
+                app:boxBackgroundColor="@android:color/white"
+                app:hintTextColor="@color/accent">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etFrequency"
@@ -82,22 +92,27 @@
                     android:layout_height="wrap_content"
                     android:hint="Frequency (e.g. Twice a day)"
                     android:inputType="text"
-                    android:textSize="12sp"/>
+                    android:textSize="14sp"
+                    android:fontFamily="@font/inter_regular"
+                    android:background="@drawable/rounded_edit_text"/>
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Start Date -->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 app:startIconDrawable="@android:drawable/ic_menu_my_calendar"
+                app:startIconTint="@color/accent"
                 app:boxBackgroundMode="outline"
-                app:boxCornerRadiusTopEnd="15dp"
-                app:boxCornerRadiusTopStart="15dp"
-                app:boxCornerRadiusBottomEnd="15dp"
-                app:boxCornerRadiusBottomStart="15dp"
-                app:boxStrokeColor="#C3C3C3"
-                app:hintTextColor="#09BC5E">
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxStrokeColor="#E0E0E0"
+                app:boxStrokeWidth="1.5dp"
+                app:boxStrokeWidthFocused="1.5dp"
+                app:boxBackgroundColor="@android:color/white"
+                app:hintTextColor="@color/accent">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etStartDate"
@@ -106,22 +121,27 @@
                     android:hint="Start Date"
                     android:clickable="true"
                     android:focusable="false"
-                    android:textSize="12sp"/>
+                    android:textSize="14sp"
+                    android:fontFamily="@font/inter_regular"
+                    android:background="@drawable/rounded_edit_text"/>
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- End Date -->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 app:startIconDrawable="@android:drawable/ic_menu_my_calendar"
+                app:startIconTint="@color/accent"
                 app:boxBackgroundMode="outline"
-                app:boxCornerRadiusTopEnd="15dp"
-                app:boxCornerRadiusTopStart="15dp"
-                app:boxCornerRadiusBottomEnd="15dp"
-                app:boxCornerRadiusBottomStart="15dp"
-                app:boxStrokeColor="#C3C3C3"
-                app:hintTextColor="#09BC5E">
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxStrokeColor="#E0E0E0"
+                app:boxStrokeWidth="1.5dp"
+                app:boxStrokeWidthFocused="1.5dp"
+                app:boxBackgroundColor="@android:color/white"
+                app:hintTextColor="@color/accent">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etEndDate"
@@ -130,21 +150,25 @@
                     android:hint="End Date"
                     android:clickable="true"
                     android:focusable="false"
-                    android:textSize="12sp"/>
+                    android:textSize="14sp"
+                    android:fontFamily="@font/inter_regular"
+                    android:background="@drawable/rounded_edit_text"/>
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Reason -->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 app:boxBackgroundMode="outline"
-                app:boxCornerRadiusTopEnd="15dp"
-                app:boxCornerRadiusTopStart="15dp"
-                app:boxCornerRadiusBottomEnd="15dp"
-                app:boxCornerRadiusBottomStart="15dp"
-                app:boxStrokeColor="#C3C3C3"
-                app:hintTextColor="#09BC5E">
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxStrokeColor="#E0E0E0"
+                app:boxStrokeWidth="1.5dp"
+                app:boxStrokeWidthFocused="1.5dp"
+                app:boxBackgroundColor="@android:color/white"
+                app:hintTextColor="@color/accent">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etReason"
@@ -154,21 +178,25 @@
                     android:inputType="textMultiLine"
                     android:lines="3"
                     android:gravity="top"
-                    android:textSize="12sp"/>
+                    android:textSize="14sp"
+                    android:fontFamily="@font/inter_regular"
+                    android:background="@drawable/rounded_edit_text"/>
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Notes -->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 app:boxBackgroundMode="outline"
-                app:boxCornerRadiusTopEnd="15dp"
-                app:boxCornerRadiusTopStart="15dp"
-                app:boxCornerRadiusBottomEnd="15dp"
-                app:boxCornerRadiusBottomStart="15dp"
-                app:boxStrokeColor="#C3C3C3"
-                app:hintTextColor="#09BC5E">
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxStrokeColor="#E0E0E0"
+                app:boxStrokeWidth="1.5dp"
+                app:boxStrokeWidthFocused="1.5dp"
+                app:boxBackgroundColor="@android:color/white"
+                app:hintTextColor="@color/accent">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etNotes"
@@ -178,13 +206,14 @@
                     android:inputType="textMultiLine"
                     android:gravity="top"
                     android:lines="3"
-                    android:textSize="12sp"/>
+                    android:textSize="14sp"
+                    android:fontFamily="@font/inter_regular"
+                    android:background="@drawable/rounded_edit_text"/>
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
     </ScrollView>
 
-    <!-- Bottom Save Button -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -193,10 +222,12 @@
 
         <Button
             android:id="@+id/btnSaveMedication"
-            style="@style/Widget.Material3.Button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#09BC5E"
+            android:background="@drawable/button_3d"
+            app:backgroundTint="@null"
+            android:fontFamily="@font/inter_bold"
+            android:textColor="@color/white"
             android:text="Save Medication" />
 
     </LinearLayout>

@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:padding="10dp"
         android:orientation="vertical"
-        android:background="#eff0f4"
+        android:background="@color/secondary"
         >
 
         <!--Account Header-->

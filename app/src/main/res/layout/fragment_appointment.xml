@@ -6,78 +6,70 @@
     android:layout_height="match_parent"
     tools:context=".ui.AppointmentFragment">
 
-    <LinearLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#eff0f4"
-        android:orientation="vertical"
-        android:padding="10dp">
+        android:fillViewport="true">
 
-        <!-- Calendar -->
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="4"
-            app:cardCornerRadius="20dp"
-            android:layout_marginHorizontal="3dp"
-            app:contentPaddingTop="10dp"
-            app:contentPaddingBottom="10dp"
-            android:layout_marginBottom="15dp">
-
-            <com.prolificinteractive.materialcalendarview.MaterialCalendarView
-                android:id="@+id/calendarAppointments"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:mcv_showOtherDates="all"
-                app:mcv_selectionColor="#08d46c" />
-        </androidx.cardview.widget.CardView>
-
-        <!-- Upcoming Appointments List -->
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="4"
-            app:cardCornerRadius="20dp"
-            android:layout_marginBottom="15dp"
-            app:cardElevation="2dp"
-            app:cardMaxElevation="3dp"
-            app:cardPreventCornerOverlap="true"
-            android:layout_marginHorizontal="3dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Upcoming Appointments"
-                    android:layout_marginVertical="10dp"
-                    android:textSize="18sp"
-                    android:fontFamily="@font/inter_bold"
-                    android:layout_marginStart="15dp"
-                    android:textColor="@color/black" />
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclerViewAppointments"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <!-- Add button -->
-        <Button
-            style="@style/Widget.Material3.Button"
-            android:id="@+id/buttonAddAppointment"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Add New Appointment"
-            android:layout_marginBottom="10dp"
-            android:backgroundTint="#08d46c" />
+            android:background="@color/secondary"
+            android:orientation="vertical"
+            android:padding="10dp">
 
-    </LinearLayout>
+            <!-- Calendar -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="390dp"
+                android:layout_marginHorizontal="3dp"
+                android:layout_marginBottom="15dp"
+                app:cardCornerRadius="16dp"
+                app:contentPadding="30dp">
+
+                <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+                    android:id="@+id/calendarAppointments"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:mcv_showOtherDates="out_of_range"
+                    app:mcv_selectionColor="@color/accent"
+                    />
+            </androidx.cardview.widget.CardView>
+
+            <!-- Upcoming Appointments Title -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Upcoming Appointments"
+                android:layout_marginVertical="10dp"
+                android:textSize="18sp"
+                android:fontFamily="@font/inter_bold"
+                android:layout_marginStart="15dp"
+                android:textColor="@color/black" />
+
+            <!-- Upcoming Appointments List -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewAppointments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false" />
+
+            <!-- Add button -->
+            <Button
+                android:id="@+id/buttonAddAppointment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/button_3d"
+                app:backgroundTint="@null"
+                android:text="Add New Appointment"
+                android:textColor="@color/white"
+                android:fontFamily="@font/inter_bold"
+                android:textAllCaps="false" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
 </FrameLayout>

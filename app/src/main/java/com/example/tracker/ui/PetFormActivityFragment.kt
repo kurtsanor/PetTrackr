@@ -11,6 +11,7 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -132,7 +133,7 @@ class PetFormActivityFragment : Fragment() {
         super.onDestroyView()
 
         val headerBar = requireActivity().findViewById<View>(R.id.headerBar)
-        headerBar.setBackgroundColor(android.graphics.Color.parseColor("#EFF0F4"))
+        headerBar.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.secondary))
 
         val subtitle = requireActivity().findViewById<TextView>(R.id.txtHeaderSubtitle)
         subtitle.text = ""

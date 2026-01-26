@@ -7,146 +7,165 @@
     android:background="@color/white"
     tools:context=".ui.HomeFragment">
 
-    <LinearLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="10dp"
-        android:background="#eff0f4">
+        android:fillViewport="true">
 
-        <!-- Record Info Card -->
-        <androidx.cardview.widget.CardView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="20dp"
-            app:contentPadding="15dp"
-            android:layout_marginHorizontal="3dp"
-            >
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:background="@color/secondary">
 
-            <LinearLayout
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/inter_bold"
+                android:text="New Growth Entry"
+                android:textColor="@color/black"
+                android:layout_marginStart="15dp"
+                android:textSize="18sp" />
 
-                <!-- Weight and Height -->
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="15dp"
-                    android:fontFamily="@font/inter_bold"
-                    android:text="New Growth Entry"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp"
+                app:contentPadding="15dp"
+                android:layout_marginHorizontal="3dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:weightSum="2"
-                    android:layout_marginBottom="10dp">
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2"
+                        android:layout_marginBottom="10dp">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/weightLayout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            app:boxBackgroundMode="outline"
+                            app:boxCornerRadiusTopStart="12dp"
+                            app:boxCornerRadiusTopEnd="12dp"
+                            app:boxCornerRadiusBottomStart="12dp"
+                            app:boxCornerRadiusBottomEnd="12dp"
+                            app:boxStrokeColor="#E0E0E0"
+                            app:boxStrokeWidth="1.5dp"
+                            app:boxStrokeWidthFocused="1.5dp"
+                            app:boxBackgroundColor="@android:color/white"
+                            app:hintTextColor="@color/accent"
+                            app:endIconMode="custom"
+                            app:endIconDrawable="@drawable/ic_info"
+                            app:endIconContentDescription="Age format info">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/weightInput"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Weight"
+                                android:inputType="numberDecimal"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/inter_regular"
+                                android:background="@drawable/rounded_edit_text"
+                                android:padding="10dp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <Space
+                            android:layout_width="10dp"
+                            android:layout_height="wrap_content" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/heightLayout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            app:boxBackgroundMode="outline"
+                            app:boxCornerRadiusTopStart="12dp"
+                            app:boxCornerRadiusTopEnd="12dp"
+                            app:boxCornerRadiusBottomStart="12dp"
+                            app:boxCornerRadiusBottomEnd="12dp"
+                            app:boxStrokeColor="#E0E0E0"
+                            app:boxStrokeWidth="1.5dp"
+                            app:boxStrokeWidthFocused="1.5dp"
+                            app:boxBackgroundColor="@android:color/white"
+                            app:hintTextColor="@color/accent"
+                            app:endIconMode="custom"
+                            app:endIconDrawable="@drawable/ic_info"
+                            app:endIconContentDescription="Age format info">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/heightInput"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Height"
+                                android:inputType="numberDecimal"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/inter_regular"
+                                android:background="@drawable/rounded_edit_text"
+                                android:padding="10dp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/weightLayout"
-                        android:layout_width="0dp"
+                        android:id="@+id/notesLayout"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:hint="Weight"
+                        android:layout_marginBottom="10dp"
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:boxStrokeColor="#E0E0E0"
+                        app:boxStrokeWidth="1.5dp"
+                        app:boxStrokeWidthFocused="1.5dp"
+                        app:boxBackgroundColor="@android:color/white"
+                        app:hintTextColor="@color/accent"
                         app:endIconMode="custom"
                         app:endIconDrawable="@drawable/ic_info"
                         app:endIconContentDescription="Age format info">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/weightInput"
+                            android:id="@+id/notesInput"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="numberDecimal"
+                            android:minHeight="70dp"
+                            android:hint="Notes (optional)"
                             android:textSize="14sp"
-                            android:background="@drawable/edittext_bg"
-                            android:padding="10dp" />
-
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <Space
-                        android:layout_width="10dp"
-                        android:layout_height="wrap_content" />
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/heightLayout"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:hint="Height"
-                        app:endIconMode="custom"
-                        app:endIconDrawable="@drawable/ic_info"
-                        app:endIconContentDescription="Age format info">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/heightInput"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:inputType="numberDecimal"
-                            android:textSize="14sp"
-                            android:background="@drawable/edittext_bg"
+                            android:fontFamily="@font/inter_regular"
+                            android:inputType="textMultiLine"
+                            android:background="@drawable/rounded_edit_text"
                             android:padding="10dp" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
                 </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-                <!-- Notes -->
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/notesLayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Notes (optional)"
-                    android:layout_marginBottom="10dp"
-                    android:minHeight="70dp"
-                    app:endIconMode="custom"
-                    app:endIconDrawable="@drawable/ic_info"
-                    app:endIconContentDescription="Age format info">
+            <Button
+                android:id="@+id/buttonSaveRecord"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/button_3d"
+                app:backgroundTint="@null"
+                android:fontFamily="@font/inter_bold"
+                android:text="Save Record"
+                android:textColor="#FFFFFF" />
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/notesInput"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:minHeight="70dp"
-                        android:textSize="14sp"
-                        android:inputType="textMultiLine"
-                        android:background="@drawable/edittext_bg"
-                        android:padding="10dp"/>
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <!-- Save Button -->
-        <Button
-            android:id="@+id/buttonSaveRecord"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Save Record"
-            android:layout_marginTop="15dp"
-            android:fontFamily="@font/inter_bold"
-            android:backgroundTint="#08d46c"
-            android:textStyle="bold"
-            android:textColor="#FFFFFF"
-            android:layout_marginBottom="15dp"/>
-
-        <!--Acitivty Trends Container-->
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginHorizontal="3dp"
-            android:layout_marginBottom="15dp"
-            android:layout_weight="3"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="2dp"
-            app:cardMaxElevation="3dp"
-            app:cardPreventCornerOverlap="true">
-            <!--Activity Trends Header-->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -157,50 +176,41 @@
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
-            <!--Line Chart-->
-            <com.github.mikephil.charting.charts.LineChart
-                android:id="@+id/barChart"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginTop="40dp"
-                android:layout_marginBottom="10dp" />
-        </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="3"
-            app:cardCornerRadius="20dp"
-            android:layout_marginBottom="10dp"
-            app:cardElevation="2dp"
-            app:cardMaxElevation="3dp"
-            app:cardPreventCornerOverlap="true"
-            android:layout_marginHorizontal="3dp"
-            >
-            <LinearLayout
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <!--Appointment Header-->
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Recent Entries"
-                    android:layout_marginVertical="10dp"
-                    android:textSize="18sp"
-                    android:fontFamily="@font/inter_bold"
-                    android:layout_marginStart="15dp"
-                    android:textColor="@color/black"
-                    />
+                android:layout_marginHorizontal="3dp"
+                android:layout_marginBottom="15dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp">
 
-                <!--Appointment Schedule Item-->
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclerViewGrowth"
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/barChart"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
+                    android:layout_height="200dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginVertical="10dp" />
+            </androidx.cardview.widget.CardView>
 
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-    </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Recent Entries"
+                android:layout_marginVertical="10dp"
+                android:textSize="18sp"
+                android:fontFamily="@font/inter_bold"
+                android:layout_marginStart="15dp"
+                android:textColor="@color/black" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewGrowth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
 </FrameLayout>

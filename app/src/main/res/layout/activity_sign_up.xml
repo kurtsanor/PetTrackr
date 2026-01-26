@@ -11,15 +11,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="#0A662F">
+        android:background="@color/accent">
 
-        <!--Hero Logo-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="5"
             android:orientation="vertical"
-            android:background="@drawable/green_gradient">
+            android:background="@color/accent">
 
             <ImageView
                 android:id="@+id/imageViewLogo"
@@ -29,7 +28,6 @@
                 app:tint="@color/white"/>
         </LinearLayout>
 
-        <!--Sign Up Form-->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -42,7 +40,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:padding="10dp"
+                android:padding="20dp"
                 android:gravity="center">
 
                 <TextView
@@ -64,18 +62,20 @@
                     android:fontFamily="@font/inter_regular"
                     android:textColor="@color/black"/>
 
-                <!-- First Name -->
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     app:boxBackgroundMode="outline"
-                    app:boxCornerRadiusTopStart="15dp"
-                    app:boxCornerRadiusTopEnd="15dp"
-                    app:boxCornerRadiusBottomStart="15dp"
-                    app:boxCornerRadiusBottomEnd="15dp"
-                    app:boxStrokeColor="#C3C3C3"
-                    app:hintTextColor="#09BC5E">
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    app:boxStrokeColor="#E0E0E0"
+                    app:boxStrokeWidth="1.5dp"
+                    app:boxStrokeWidthFocused="1.5dp"
+                    app:boxBackgroundColor="@android:color/white"
+                    app:hintTextColor="@color/accent">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/textViewFirstName"
@@ -84,21 +84,25 @@
                         android:hint="First Name"
                         android:inputType="textPersonName"
                         android:textSize="14sp"
-                        android:fontFamily="@font/inter_regular"/>
+                        android:textColorLink="#205890"
+                        android:fontFamily="@font/inter_regular"
+                        android:background="@drawable/rounded_edit_text"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <!-- Last Name -->
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     app:boxBackgroundMode="outline"
-                    app:boxCornerRadiusTopStart="15dp"
-                    app:boxCornerRadiusTopEnd="15dp"
-                    app:boxCornerRadiusBottomStart="15dp"
-                    app:boxCornerRadiusBottomEnd="15dp"
-                    app:boxStrokeColor="#C3C3C3"
-                    app:hintTextColor="#09BC5E">
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    app:boxStrokeColor="#E0E0E0"
+                    app:boxStrokeWidth="1.5dp"
+                    app:boxStrokeWidthFocused="1.5dp"
+                    app:boxBackgroundColor="@android:color/white"
+                    app:hintTextColor="@color/accent">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/textViewLastName"
@@ -107,21 +111,25 @@
                         android:hint="Last Name"
                         android:inputType="textPersonName"
                         android:textSize="14sp"
-                        android:fontFamily="@font/inter_regular"/>
+                        android:textColorLink="#205890"
+                        android:fontFamily="@font/inter_regular"
+                        android:background="@drawable/rounded_edit_text"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <!-- Email -->
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     app:boxBackgroundMode="outline"
-                    app:boxCornerRadiusTopStart="15dp"
-                    app:boxCornerRadiusTopEnd="15dp"
-                    app:boxCornerRadiusBottomStart="15dp"
-                    app:boxCornerRadiusBottomEnd="15dp"
-                    app:boxStrokeColor="#C3C3C3"
-                    app:hintTextColor="#09BC5E">
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    app:boxStrokeColor="#E0E0E0"
+                    app:boxStrokeWidth="1.5dp"
+                    app:boxStrokeWidthFocused="1.5dp"
+                    app:boxBackgroundColor="@android:color/white"
+                    app:hintTextColor="@color/accent">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/textViewEmail"
@@ -130,22 +138,26 @@
                         android:hint="Email"
                         android:inputType="textEmailAddress"
                         android:textSize="14sp"
-                        android:fontFamily="@font/inter_regular"/>
+                        android:textColorLink="#205890"
+                        android:fontFamily="@font/inter_regular"
+                        android:background="@drawable/rounded_edit_text"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <!-- Password -->
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
+                    android:layout_marginBottom="10dp"
                     app:boxBackgroundMode="outline"
-                    app:boxCornerRadiusTopStart="15dp"
-                    app:boxCornerRadiusTopEnd="15dp"
-                    app:boxCornerRadiusBottomStart="15dp"
-                    app:boxCornerRadiusBottomEnd="15dp"
-                    app:boxStrokeColor="#C3C3C3"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    app:boxStrokeColor="#E0E0E0"
+                    app:boxStrokeWidth="1.5dp"
+                    app:boxStrokeWidthFocused="1.5dp"
+                    app:boxBackgroundColor="@android:color/white"
                     app:endIconMode="password_toggle"
-                    app:hintTextColor="#09BC5E">
+                    app:hintTextColor="@color/accent">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/textViewPassword"
@@ -153,22 +165,27 @@
                         android:layout_height="wrap_content"
                         android:hint="Password"
                         android:inputType="textPassword"
-                        android:textSize="14sp"/>
+                        android:textSize="14sp"
+                        android:textColorLink="#205890"
+                        android:fontFamily="@font/inter_regular"
+                        android:background="@drawable/rounded_edit_text"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <!-- Confirm Password -->
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
                     app:boxBackgroundMode="outline"
-                    app:boxCornerRadiusTopStart="15dp"
-                    app:boxCornerRadiusTopEnd="15dp"
-                    app:boxCornerRadiusBottomStart="15dp"
-                    app:boxCornerRadiusBottomEnd="15dp"
-                    app:boxStrokeColor="#C3C3C3"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    app:boxStrokeColor="#E0E0E0"
+                    app:boxStrokeWidth="1.5dp"
+                    app:boxStrokeWidthFocused="1.5dp"
+                    app:boxBackgroundColor="@android:color/white"
                     app:endIconMode="password_toggle"
-                    app:hintTextColor="#09BC5E">
+                    app:hintTextColor="@color/accent">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/textViewConfirmPassword"
@@ -176,16 +193,20 @@
                         android:layout_height="wrap_content"
                         android:hint="Confirm Password"
                         android:inputType="textPassword"
-                        android:textSize="14sp"/>
+                        android:textSize="14sp"
+                        android:textColorLink="#205890"
+                        android:fontFamily="@font/inter_regular"
+                        android:background="@drawable/rounded_edit_text"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <Button
                     android:id="@+id/buttonSignUp"
-                    style="@style/Widget.Material3.Button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="#09BC5E"
+                    android:background="@drawable/button_3d"
+                    app:backgroundTint="@null"
                     android:text="Sign Up"
+                    android:textColor="@color/white"
                     android:fontFamily="@font/inter_bold"/>
 
                 <LinearLayout
@@ -209,13 +230,12 @@
                         android:layout_height="wrap_content"
                         android:text="Sign In"
                         android:textSize="14sp"
-                        android:textColor="#09BC5E"
+                        android:textColor="@color/accent"
                         android:textStyle="bold"
                         android:fontFamily="@font/inter_bold"
                         android:clickable="true"
                         android:focusable="true"/>
                 </LinearLayout>
-
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>

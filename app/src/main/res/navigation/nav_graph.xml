@@ -159,12 +159,6 @@
         android:name="com.example.tracker.ui.AppointmentFragment"
         android:label="Appointment"
         >
-    </fragment>
-    <fragment
-        android:id="@+id/appointmentFormFragment"
-        android:name="com.example.tracker.ui.AppointmentFormFragment"
-        android:label="Appointment Form"
-        >
         <action
             android:id="@+id/action_appointment_to_appointmentForm"
             app:destination="@+id/appointmentFormFragment"
@@ -173,6 +167,13 @@
             app:popEnterAnim="@android:anim/fade_in"
             app:popExitAnim="@anim/slide_out_right"
             />
+    </fragment>
+    <fragment
+        android:id="@+id/appointmentFormFragment"
+        android:name="com.example.tracker.ui.AppointmentFormFragment"
+        android:label="Appointment Form"
+        >
+
     </fragment>
     <fragment
         android:id="@+id/medicationFragment"

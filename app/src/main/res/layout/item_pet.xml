@@ -78,10 +78,10 @@
                     style="@style/ShapeAppearanceOverlay.Material3.Button"
                     android:layout_width="wrap_content"
                     android:layout_height="39dp"
-                    android:backgroundTint="#EAF6EC"
+                    android:backgroundTint="@color/light_accent"
                     android:text="Healthy ✓"
                     android:textSize="14dp"
-                    android:textColor="#176832"
+                    android:textColor="@color/accent"
                     android:fontFamily="@font/inter_semibold"
                     />
             </LinearLayout>

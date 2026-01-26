@@ -22,12 +22,15 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             app:boxBackgroundMode="outline"
-            app:boxCornerRadiusBottomEnd="15dp"
-            app:boxCornerRadiusBottomStart="15dp"
-            app:boxCornerRadiusTopEnd="15dp"
-            app:boxCornerRadiusTopStart="15dp"
-            app:boxStrokeColor="#C3C3C3"
-            app:hintTextColor="#09BC5E">
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxStrokeColor="#E0E0E0"
+            app:boxStrokeWidth="1.5dp"
+            app:boxStrokeWidthFocused="1.5dp"
+            app:boxBackgroundColor="@android:color/white"
+            app:hintTextColor="@color/accent">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etPetName"
@@ -35,7 +38,9 @@
                 android:layout_height="wrap_content"
                 android:hint="Pet Name"
                 android:inputType="textCapWords"
-                android:textSize="12sp" />
+                android:textSize="14sp"
+                android:fontFamily="@font/inter_regular"
+                android:background="@drawable/rounded_edit_text"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -43,12 +48,15 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             app:boxBackgroundMode="outline"
-            app:boxCornerRadiusBottomEnd="15dp"
-            app:boxCornerRadiusBottomStart="15dp"
-            app:boxCornerRadiusTopEnd="15dp"
-            app:boxCornerRadiusTopStart="15dp"
-            app:boxStrokeColor="#C3C3C3"
-            app:hintTextColor="#09BC5E">
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxStrokeColor="#E0E0E0"
+            app:boxStrokeWidth="1.5dp"
+            app:boxStrokeWidthFocused="1.5dp"
+            app:boxBackgroundColor="@android:color/white"
+            app:hintTextColor="@color/accent">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etPetType"
@@ -56,7 +64,9 @@
                 android:layout_height="wrap_content"
                 android:hint="Type (e.g. Dog)"
                 android:inputType="text"
-                android:textSize="12sp" />
+                android:textSize="14sp"
+                android:fontFamily="@font/inter_regular"
+                android:background="@drawable/rounded_edit_text"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -64,12 +74,15 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             app:boxBackgroundMode="outline"
-            app:boxCornerRadiusBottomEnd="15dp"
-            app:boxCornerRadiusBottomStart="15dp"
-            app:boxCornerRadiusTopEnd="15dp"
-            app:boxCornerRadiusTopStart="15dp"
-            app:boxStrokeColor="#C3C3C3"
-            app:hintTextColor="#09BC5E">
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxStrokeColor="#E0E0E0"
+            app:boxStrokeWidth="1.5dp"
+            app:boxStrokeWidthFocused="1.5dp"
+            app:boxBackgroundColor="@android:color/white"
+            app:hintTextColor="@color/accent">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etBreed"
@@ -77,7 +90,9 @@
                 android:layout_height="wrap_content"
                 android:hint="Breed"
                 android:inputType="text"
-                android:textSize="12sp" />
+                android:textSize="14sp"
+                android:fontFamily="@font/inter_regular"
+                android:background="@drawable/rounded_edit_text"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -86,12 +101,15 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             app:boxBackgroundMode="outline"
-            app:boxCornerRadiusBottomEnd="15dp"
-            app:boxCornerRadiusBottomStart="15dp"
-            app:boxCornerRadiusTopEnd="15dp"
-            app:boxCornerRadiusTopStart="15dp"
-            app:boxStrokeColor="#C3C3C3"
-            app:hintTextColor="#09BC5E">
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxStrokeColor="#E0E0E0"
+            app:boxStrokeWidth="1.5dp"
+            app:boxStrokeWidthFocused="1.5dp"
+            app:boxBackgroundColor="@android:color/white"
+            app:hintTextColor="@color/accent">
 
             <AutoCompleteTextView
                 android:id="@+id/actvGender"
@@ -99,7 +117,9 @@
                 android:layout_height="wrap_content"
                 android:hint="Gender"
                 android:inputType="none"
-                android:textSize="12sp" />
+                android:textSize="14sp"
+                android:fontFamily="@font/inter_regular"
+                android:background="@drawable/rounded_edit_text"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -107,13 +127,17 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             app:boxBackgroundMode="outline"
-            app:boxCornerRadiusBottomEnd="15dp"
-            app:boxCornerRadiusBottomStart="15dp"
-            app:boxCornerRadiusTopEnd="15dp"
-            app:boxCornerRadiusTopStart="15dp"
-            app:boxStrokeColor="#C3C3C3"
-            app:hintTextColor="#09BC5E"
-            app:startIconDrawable="@android:drawable/ic_menu_my_calendar">
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxStrokeColor="#E0E0E0"
+            app:boxStrokeWidth="1.5dp"
+            app:boxStrokeWidthFocused="1.5dp"
+            app:boxBackgroundColor="@android:color/white"
+            app:hintTextColor="@color/accent"
+            app:startIconDrawable="@android:drawable/ic_menu_my_calendar"
+            app:startIconTint="@color/accent">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etBirthDate"
@@ -122,7 +146,9 @@
                 android:clickable="true"
                 android:focusable="false"
                 android:hint="Birth Date"
-                android:textSize="12sp" />
+                android:textSize="14sp"
+                android:fontFamily="@font/inter_regular"
+                android:background="@drawable/rounded_edit_text"/>
         </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
@@ -135,12 +161,14 @@
 
         <Button
             android:id="@+id/buttonAddPet"
-            style="@style/Widget.Material3.Button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#09BC5E"
+            android:background="@drawable/button_3d"
+            app:backgroundTint="@null"
             android:layout_marginBottom="20dp"
-            android:text="Add To Pets" />
+            android:fontFamily="@font/inter_bold"
+            android:text="Add To Pets"
+            android:textColor="@color/white" />
 
     </LinearLayout>
 
